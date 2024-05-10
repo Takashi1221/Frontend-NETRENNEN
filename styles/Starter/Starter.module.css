@@ -1,0 +1,39 @@
+
+.mainContainer {
+    background-color: #ebf1f4;
+    display: flex;
+    margin: 0% 18%;  /* フレームの左右に余白 */
+
+}
+
+.body {
+    background-color: #f3ede4;
+    min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerText {
+    color: #122315;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6vw;
+    font-weight: 800;
+    padding-left: 1vw;
+}
+
+.bodyContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.6vw;
+    margin-right: 27vw;
+    margin-left: 36vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #3e4d40;
+    font-size: 0.8vw;
+}

@@ -1,0 +1,422 @@
+.body {
+    background-color: #f3ede4;
+    min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerText {
+    color: #122315;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6vw;
+    font-weight: 800;
+    padding-left: 1vw;
+}
+
+.bodyContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.8vw;
+    margin-left: 36vw;
+    margin-bottom: 6vw;
+}
+
+.nameContainer {
+    background-color: #122315;
+    display: flex;
+    align-items: center;
+    height: 45px;
+    margin-bottom: 15px;
+}
+
+.horseName {
+    color: #f1f5f6;
+    font-size: 1.6rem;
+    padding-left: 15px;
+}
+
+.horseAge {
+    color: #f1f5f6f1;
+    font-size: 1.2rem;
+    padding-left: 15px;
+}
+
+.topContainer {
+    display: flex;
+    margin: 0% 18% 0.5% 18%;
+}
+
+.tablistStyle {  /* タブのスタイル */
+    display: flex;
+    margin-left: 5px;
+}
+
+.tab {
+    padding: 10px;
+    list-style: none;
+    cursor: pointer;
+  }
+
+.tab:hover {
+    color: rgb(209, 43, 43, 0.8);
+}
+
+.mainContainer1 {
+    background-color: #ffffff;
+    display: flex;
+    width: 800px;
+    min-height: 150px;
+    margin-top: 15px;
+    padding: 15px;
+}
+
+.main1LeftContainer {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.photoSpace {
+    background-color: rgba(86, 86, 86, 0.724);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    color: #adadadf0;
+}
+
+.threadSpace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 150px;
+    color: #adadadf0;
+}
+
+.main1RightContainer {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+}
+
+.infoSpace {
+    display: flex;
+    width: 500px;
+    height: 250px;
+    margin-left: 20px;
+    border-top: 1px solid rgb(199, 204, 208);
+}
+
+.infoTitle {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+
+.infoLeft {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}
+
+.infoLeftRow {
+    border-right: 1px solid rgb(199, 204, 208);
+    border-bottom: 1px solid rgb(199, 204, 208);
+    border-left: 1px solid rgb(199, 204, 208);
+    padding: 5px 0 3px 10px;
+}
+
+.infoRight {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.infoRightRow {
+    border-right: 1px solid rgb(199, 204, 208);
+    border-bottom: 1px solid rgb(199, 204, 208);
+    padding: 5px 0 3px 10px;
+}
+
+.pedigreeSpace {
+
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 180px;
+    margin: 10px 0 0 20px;
+}
+
+.pedigreeTitle {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding-bottom: 3px;
+}
+
+.pedigreeBody {
+    display: flex;
+    border-top: 0.6px solid rgb(199, 204, 208);
+    border-left: 0.6px solid rgb(199, 204, 208);
+}
+
+.pedigreeRowContainer {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.pedigreeRow1 {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    padding-left: 7.5px;
+    font-size: 1rem;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.pedigreeRow2 {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    padding-left: 7.5px;
+    font-size: 0.95rem;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.fatherColor {
+    background-color: #f3ede4;
+}
+
+.motherColor {
+    background-color: #ffffff;
+}
+
+.mainContainer2 {
+    background-color: #ffffff;
+    display: flex;
+    width: 780px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 15px;
+}
+
+.formenTabBG {
+    background-color: #ffffff;
+    display: flex;
+    width: 780px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    padding: 15px;
+}
+
+.resultsTableContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.resultsTitle {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    font-size: 1.1rem;
+}
+
+.resultsTableColumns {
+    background-color: #122315d1;
+    display: flex;
+    align-items: center;
+    padding: 5px 0 0 1.5px;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+}
+
+.resultsTableBody {
+    display: flex;
+    flex-direction: column;
+    color: #033034;
+}
+
+.tableRowContainer {
+    display: flex;
+    align-items: center;
+    padding: 5px 0 0 1.5px;
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+    cursor: pointer;
+}
+
+.tableRowContainer:hover {
+    background-color: rgba(157, 157, 157, 0.526);
+    color: rgb(209, 43, 43, 0.8);
+}
+
+.showMore {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 5px 0 0;
+    cursor: pointer;
+}
+
+.showMore:hover {
+    color: rgb(209, 43, 43, 0.8);
+    text-decoration: underline;
+}
+
+.rowWidth190 {
+    width: 190px;
+    height: 28px;
+    font-size: 0.95rem;
+}
+
+.rowWidth150 {
+    display: flex;
+    width: 150px;
+    height: 28px;
+    padding-left: 5px;
+    font-size: 0.95rem;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+.rowWidth80 {
+    display: flex;
+    justify-content: flex-end;
+    width: 80px;
+    height: 28px;
+    padding-right: 10px;
+    font-size: 0.95rem;
+}
+
+.rowWidth70 {
+    display: flex;
+    justify-content: flex-end;
+    width: 70px;
+    height: 28px;
+    padding-right: 10px;
+    font-size: 0.95rem;
+}
+
+.paddingLeft {
+    padding-left: 10px;
+}
+
+.paddingLeftMini {
+    padding-left: 5px;
+}
+
+.paddingBottom {
+    color: #122315;
+    padding-bottom: 5px;
+}
+
+.evenRow {
+    background-color: #f3ede4;
+}
+
+.tabPedigreeBG {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 1040px;
+    height: 630px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    padding: 20px;
+}
+
+.pedigreeTabTitle {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding-bottom: 15px;
+}
+
+.tabPedigreeContainer {
+    display: flex;
+    width: 1000px;
+    height: 560px;
+    border-top: 0.6px solid rgb(199, 204, 208);
+    border-left: 0.6px solid rgb(199, 204, 208);
+}
+
+.pedigreeContainerDummy {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 560px;
+}
+
+.pedigreeContainerOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    height: 560px;
+    padding-left: 20px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.pedigreeContainerTwo {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 280px;
+    padding-left: 10px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.pedigreeContainerThree {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 140px;
+    padding-left: 10px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.pedigreeContainerFour {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 70px;
+    padding-left: 10px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.pedigreeContainerFive {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 35px;
+    padding-left: 10px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.noDataContainer {
+    display: flex;
+    margin-top: 9vw;
+    margin-left: 36vw;
+    margin-bottom: 6vw;
+    min-height: 100vh;
+    padding-left: 9vw;
+}

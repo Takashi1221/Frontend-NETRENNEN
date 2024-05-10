@@ -1,0 +1,59 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Full width */
+    height: 70px;
+    padding: 20px 40px;
+    background-color: #122315;
+    box-shadow: 0 2px 2px #09160b;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logoText {
+    display: flex;
+    align-items: baseline;
+}
+
+.net {
+    color: #f3ede4;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 2rem; /* あるいは具体的なピクセル値 */
+}
+
+.rennen {
+    color: #f3ede4;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 2rem; /* あるいは具体的なピクセル値 */
+}
+
+.naviText {
+    display: flex;
+    color: #f3ede4;
+    font-family: 'Nokora', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.naviTextMargin {
+    margin-right: 30px;
+}
+
+.naviLogin {
+    display: flex;
+    height: 70px;
+    align-items: center;
+}
+
+.spaceContainer {
+    background: #122315;
+    width: 100%;
+    height: 150px;
+}
+

@@ -1,0 +1,197 @@
+.mainContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.stepContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  position: relative;
+}
+
+.containerBefore {
+  content: '';
+  position: absolute;
+  background: #f3e7f3;
+  height: 4px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.containerAfter {
+  content: '';
+  position: absolute;
+  background: #4a154b;
+  height: 4px;
+  top: 50%;
+  transition: 0.4s ease;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.stepWrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.stepStyle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 3px solid #f3e7f3;
+  transition: 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stepStyleCompleted {
+  border-color: #4A154B;
+}
+
+.stepCount {
+  font-size: 13px;
+  color: #501651a9;
+}
+
+.stepsLabelContainer {
+  position: absolute;
+  top: 66px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap; 
+}
+
+.stepLabel {
+  font-size: 13px;
+  color: #501651a9;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -15px;
+  margin-top: 100px;
+}
+
+.buttonStyle {
+  border-radius: 4px;
+  border: 0;
+  background: #4a154b;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px;
+  width: 90px;
+}
+
+.buttonStyle:active {
+  transform: scale(0.98);
+}
+
+.buttonStyleDisabled {
+  background: #f3e7f3;
+  color: #000000;
+  cursor: not-allowed;
+}
+
+.checkMark {
+  font-size: 26px;
+  font-weight: 600;
+  color: #4a154b;
+  padding-top: 3px;
+}
+
+@media (max-width: 600px) {
+  .stepCount,
+  .stepLabel {
+    font-size: 16px;
+  }
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+  padding-top: 100px;
+}
+
+.formTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.formDiscription {
+  font-size: 0.9rem;
+  color: #747274ca;
+}
+
+.formMainContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.inputStyle {
+  border: 1px solid #ccc; /* 通常時の枠線 */
+  height: 40px;
+  padding: 0 15px;
+  padding-right: 50px; /* ボタンのスペースを確保 */
+  width: 100%;
+  margin-bottom: 10px;
+  color: #373737d8;
+}
+
+.toggleButton {
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.weiterButtonStyle {
+  margin-top: 80px;
+  height: 40px;
+  background-color: #318441e6;
+  border: 1px solid #318441e6;
+  color: #f8f5f5fd;
+}
+
+.weiterButtonStyle:hover {
+  background-color: #122315;
+  border: 1px solid #122315;
+}
+
+.returnButtonStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 70px;
+  height: 40px;
+  background-color: #353635c9;
+  border: 1px solid #353635c9;
+  color: #f8f5f5fd;
+  font-size: 0.8rem;
+}
+
+.returnButtonStyle:hover {
+  background-color: #797979c9;
+  border: 1px solid #797979c9;
+}
+

@@ -1,0 +1,65 @@
+.pageContainer {
+    background-color: #122315;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.signupBody {
+    background-color: #f8f5f5fd;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-left: 32vw;
+    margin-right: 32vw;
+}
+
+.useFreeMainContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.useFreeHeader {
+    display: flex;
+    font-size: 1.6rem;
+    margin-left: auto;
+    margin-right: auto;
+    color: #122315ee;
+}
+
+.useFreeBody {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.0rem;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #243527c7;
+}
+
+.loadingContainer {
+    margin-top: 60px;
+}
+
+.returnStripeContainer {
+    display: flex;
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.returnStripeButton {
+    margin-top: 80px;
+    padding: 10px;
+    height: 40px;
+    background-color: #6528F7;
+    border: 1px solid #6528F7;
+    color: #f8f5f5fd;
+    cursor: pointer;
+  }
+  
+  .returnStripeButton:hover {
+    background-color: #341282;
+    border: 1px solid #341282;
+  }

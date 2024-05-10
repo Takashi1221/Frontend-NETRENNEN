@@ -1,0 +1,59 @@
+.mainContainer {
+    background-color: #fbfeff;
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.racenumberContainer {
+    display: flex;
+    margin: 0.5% 18%;  /* フレームの左右に余白 */
+    font-size: 1.4rem;
+    background-image: linear-gradient(to left, transparent 60%, rgba(2, 37, 34, 0.25) 60%, rgba(2, 37, 34, 0.25) 100%);
+    background-repeat: no-repeat;
+    background-position: bottom; /* 下端に配置 */
+    background-size: 100% 2px; /* 下線の幅と太さ */
+}
+
+.racenumberButton {
+    margin-right: 20px;
+}
+
+.raceinfoContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5% 18%;  /* フレームの左右に余白 */
+}
+
+.thisraceNumber {
+    background-color: #044349;
+    color: #f1f5f6;
+    font-size: 1.8rem;
+    margin: 0 0 1.5%;
+    padding: 1%;
+    border-radius: 10px; /* 角の丸みを指定 */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.raceinfoText {
+    display: flex;
+    flex-direction: column;
+    color: #033034;
+    margin: 0 1% 0;
+}
+
+.raceTitle {
+    font-size: 1.8rem;
+}
+
+.raceDetails {
+    display: flex;
+    flex-direction: row;
+    padding: auto;
+    font-size: 0.9rem;
+}
+
+.itemRightMargin {
+    margin-right: 14px;
+  }

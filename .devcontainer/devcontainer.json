@@ -1,0 +1,9 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+	"name": "Frontend",
+	"build": {
+		"dockerfile": "../Dockerfile"
+	},
+  "postCreateCommand": "yarn dev",
+  "remoteUser": "node"
+}

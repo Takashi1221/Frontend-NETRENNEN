@@ -1,0 +1,114 @@
+.body {
+    background-color: #f3ede4;
+    min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerText {
+    color: #122315;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6vw;
+    font-weight: 800;
+    padding-left: 1vw;
+}
+
+.bodyContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.7vw;
+    margin-left: 36vw;
+    margin-bottom: 6vw;
+}
+
+.contentHeader {
+    display: flex;
+    align-items: center;
+    height: 2.1vw;
+    width: 30vw;
+    margin-bottom: 1vw;
+    color: #122315;
+    font-size: 1.1vw;
+}
+
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.jahrText {
+    color: #122315;
+    font-size: 0.7vw;
+    padding-left: 0.5vw;
+}
+
+.tableHeader {
+    background-color: #122315d1;
+    display: flex;
+    margin-right: auto;
+    padding-top: 0.2vw;
+    padding-bottom: 0.2vw;
+    color: #f3ede4;
+}
+
+.tableRow {
+    display: flex;
+    margin-right: auto;
+    padding-top: 0.3vw;
+    padding-bottom: 0.3vw;
+    border-bottom: 1px solid rgb(199, 204, 208);
+}
+
+.evenRow {
+    background-color: #f7f4ef;
+}
+
+.columnWigth60 {
+    width: 60px;
+}
+
+.columnWigth70 {
+    display: flex;
+    justify-content:center;
+    width: 70px;
+}
+
+.columnWigth90 {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0.6vw;
+    width: 90px;
+}
+
+.columnWigth100 {
+    width: 100px;
+}
+
+.columnWigth140 {
+    width: 140px;
+}
+
+.columnWigth450 {
+    width: 450px;
+}
+
+
+.contentContainer {
+    display: flex;
+    align-items: center;
+    height: 4.5vw;
+    width: 30vw;
+    margin-bottom: 1vw;
+    border: 1px solid rgb(199, 204, 208);
+}
+
+.contentTextSpace {
+    color: #122315;
+    font-size: 0.8vw;
+    margin-left: 2vw;
+}

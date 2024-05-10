@@ -1,0 +1,7 @@
+.customButton {
+    background-color: #55dd4a;
+}
+.customButton:hover {
+    background-color: #122315;
+    transition: background-color 0.3s;
+}

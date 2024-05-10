@@ -1,0 +1,417 @@
+
+.tableWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer {
+    background-color: #fbfeff;
+    display: flex;
+
+}
+
+.resultsWrapper {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.resultsHeader {
+    background-color: #4c949b;
+    display: flex;
+    flex-direction: row;
+    min-height: 28px;
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    border-top: 0.6px solid rgb(199, 204, 208);
+    border-left: 0.6px solid rgb(199, 204, 208);
+}
+
+.resultsHeaderColumn1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.resultsHeaderColumn2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 205px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.resultsHeaderColumn3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 67px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.resultsHeaderColumn4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 252px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.horseContainer {
+    background-color: #fbfeff;
+    display: flex;
+    flex-direction: row;
+    width: 347px;
+    height: 175px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-left: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.markBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 175px;
+}
+
+.numBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 175px;
+    border-left: 0.6px solid rgb(199, 204, 208);
+    border-right: 0.6px solid rgb(199, 204, 208);
+}
+
+.infoBoxOne {
+    display: flex;
+    flex-direction: column;
+    width: 205px;
+    height: 175px;
+    padding: 5px 5px 5px 10px;
+}
+
+.infoBoxTwo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 67px;
+    height: 175px;
+    padding-left: 7px;
+    font-size: 0.8rem;
+    border-left: 0.6px solid rgb(199, 204, 208);
+}
+
+.nameBox {
+    display: flex;
+    font-size: 1.2rem;
+    color: rgba(3, 70, 73, 0.95);
+    overflow: hidden;
+}
+
+.jockyBox {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    color: rgba(3, 70, 73, 0.8);
+    overflow: hidden;
+}
+
+.sireBox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: rgba(3, 70, 73, 0.95);
+    overflow: hidden;
+}
+
+.textOverFlow {
+    white-space: nowrap;
+    overflow: hidden;   
+    text-overflow: ellipsis;
+}
+
+.horseWrapper {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.resultsContainer1 {
+    background-color: #fffbe5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 252px;
+    height: 175px;
+    padding: 4px 4px 4px 10px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.resultsContainer2 {
+    background-color: #f5fbff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 252px;
+    height: 175px;
+    padding: 4px 4px 4px 10px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.resultsContainer3 {
+    background-color: #fff8f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 252px;
+    height: 175px;
+    padding: 4px 4px 4px 10px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.resultsContainer4 {
+    background-color: #fbfeff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 252px;
+    height: 175px;
+    padding: 4px 4px 4px 10px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.resultsContainerEmputy {
+    background-color: #fbfeff;
+    width: 252px;
+    height: 175px;
+    padding: 4px 4px 4px 10px;
+    border-right: 0.6px solid rgb(199, 204, 208);
+    border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.resultsDetailContainerUpper {
+    display: flex;
+    width: 240px;
+    height: 55px;
+}
+
+.dayTitleBox {
+    display: flex;
+    flex-direction: column;
+    width: 190px;
+    height: 55px;
+}
+
+.textDayOrt {
+    display: flex;
+    width: 192px;
+    font-size: 0.95rem;
+    color: rgba(3, 70, 73, 0.95);
+}
+
+.titleRow {
+    display: flex;
+    width: 192px;
+    height: 33px;
+    padding-right: 10px;
+    font-size: 1.1rem;
+    color: rgba(3, 70, 73, 0.95);
+    overflow: hidden;
+}
+
+.categorieBox {
+    display: flex;
+    width: 46px;
+    height: 55px;
+}
+
+.textCotegorie {
+    display: flex;
+    width: 48px;
+    font-size: 0.9rem;
+    color: rgba(3, 70, 73, 0.95);
+}
+
+.platzRow {
+    display: flex;
+    width: 240px;
+    height: 36px;
+    margin-top: -8px;
+}
+
+.platzContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+}
+
+.platzBox1 {
+    background-color: #f1e082;
+    display: flex;
+    justify-content: center;
+    width: 32px;
+    height: 28px;
+    padding-top: 1.5px;
+    font-size: 1.1rem;
+    color: #034649;
+    border: 1px solid #b39f30;
+}
+
+.platzBox2 {
+    background-color: #b2d7f0;
+    display: flex;
+    justify-content: center;
+    width: 32px;
+    height: 28px;
+    padding-top: 1.5px;
+    font-size: 1.1rem;
+    color: #034649;
+    border: 1px solid #477fa3;
+}
+
+.platzBox3 {
+    background-color: #f3afaf;
+    display: flex;
+    justify-content: center;
+    width: 32px;
+    height: 28px;
+    padding-top: 1.5px;
+    font-size: 1.1rem;
+    color: #034649;
+    border: 1px solid #7e3232;
+}
+
+.platzBox4 {
+    background-color: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    width: 32px;
+    height: 28px;
+    padding-top: 1.5px;
+    font-size: 1.1rem;
+    color: #034649;
+    border: 1px solid #aaaaaa;
+}
+
+.platzRightContainer {
+    display: flex;
+    flex-direction: column;
+    width: 190px;
+    height: 36px;
+    margin-left: 10px;
+}
+
+.platzRightRow1 {
+    display: flex;
+    width: 180px;
+    height: 18px;
+    font-size: 0.95rem;
+}
+
+.platzRightRow2 {
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+    height: 18px;
+    font-size: 0.95rem;
+}
+
+.platzRightTextBox {
+    display: flex;
+    flex-direction: row;
+}
+
+.resultsDetailContainerLower {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    height: 66px;
+}
+
+.lowerRow1 {
+    display: flex;
+    width: 240px;
+    height: 22px;
+}
+
+.lowerRow2 {
+    display: flex;
+    justify-content: space-between;
+    width: 240px;
+    height: 22px;
+}
+
+.lowerRow3 {
+    display: flex;
+    width: 240px;
+    height: 22px;
+    color: rgba(3, 70, 73, 0.8);
+}
+
+.textSmallDark {
+    display: flex;
+    font-size: 1.0rem;
+    color: rgba(3, 70, 73, 0.95);
+    margin-right: 10px;
+}
+
+.textSmallLight {
+    display: flex;
+    font-size: 0.95rem;
+    color: rgba(3, 70, 73, 0.8);
+    margin-right: 10px;
+}
+
+.textLight {
+    display: flex;
+    font-size: 0.95rem;
+    color: rgba(3, 70, 73, 0.8);
+}
+
+.textLightEvq {
+    display: flex;
+    font-size: 0.95rem;
+    color: rgba(3, 70, 73, 0.8);
+    margin-left: 10px;
+}
+
+.textExtraSmall {
+    font-size: 0.9rem;
+    color: rgba(3, 70, 73, 0.8);
+    margin-left: 2px;
+}
+
+.marginRight {
+    margin-right: 10px;
+}
+
+.marginLeft {
+    margin-left: 10px;
+}
+
+.linkStyle {
+    text-decoration: none; /* 下線を非表示にする */
+  }
+
+.linkStyle:hover {
+    color: rgb(209, 43, 43, 0.8); /* ホバー時の色を赤に変更 */
+    text-decoration: underline; /* 下線を表示する */
+  }

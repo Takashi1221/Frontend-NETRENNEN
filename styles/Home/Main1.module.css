@@ -1,0 +1,52 @@
+.mainContainer {
+    /* background-color: #044349;*/
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.landingContainer {
+    display: flex;
+    justify-content: center;
+    padding: 5% 10%;
+}
+
+.landingTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.landingText {
+    display: flex;
+    color: #f3ede4;
+    font-family: 'Nokora', sans-serif;
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+.scrollButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0% 5%;
+}
+
+.lawnContainer {
+    display: flex;
+    padding: 0% 10%;
+}
+
+.lawnWrapper {
+    display: flex;
+    margin-top: -100px;
+}
+
+.fakeFooter {
+    background-color: #122315;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    margin-top: -150px;
+}
