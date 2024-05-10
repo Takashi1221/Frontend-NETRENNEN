@@ -3,6 +3,9 @@
 # VScode
 .vscode/
 
+# Dockerfile
+
+
 # dependencies
 /node_modules
 /.pnp
