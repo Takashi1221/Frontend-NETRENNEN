@@ -1,0 +1,105 @@
+.loginForm {
+    background-color: rgb(242, 245, 247);
+    display: flex;
+    flex-direction: column;
+    color: rgba(11, 59, 46, 0.868);
+    height: 1100px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loginBody {
+    background-color: rgba(203, 218, 214, 0.76);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    margin-top: 200px;
+    margin-left: 100px;
+}
+
+.loginMarginTop {
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.loginButton {
+    background-color: rgba(254, 30, 6, 0.795);
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    margin: 50px;
+}
+
+.loginButton:hover {
+    background-color: rgba(219, 103, 103, 0.959);
+    color: rgba(59, 59, 59, 0.916);
+}
+
+.backGround {
+    background-color: rgb(242, 245, 247);
+    color: rgba(11, 59, 46, 0.868);
+    display: flex;
+}
+
+.calenderBlock {
+    margin: 50px;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.ortBlock {
+    background-color: rgba(4, 103, 52, 0.909);
+    color: rgb(240, 243, 245);
+    margin-top: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+}
+
+.raceBlock {
+    background-color: rgba(15, 25, 142, 0.897);
+    color: rgb(240, 243, 245);
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+}
+
+.submitBlock {
+    background-color: rgba(243, 255, 76, 0.959);
+    color: rgb(47, 46, 46);
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    margin: 50px;
+}
+
+.submitBlock:hover {
+    background-color: rgba(255, 237, 103, 0.959);
+    color: rgba(151, 10, 10, 0.916);
+}
+
+.marginLeft {
+    margin-top: 20px;
+    margin-left: 10px;
+    padding-left: 20px;
+}
+
+.inputField {
+    color: rgba(192, 11, 95, 0.916);
+}
