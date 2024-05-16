@@ -22,16 +22,16 @@ export const HeaderLanding = () => {
               onClick={handleOpen}
               variant="outlined"
               sx={{
-                backgroundColor: 'rgb(59, 59, 59)',
-                color: '#f3ede4', // テキストカラー
-                fontWeight: 'bold',
-                fontSize: '1.4em',
-                borderWidth: 4,
-                borderColor: 'rgb(59, 59, 59)', // 枠線の色
+                backgroundColor: 'rgb(59, 59, 59) !important',
+                color: '#f3ede4 !important', // テキストカラー
+                fontWeight: 'bold !important',
+                fontSize: '1.4em !important',
+                borderWidth: '4px !important',
+                borderColor: 'rgb(59, 59, 59) !important', // 枠線の色
                 '&:hover': {
-                  backgroundColor: 'rgb(101, 101, 101)', // ホバー時の背景色をわずかに白く
-                  borderColor: 'rgb(101, 101, 101)', // ホバー時も枠線を保つ
-                  borderWidth: 4,
+                  backgroundColor: 'rgb(101, 101, 101) !important', // ホバー時の背景色
+                  borderColor: 'rgb(101, 101, 101) !important', // ホバー時の枠線の色
+                  borderWidth: '4px !important',
                 },
                 // 他の必要なスタイルがあればここに追加
               }}
