@@ -1,0 +1,47 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Full width */
+    height: 70px;
+    margin-top: 30px;
+    padding: 20px 40px;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logoText {
+    display: flex;
+    align-items: baseline;
+}
+
+.net {
+    color: #f3ede4;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 2rem; /* あるいは具体的なピクセル値 */
+}
+
+.rennen {
+    color: #f3ede4;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 2rem; /* あるいは具体的なピクセル値 */
+}
+
+.naviLogin {
+    display: flex;
+    height: 70px;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.spaceContainer {
+    background: #122315;
+    width: 100%;
+    height: 150px;
+}
+

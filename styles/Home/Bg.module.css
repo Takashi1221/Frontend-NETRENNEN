@@ -1,5 +1,56 @@
-.body {
-    min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
+.backgroundSlider {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/topimage.jpg');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    animation: slide 100s linear infinite;
+}
+  
+@keyframes slide {
+    from {
+      background-position: 0% 0;
+    }
+    to {
+      background-position: -600% 0;
+    }
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    width: 100%;
     margin: 0;
-    padding: 0;
+}
+
+.mainText {
+    color: rgb(255, 255, 255);
+    font-size: 6rem;
+    text-align: center; /* テキストを中央揃えに */
+}
+
+.subtextContainer {
+    width: 100%; /* コンテナの幅を調整 */
+    padding: 20px 0; /* 上下にパディングを追加 */
+    box-sizing: border-box;
+}
+
+.subText {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    text-align: center; /* サブテキストを中央揃えに */
+    margin: 10px 0; /* テキスト間のマージンを設定 */
 }
