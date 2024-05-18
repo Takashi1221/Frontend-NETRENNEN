@@ -1,0 +1,55 @@
+.pageContainer {
+    background-color: #f3ede4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.headerText {
+    color: #122315;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6vw;
+    font-weight: 800;
+    padding-left: 1vw;
+}
+
+.bodyContainer {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.formContainer {
+    background-color: #f5f1eb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 700px;
+    height: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.formHeader {
+    color: #484d49b4;
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+}
+
+.formBodyContainer {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.sendSuccessed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #484d49b4;
+    font-size: 1.4rem;
+}
+
+.sendSuccessedText {
+    margin-bottom: 20px;
+}
