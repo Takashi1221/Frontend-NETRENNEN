@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Header } from "../../../components/Header";
 import { LoginModal } from "../../../components/Home/LoginModal";
+import { Footer } from "../../../components/Footer";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import styles from "/styles/Starter/Kalender.module.css";
 
@@ -22,9 +23,10 @@ function RennKalender() {
             <Header />
             <LoginModal />
             <div className={styles.pageContainer}>
-                <div className={styles.headerText}>
-                    KALENDER
+                <div className={styles.headerContainer}>
+                    <div className={styles.headerText}>Kalender</div>
                 </div>
+                <div className={styles.headerBackground}></div>
                 <div className={styles.bodyContainer}>
                     <div className={styles.contentHeader}>
                         <p><CalendarMonthIcon sx={{ 
@@ -36,7 +38,7 @@ function RennKalender() {
                                 }} /></p>
                         <p>Wichtigste Renntermine</p>
                     </div>
-                    <div className={styles.jahrText}>Jahr: 2024</div>
+                    <div className={styles.jahrText}>(Jahr: 2024)</div>
                     <div className={styles.tableContainer}>
                         <div className={styles.tableHeader}>
                             <p className={styles.columnWigth70}>Datum</p>
@@ -73,6 +75,7 @@ function RennKalender() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
   }

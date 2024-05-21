@@ -1,59 +1,72 @@
-.header {
+.headerContainer {
+    background-color: #ffffff;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.headerBackground {
+    background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/headerheader.png');
+    display: flex;
     justify-content: space-between;
-    width: 100%; /* Full width */
-    height: 70px;
-    padding: 20px 40px;
-    background-color: #122315;
-    box-shadow: 0 2px 2px #09160b;
+    width: 100%;
+    height: 100px;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    background-size: auto 100%; 
+}
+
+.headerNaviContainer {
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 .logoContainer {
     display: flex;
     align-items: center;
+    margin-left: 10px;
+}
+
+.logoImg {
+    background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/logo_2.png');
+    width: 100px; /* 背景画像のコンテナの幅を指定 */
+    height: 80px; /* 背景画像のコンテナの高さを指定 */
+    background-size: cover; /* 画像がコンテナ全体にフィットするように設定 */
+    margin-top: -30px;
 }
 
 .logoText {
     display: flex;
     align-items: baseline;
-}
-
-.net {
-    color: #f3ede4;
+    color: #ffffff;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    font-size: 2rem; /* あるいは具体的なピクセル値 */
-}
-
-.rennen {
-    color: #f3ede4;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    font-size: 2rem; /* あるいは具体的なピクセル値 */
+    font-size: 3rem;
+    margin-top: -10px;
+    margin-left: -5px;
 }
 
 .naviText {
     display: flex;
-    color: #f3ede4;
-    font-family: 'Nokora', sans-serif;
-    font-weight: bold;
-    font-size: 1rem;
+    color: #8b8a88bf;
+    font-size: 1.1rem;
 }
 
 .naviTextMargin {
     margin-right: 30px;
 }
 
+.naviTextMargin:hover {
+    color: rgb(209, 43, 43, 0.8); /* ホバー時の色を赤に変更 */
+    text-decoration: underline; /* 下線を表示する */
+}
+
 .naviLogin {
     display: flex;
-    height: 70px;
+    height: 80px;
     align-items: center;
+    margin-right: 40px;
 }
-
-.spaceContainer {
-    background: #122315;
-    width: 100%;
-    height: 150px;
-}
-

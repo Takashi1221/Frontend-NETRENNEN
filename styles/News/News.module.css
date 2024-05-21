@@ -1,6 +1,6 @@
 .body {
-    background-color: #f3ede4;
-    min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
+    background-color: #f7f5f3;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
 }
@@ -8,30 +8,140 @@
 .pageContainer {
     display: flex;
     flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 175px;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
 }
 
 .headerText {
-    color: #122315;
+    color: #1FC613;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 6vw;
-    font-weight: 800;
-    padding-left: 1vw;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.headerBackground {
+    background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/title_line.png');
+    width: 100%;
+    height: 20px;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    background-size: 3% 50%; 
 }
 
 .bodyContainer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2.6vw;
-    margin-right: 27vw;
-    margin-left: 36vw;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    color: #3e4d40;
-    font-size: 0.8vw;
+    margin-top: 10px;
+    width: 1200px;
+    margin: 10px auto;
 }
 
-.articleContainer {
+.grid {
     display: flex;
-    height: 10vw;
-    border-bottom: 1px solid #7e807ed0;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+  
+.card {
+    background-color: #ffffff;
+    flex: 1 1 calc(33% - 20px);
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+}
+
+.card:hover {
+    background-color: #ecf1e8;
+}
+  
+.largeCard {
+    background-color: #ffffff;
+    flex: 1 1 65%;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+}
+
+.largeCard:hover {
+    background-color: #ecf1e8;
+}
+  
+.imageContainer {
+    position: relative;
+    width: 100%;
+}
+  
+.card .imageContainer {
+    height: 200px; 
+}
+  
+.largeCard .imageContainer {
+    height: 400px; 
+}
+  
+.image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+  
+.text h2 {
+    font-size: 1.5em;
+    margin: 10px 10px 0 10px;
+}
+  
+.text p {
+    font-size: 1em;
+    margin: 10px;
+    color: #5a5a5a;
+}
+
+.endElement {
+    display: flex;
+    align-items: center;
+}
+  
+.date {
+    font-size: 0.8em;
+    color: #888;
+    margin-right: 8px;
+    padding-right: 8px;
+    position: relative;
+}
+  
+.date::after {
+    content: '';
+    position: absolute;
+    top: 10%; /* ボーダーラインの上端を要素の高さの10%に設定 */
+    right: 0;
+    width: 1px;
+    height: 70%; /* ボーダーラインの高さを要素の高さの80%に設定 */
+    background-color: #888888cd;
+}
+
+.genre {
+    font-size: 0.8em;
+    color: #888;
 }

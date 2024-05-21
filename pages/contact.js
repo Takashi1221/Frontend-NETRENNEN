@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { TextField, Button, Typography, Box } from '@mui/material';
+import { TextField, Button, Box } from '@mui/material';
 import styles from '/styles/Company/Contact.module.css';
-import { Header } from '../../../components/Header';
-import { LoginModal } from '../../../components/Home/LoginModal';
-import { Footer } from '../../../components/Footer';
+import { Header } from '../components/Header';
+import { LoginModal } from '../components/Home/LoginModal';
+import { Footer } from '/components/Footer';
 
-const ContactForm = () => {
+
+export default function ContactForm () {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [submitted, setSubmitted] = useState(false); 
@@ -33,13 +34,14 @@ const ContactForm = () => {
     };
 
     return (
-        <div>
+        <div className={styles.body}>
             <Header />
             <LoginModal />
             <div className={styles.pageContainer}>
-                <div className={styles.headerText}>
-                    Kontakt
+                <div className={styles.headerContainer}>
+                    <div className={styles.headerText}>Kontakt</div>
                 </div>
+                <div className={styles.headerBackground}></div>
                 <div className={styles.bodyContainer}>
                     {submitted ? (
                         // 送信後のメッセージ表示
@@ -98,7 +100,7 @@ const ContactForm = () => {
                                         sx={{
                                             mt: 3, 
                                             mb: 2,
-                                            backgroundColor: 'green !important', 
+                                            backgroundColor: '#1FC613 !important', 
                                             '&:hover': { 
                                                 backgroundColor: '#3CB371 !important' 
                                             }
@@ -118,7 +120,5 @@ const ContactForm = () => {
             </div>
             <Footer />
         </div>
-    );
-};
-
-export default ContactForm;
+    )
+}

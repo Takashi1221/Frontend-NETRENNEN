@@ -4,22 +4,22 @@ import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 
 import { Header } from '../../../components/Header';
 import { LoginModal } from '../../../components/Home/LoginModal';
+import { Footer } from '../../../components/Footer';
 import styles from '/styles/Account/Mypage.module.css'
 
 
 
-
 const NewsTop = () => {
-    
 
     return (
         <div className={styles.body}>
             <Header />
             <LoginModal />
             <div className={styles.pageContainer}>
-                <div className={styles.headerText}>
-                    KONTO
+                <div className={styles.headerContainer}>
+                    <div className={styles.headerText}>Konto</div>
                 </div>
+                <div className={styles.headerBackground}></div>
                 <div className={styles.bodyContainer}>
                     <div className={styles.contentHeader}> ABO Status</div>
                     <div className={styles.contentContainer}>
@@ -32,8 +32,6 @@ const NewsTop = () => {
                         </p>
                         <p className={styles.contentTextSpace}>Netrennen Premium</p>
                     </div>
-
-
                     <div className={styles.contentHeader}>Änderung der Registrierungsinformationen</div>
                     <div className={styles.contentContainer}>
                         <p>
@@ -56,6 +54,7 @@ const NewsTop = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

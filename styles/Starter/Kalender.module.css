@@ -1,5 +1,5 @@
 .body {
-    background-color: #f3ede4;
+    background-color: #f7f5f3;
     min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
     margin: 0;
     padding: 0;
@@ -8,30 +8,58 @@
 .pageContainer {
     display: flex;
     flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 80px;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
 }
 
 .headerText {
-    color: #122315;
+    color: #1FC613;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 6vw;
-    font-weight: 800;
-    padding-left: 1vw;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.toScheduleText {
+    display: flex;
+    color: #8b8a88bf;
+    font-size: 1.2rem;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+.headerBackground {
+    background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/title_line.png');
+    width: 100%;
+    height: 20px;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    background-size: 3% 50%; 
 }
 
 .bodyContainer {
+    background-color: #fefefd;
     display: flex;
     flex-direction: column;
-    margin-top: 2.7vw;
-    margin-left: 36vw;
-    margin-bottom: 6vw;
+    width: 48vw;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
 }
 
 .contentHeader {
     display: flex;
     align-items: center;
-    height: 2.1vw;
-    width: 30vw;
-    margin-bottom: 1vw;
+    margin: 10px;
     color: #122315;
     font-size: 1.1vw;
 }
@@ -39,21 +67,24 @@
 .tableContainer {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .jahrText {
     color: #122315;
     font-size: 0.7vw;
-    padding-left: 0.5vw;
+    margin-left: 40px;
 }
 
 .tableHeader {
-    background-color: #122315d1;
+    background-color: #107623d1;
     display: flex;
     margin-right: auto;
     padding-top: 0.2vw;
     padding-bottom: 0.2vw;
-    color: #f3ede4;
+    color: #f9f7f4;
 }
 
 .tableRow {

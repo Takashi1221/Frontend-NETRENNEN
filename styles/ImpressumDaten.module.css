@@ -1,0 +1,98 @@
+.body {
+    background-color: #f7f5f3;
+    min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.headerText {
+    color: #1FC613;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.headerBackground {
+    background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/title_line.png');
+    width: 100%;
+    height: 20px;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    background-size: 3% 50%; 
+}
+
+.bodyMainContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.bodyHeaderText {
+    display: flex;
+    font-size: 1.4rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.bodysemiHeaderText {
+    display: flex;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.bodyChildText {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0rem;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-right: 60px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+} 
+
+.impressumHeader {
+    color: #39433ace;
+    font-size: 1.4rem;
+    margin-top: 5px;
+    margin-left: 25px;
+}
+
+.impressumText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0rem;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.impressumDisclaimer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0rem;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-right: 80px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+}
+
+.underTheBody {
+    margin-bottom: 100px;
+}

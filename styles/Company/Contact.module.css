@@ -1,16 +1,39 @@
+.body {
+    background-color: #f7f5f3;
+    min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
+    margin: 0;
+    padding: 0;
+}
+
 .pageContainer {
-    background-color: #f3ede4;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 150px;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
 }
 
 .headerText {
-    color: #122315;
+    color: #1FC613;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 6vw;
-    font-weight: 800;
-    padding-left: 1vw;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.headerBackground {
+    background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/title_line.png');
+    width: 100%;
+    height: 20px;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    background-size: 3% 50%; 
 }
 
 .bodyContainer {
@@ -20,17 +43,21 @@
 }
 
 .formContainer {
-    background-color: #f5f1eb;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 700px;
     height: 600px;
+    margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
 }
 
 .formHeader {
-    color: #484d49b4;
+    color: rgba(27, 27, 27, 0.878);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0rem;
+    font-weight: 500;
     display: flex;
     flex-direction: column;
     margin-left: 60px;
