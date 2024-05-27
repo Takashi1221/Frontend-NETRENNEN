@@ -54,3 +54,24 @@
     text-align: center; /* サブテキストを中央揃えに */
     margin: 10px 0; /* テキスト間のマージンを設定 */
 }
+
+@media (max-width: 500px) {
+    .mainText {
+        font-size: 2.7rem;
+    }
+
+    .subtextContainer {
+        width: 100%;
+        padding: 20px 20px;
+        box-sizing: border-box;
+    }
+
+    .subText {
+        font-size: 
+        0.9rem;
+    }
+    
+    .backgroundSlider {
+        background-size: auto 140%;
+    }
+}

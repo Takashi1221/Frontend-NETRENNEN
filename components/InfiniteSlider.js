@@ -41,6 +41,11 @@ export function BackgroundSlider() {
                       borderColor: '#f3ede4', // ホバー時も枠線を保つ
                       borderWidth: 4, // ホバー時の枠線の太さも2倍に
                     },
+                    '@media (max-width: 500px)': {
+                      fontSize: '1em',
+                      padding: '8px 16px',
+                      marginTop: '20px',
+                    },
                     // 他の必要なスタイルがあればここに追加
                   }}
                 >

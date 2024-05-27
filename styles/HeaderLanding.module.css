@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%; /* Full width */
+    width: 100%;
     height: 70px;
     margin-top: 30px;
     padding: 20px 40px;
@@ -39,9 +39,24 @@
     margin-right: 40px;
 }
 
-.spaceContainer {
-    background: #122315;
-    width: 100%;
-    height: 150px;
-}
+@media (max-width: 500px) {
+    .header {
+      height: 50px;
+      padding: 10px 20px;
+    }
+  
+    .net, .rennen {
+      font-size: 1.5rem; /* 小さくする */
+    }
+  
+    .naviLogin {
+      height: 50px;
+      margin-right: 20px;
+    }
 
+    .logoContainer img {
+        width: 60px; /* 画像の幅を小さくする */
+        height: auto; /* 高さを自動調整 */
+    }
+
+}
