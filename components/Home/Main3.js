@@ -52,8 +52,7 @@ export function Main3() {
     {sortedAndMaxNumberRaces.map((race, index) => {
       // race.dateが文字列の場合、Dateオブジェクトに変換
       const date = new Date(race.date);
-      const formattedDate = date.toLocaleDateString('de-DE', { year: 'numeric', month: '2-digit', day: '2-digit' });
-      const path = `/races/${formattedDate}/${encodeURIComponent(race.location)}`;
+      const path = `/starter/${race.date}/${encodeURIComponent(race.location)}`;
 
       return (
         <Link key={index} href={path}>

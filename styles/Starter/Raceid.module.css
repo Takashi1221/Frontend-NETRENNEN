@@ -1,59 +1,99 @@
-.mainContainer {
-    background-color: #fbfeff;
-    min-height: 100vh;
+.body {
+    background-color: #f7f5f3;
+    min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
+    margin: 0;
     padding: 0;
+}
+
+.pageContainer {
     display: flex;
     flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 100px;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    color: #353535bf;
+    font-size: 1.2rem;
+    margin-top: 40px;
+
+}
+
+.headerBackground {
+    background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/title_line.png');
+    width: 100%;
+    height: 20px;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    background-size: 3% 50%; 
+    margin-bottom: 10px;
 }
 
 .racenumberContainer {
     display: flex;
-    margin: 0.5% 18%;  /* フレームの左右に余白 */
-    font-size: 1.4rem;
-    background-image: linear-gradient(to left, transparent 60%, rgba(2, 37, 34, 0.25) 60%, rgba(2, 37, 34, 0.25) 100%);
-    background-repeat: no-repeat;
-    background-position: bottom; /* 下端に配置 */
-    background-size: 100% 2px; /* 下線の幅と太さ */
+    align-items: center;
+    gap: 10px;
+    margin-left: 30px;
+}
+
+.dayLocation {
+    padding-top: 15px;
 }
 
 .racenumberButton {
-    margin-right: 20px;
+    background-color: #f0f0f0; 
+    color: #353535bf;
+    border: none;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.raceinfoContainer {
-    display: flex;
-    flex-direction: row;
-    padding: 0.5% 18%;  /* フレームの左右に余白 */
+.returnButton {
+    color: #8b8a88bf;
+    font-size: 1rem;
+    margin-left: 30px;
 }
 
-.thisraceNumber {
-    background-color: #044349;
-    color: #f1f5f6;
-    font-size: 1.8rem;
-    margin: 0 0 1.5%;
-    padding: 1%;
-    border-radius: 10px; /* 角の丸みを指定 */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+.selectedButton {
+    background-color: #1FC613;
+    color: #fff; 
 }
 
-.raceinfoText {
+.infoContainer {
     display: flex;
     flex-direction: column;
-    color: #033034;
-    margin: 0 1% 0;
+    margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 .raceTitle {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+    color: #353535bf;
+    margin-bottom: 5px;
 }
 
-.raceDetails {
-    display: flex;
-    flex-direction: row;
-    padding: auto;
+.infoDetails {
     font-size: 0.9rem;
+    color: #8b8a88bf;
 }
 
-.itemRightMargin {
-    margin-right: 14px;
-  }
+.tabLabel {
+    background-color: #f0f0f0; 
+    font-size: 0.9rem;
+    color: #353535bf;
+    border: none;
+    width: 130px;
+    padding: 8px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
