@@ -3,6 +3,7 @@
     min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
     margin: 0;
     padding: 0;
+    padding-bottom: 100px;
 }
 
 .pageContainer {
@@ -124,4 +125,40 @@
     margin-right: 80px;
     margin-bottom: 40px;
     margin-left: 20px;
+}
+
+@media (max-width: 500px) {
+    .pageContainer {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .headerContainer{
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 20px;
+    }
+
+    .headerText{
+        font-size: 1.6rem;
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+
+    .toScheduleText {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1rem;
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    .termineParentContainer {
+        justify-content: center;
+    }
+
+    .termineChildContainer {
+        margin-bottom: 15px;
+        background-color: #ffffff;
+    }
 }

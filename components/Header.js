@@ -1,12 +1,31 @@
 import { useAuth } from '/context/AuthContext';
 import Button from '@mui/material/Button';
 import Link from 'next/link';
-import styles from '../styles/Header.module.css'; 
+import styles from '/styles/Header.module.css'; 
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-
+import { useState, useEffect, useRef } from 'react';
 
 export const Header = () => {
   const { isLogin, handleOpen, logout } = useAuth();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  }
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className={styles.headerContainer}>
@@ -39,13 +58,12 @@ export const Header = () => {
                   fontSize: '1rem',
                   fontWeight: '700',
                   borderWidth: 4,
-                  borderColor: '#ffffff', // 枠線の色
+                  borderColor: '#ffffff',
                   '&:hover': {
-                    backgroundColor: 'rgba(255, 255, 255, 0.08)', // ホバー時わずかに白く
-                    borderColor: '#ffffff', // ホバー時も枠線を保つ
+                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                    borderColor: '#ffffff',
                     borderWidth: 4,
                   },
-                  // 他の必要なスタイルがあればここに追加
                 }}
               >
                 Logout
@@ -68,7 +86,6 @@ export const Header = () => {
                       borderColor: '#ffffff',
                       borderWidth: 4,
                     },
-                    // 他の必要なスタイルがあればここに追加
                   }}
                 >
                   SignUp
@@ -88,32 +105,49 @@ export const Header = () => {
                     borderColor: '#ffffff',
                     borderWidth: 4,
                   },
-                  // 他の必要なスタイルがあればここに追加
                 }}
               >
                 Login
               </Button>
             </div>
           )}
-          
+        </div>
+        <div className={styles.hamburger} onClick={toggleMenu}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div ref={menuRef} className={`${styles.menu} ${menuOpen ? styles.show : ''}`}>
+          <Link href={`/dashboard`}><span onClick={toggleMenu}>Rennen</span></Link>
+          <Link href={`/news`}><span onClick={toggleMenu}>News</span></Link>
+          <Link href={`/about`}><span onClick={toggleMenu}>Über uns</span></Link>
+          <Link href={`/contact`}><span onClick={toggleMenu}>Kontakt</span></Link>
+          {isLogin ? (
+            <span onClick={logout}>Logout</span>
+          ) : (
+            <>
+              <Link href={`/account/signup`}><span onClick={toggleMenu}>SignUp</span></Link>
+              <span onClick={handleOpen}>Login</span>
+            </>
+          )}
         </div>
       </div>
       <div className={styles.headerNaviContainer}>
         <div className={styles.naviText}>
-            <Link href={`/dashboard`}>
-              <span className={styles.naviTextMargin}>Rennen</span>
-            </Link>
-            <Link href={`/news`}>
-              <span className={styles.naviTextMargin}>News</span>
-            </Link>
-            <Link href={`/about`}>
-              <span className={styles.naviTextMargin}>Über uns</span>
-            </Link>
-            <Link href={`/contact`}>
-              <span className={styles.naviTextMargin}>Kontakt</span>
-            </Link>
-          </div>
+          <Link href={`/dashboard`}>
+            <span className={styles.naviTextMargin}>Rennen</span>
+          </Link>
+          <Link href={`/news`}>
+            <span className={styles.naviTextMargin}>News</span>
+          </Link>
+          <Link href={`/about`}>
+            <span className={styles.naviTextMargin}>Über uns</span>
+          </Link>
+          <Link href={`/contact`}>
+            <span className={styles.naviTextMargin}>Kontakt</span>
+          </Link>
+        </div>
       </div>
     </div>
-  )  
+  )
 }

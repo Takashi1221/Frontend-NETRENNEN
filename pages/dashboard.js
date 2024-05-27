@@ -17,14 +17,14 @@ export default function Home() {
         <div className={styles.pageContainer}>
           <div className={styles.headerContainer}>
             <div className={styles.headerText}>Bevorstehende Rennterimine</div>
-            <Link href={`/starter/kalender`}>
+          </div>
+          <div className={styles.headerBackground}></div>
+          <Link href={`/starter/kalender`}>
             <div className={styles.toScheduleText}>
               <p className={styles.linkStyle}>Rennkalender</p>
               <p><PlayArrowIcon fontSize='small' /></p>
             </div>
           </Link>
-          </div>
-          <div className={styles.headerBackground}></div>
           <Main3 />
         </div>
       </div>
