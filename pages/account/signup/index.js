@@ -1,7 +1,8 @@
-import { Header } from '/components/Header'
-import { LoginModal } from '/components/Home/LoginModal'
-import { ProgressSteps } from '/components/Account/ProgressSteps'
-import { Footer } from '/components/Footer'
+import React from 'react';
+
+import { HeaderLanding } from '../../../components/HeaderLanding';
+import { LoginModal } from '../../../components/Home/LoginModal';
+import { EmailAndPasswordForm } from '../../../components/Account/EmailPwForm';
 import styles from '/styles/Account/SignUp.module.css'
 
 
@@ -9,15 +10,24 @@ const SignUp = () => {
 
 
     return (
-        <div>
-            <Header />
+        <div className={styles.backgroundSlider}>
+            <HeaderLanding />
             <LoginModal />
-            <div className={styles.pageContainer}>
-                <div className={styles.signupBody}>
-                    <ProgressSteps />
+            <div className={styles.backgroundContainer}>
+                <div className={styles.leftContainer}>
+                    <div className={styles.leftTextSpace}>
+                        <h2>netrennen</h2>
+                        <ul className={styles.bulletList}>
+                            <li>Nach der Registrierung können Sie den Dienst sofort kostenlos nutzen.</li>
+                            <li>Umfangreiche Informationen zu den Rennleistungen und Abstammungen der Pferde.</li>
+                            <li>Sie können auch Nachrichtenartikel lesen.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div className={styles.rightContainer}>
+                    <EmailAndPasswordForm />
                 </div>
             </div>
-            <Footer />
         </div>
     );
 };

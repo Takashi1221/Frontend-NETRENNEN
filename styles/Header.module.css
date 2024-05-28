@@ -75,6 +75,7 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
+    margin-right: 10px;
 }
   
 .hamburger div {
@@ -120,6 +121,10 @@
     .headerBackground {
         height: 45px;
         padding: 2px 0;
+    }
+
+    .logoContainer {
+        margin-left: 5px;
     }
 
     .logoImg {

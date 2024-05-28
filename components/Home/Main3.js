@@ -48,22 +48,24 @@ export function Main3() {
   }
 
   return (
-    <div className={styles.termineParentContainer}>
-    {sortedAndMaxNumberRaces.map((race, index) => {
-      // race.dateが文字列の場合、Dateオブジェクトに変換
-      const date = new Date(race.date);
-      const path = `/starter/${race.date}/${encodeURIComponent(race.location)}`;
+    <div className={styles.main3Body}>
+      <div className={styles.termineParentContainer}>
+      {sortedAndMaxNumberRaces.map((race, index) => {
+        // race.dateが文字列の場合、Dateオブジェクトに変換
+        const date = new Date(race.date);
+        const path = `/starter/${race.date}/${encodeURIComponent(race.location)}`;
 
-      return (
-        <Link key={index} href={path}>
-          <div className={styles.termineChildContainer}>
-            <p className={styles.termineDay}>{date.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' })}</p>
-            <p className={styles.termineLocation}>{race.location}</p>
-            <p className={styles.termineRaces}>{race.number} Rennen</p>
-          </div>
-        </Link>
-      );
-    })}
+        return (
+          <Link key={index} href={path}>
+            <div className={styles.termineChildContainer}>
+              <p className={styles.termineDay}>{date.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' })}</p>
+              <p className={styles.termineLocation}>{race.location}</p>
+              <p className={styles.termineRaces}>{race.number} Rennen</p>
+            </div>
+          </Link>
+        );
+      })}
+    </div>
   </div>
   )  
 }

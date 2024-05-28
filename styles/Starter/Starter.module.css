@@ -9,8 +9,8 @@
 .pageContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 300px;
+    margin-right: 300px;
 }
 
 .headerContainer {
@@ -29,10 +29,12 @@
 
 .toScheduleText {
     display: flex;
+    justify-content: flex-end;
     color: #8b8a88bf;
-    font-size: 1.2rem;
-    margin-right: 20px;
-    margin-top: 15px;
+    font-size: 1.4rem;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .headerBackground {
@@ -58,12 +60,17 @@
 
 .linkStyle {
     text-decoration: none; /* 下線を非表示にする */
-  }
+}
 
 .linkStyle:hover {
     color: rgb(209, 43, 43, 0.8); /* ホバー時の色を赤に変更 */
     text-decoration: underline; /* 下線を表示する */
-  }
+}
+
+.main3Body {
+    display: flex;
+    justify-content: center;
+}
 
 .termineParentContainer {
     display: flex;

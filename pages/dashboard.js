@@ -19,12 +19,12 @@ export default function Home() {
             <div className={styles.headerText}>Bevorstehende Rennterimine</div>
           </div>
           <div className={styles.headerBackground}></div>
-          <Link href={`/starter/kalender`}>
-            <div className={styles.toScheduleText}>
-              <p className={styles.linkStyle}>Rennkalender</p>
-              <p><PlayArrowIcon fontSize='small' /></p>
-            </div>
-          </Link>
+          <div className={styles.toScheduleText}>
+            <Link href={`/starter/kalender`}>
+            <p className={styles.linkStyle}>Rennkalender</p>
+            </Link>
+            <p><PlayArrowIcon fontSize='small' /></p>
+          </div>
           <Main3 />
         </div>
       </div>

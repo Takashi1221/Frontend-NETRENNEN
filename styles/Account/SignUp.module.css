@@ -1,3 +1,19 @@
+.backgroundSlider {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/topimage.jpg');
+}
+
+.backgroundContainer {
+    background-color: rgba(0, 0, 0, 0.063);
+    display: flex;
+    height: 100%;
+    max-width: auto;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
 .pageContainer {
     background-color: #122315;
     min-height: 100vh;
@@ -57,9 +73,226 @@
     border: 1px solid #6528F7;
     color: #f8f5f5fd;
     cursor: pointer;
-  }
+}
   
-  .returnStripeButton:hover {
+.returnStripeButton:hover {
     background-color: #341282;
     border: 1px solid #341282;
-  }
+}
+
+.leftContainer {
+    display: flex;
+    flex: 1;
+}
+
+.leftTextSpace {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20%;
+}
+
+.leftTextSpace h2 {
+    font-size: 2.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+.bulletList {
+    list-style-type: disc; /* デフォルトのディスクスタイルを適用 */
+    margin-left: 20px; /* リストの左マージンを調整 */
+}
+
+.leftTextSpace li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.rightContainer {
+    display: flex;
+    flex: 1;
+}
+
+.formContainer {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 80%;
+    max-width: 700px;
+    padding: 80px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2); 
+}
+
+.formTitle {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 2rem;
+    color: #2f2f2fe4;
+    margin-bottom: 60px;
+}
+  
+.formDiscription {
+    font-size: 1.2rem;
+    color: #747274ca;
+}
+
+.formDiscriptionLower {
+    font-size: 1rem;
+    color: #747274ca;
+}
+  
+.formMainContainer {
+    display: flex;
+    flex-direction: column;
+}
+  
+.inputContainer {
+    position: relative;
+}
+  
+.inputStyleEmail {
+    border: 1px solid #ccc; /* 通常時の枠線 */
+    height: 40px;
+    padding: 0 15px;
+    padding-right: 50px; /* ボタンのスペースを確保 */
+    width: 100%;
+    margin-bottom: 60px;
+    color: #373737d8;
+}
+
+.inputStylePW {
+    border: 1px solid #ccc; /* 通常時の枠線 */
+    height: 40px;
+    padding: 0 15px;
+    padding-right: 50px; /* ボタンのスペースを確保 */
+    width: 100%;
+    margin-bottom: 20px;
+    color: #373737d8;
+}
+  
+.toggleButton {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+  
+.weiterButtonStyle {
+    margin-top: 80px;
+    height: 60px;
+    padding: 15px auto;
+    background-color: #1cd441ed;
+    border: 1px solid #1cd441ed;
+    border-radius: 10px;
+    color: #f8f5f5fd;
+    font-size: 1.2rem;
+}
+  
+.weiterButtonStyle:hover {
+    background-color: #ff2b8af3;
+    border: 1px solid #ff2b8af3;
+}
+
+@media (max-width: 500px) {
+    .backgroundContainer {
+        background-color: rgba(0, 0, 0, 0.063);
+        display: flex;
+        flex-direction: column;
+        margin: 40px 0 40px 0;
+    }
+
+    .leftContainer {
+        flex: none;
+        margin-bottom: 40px;
+    }
+    
+    .leftTextSpace {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .leftTextSpace h2 {
+        font-size: 1.8rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        color: #ffffff;
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .bulletList {
+        list-style-type: disc; /* デフォルトのディスクスタイルを適用 */
+        margin-left: 20px; /* リストの左マージンを調整 */
+    }
+    
+    .leftTextSpace li {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    .rightContainer {
+        display: flex;
+        flex: none;
+    }
+
+    .formContainer {
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        flex: none;
+        width: 98%;
+        height: 100%;
+        margin: 5px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2); 
+    }
+    
+    .formTitle {
+        display: flex;
+        justify-content: flex-start;
+        font-size: 1.6rem;
+        color: #2f2f2fe4;
+        margin-bottom: 30px;
+    }
+      
+    .formDiscription {
+        font-size: 1rem;
+        color: #747274ca;
+    }
+    
+    .formDiscriptionLower {
+        font-size: 0.9rem;
+        color: #747274ca;
+    }
+
+    .inputStyleEmail {
+        margin-bottom: 30px;
+    }
+
+    .weiterButtonStyle {
+        margin: 60px 80px 20px 80px;
+        height: 60px;
+        padding: 15px auto;
+        background-color: #1cd441ed;
+        border: 1px solid #1cd441ed;
+        border-radius: 10px;
+        color: #f8f5f5fd;
+        font-size: 1.2rem;
+    }
+}
