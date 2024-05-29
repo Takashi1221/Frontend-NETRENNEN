@@ -17,7 +17,11 @@ export const AuthProvider = ({ children }) => {
     const checkAuthStatus = async () => {
         try {
             const response = await axios.get('/api/checkauth/');
-            setIsLogin(response.data.is_authenticated);
+            if (response.status === 200) {
+              setIsLogin(true);
+            } else {
+                setIsLogin(false);
+            }
         } catch (error) {
             console.error('Auth check failed:', error);
             if (error.response && error.response.status === 401) {
@@ -46,11 +50,11 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       const response = await axios.post('/api/login', { email, password });
-      console.log(response.data); // ここでレスポンスの中身を確認
-      localStorage.setItem('token', response.data.access); // トークンをローカルストレージに保存
-      localStorage.setItem('refreshToken', response.data.refresh);
-      setIsLogin(true);
-      handleClose();
+      if (response.status === 200) {
+        setIsLogin(true);
+        router.push('/dashboard');
+        handleClose();
+      }
     } catch (error) {
       console.error('Login failed:', error);
       setAuthError("Falscher Benutzername oder Passwort.");
@@ -60,8 +64,8 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     try {
       await axios.post('/api/logout');
-      localStorage.removeItem('token'); // トークンをローカルストレージから削除
       setIsLogin(false);
+      router.push('/');
     } catch (error) {
       console.error('Logout failed:', error);
       // エラーハンドリング
@@ -71,8 +75,9 @@ export const AuthProvider = ({ children }) => {
   const refreshAccessToken = async () => {
     try {
         const response = await axios.post('/api/refresh/');
-        // Assuming the new access and refresh tokens are automatically set in HTTP-only Cookies
-        setIsLogin(true);
+        if (response.status === 200) {
+          setIsLogin(true);
+        }
     } catch (error) {
         console.error('Token refresh failed:', error);
         setIsLogin(false);
@@ -84,7 +89,11 @@ export const AuthProvider = ({ children }) => {
   const checkAuthSignUp = async () => {
     try {
         const response = await axios.get('/api/checkauth/');
-        setIsLogin(response.data.is_authenticated);
+        if (response.status === 200) {
+          setIsLogin(true);
+        } else {
+            setIsLogin(false);
+        }
     } catch (error) {
         console.error('Auth check failed:', error);
         if (error.response && error.response.status === 401) {

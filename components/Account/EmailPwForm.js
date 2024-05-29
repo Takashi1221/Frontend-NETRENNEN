@@ -22,18 +22,8 @@ const countryList = [
 ];
 
 
-
-export const EmailAndPasswordForm = ({ onSubmit }) => {
-    // 内部状態としてのフォームデータ
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [country, setCountry] = useState('');
+export const EmailAndPasswordForm = ({ onSubmit, formData, handleChange }) => {
     const [showPassword, setShowPassword] = useState(false);
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        onSubmit(email, password);
-    };
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -45,19 +35,23 @@ export const EmailAndPasswordForm = ({ onSubmit }) => {
                 <p className={styles.formTitle}>NETRENNEN-Konto erstellen</p>
             </div>
             <div>
-                <form onSubmit={handleSubmit} className={styles.formMainContainer}>
+                <form onSubmit={onSubmit} className={styles.formMainContainer}>
                     <div className={styles.formDiscription}>E-mail</div>
                     <input 
                         type="email" 
-                        value={email} 
-                        onChange={(e) => setEmail(e.target.value)}
+                        name="email"
+                        value={formData.email} 
+                        onChange={handleChange}
                         className={styles.inputStyleEmail} 
+                        required 
                     />
                     <div className={styles.formDiscription}>Land</div>
                     <select 
-                        value={country} 
-                        onChange={(e) => setCountry(e.target.value)}
+                        value={formData.country} 
+                        name="country"
+                        onChange={handleChange}
                         className={styles.inputStyleEmail}
+                        required 
                     >
                         <option value="" disabled></option>
                         {countryList.map((countryName, index) => (
@@ -68,9 +62,11 @@ export const EmailAndPasswordForm = ({ onSubmit }) => {
                     <div className={styles.inputContainer}>
                         <input 
                             type={showPassword ? 'text' : 'password'} 
-                            value={password} 
-                            onChange={(e) => setPassword(e.target.value)}
+                            name="password"
+                            value={formData.password} 
+                            onChange={handleChange}
                             className={styles.inputStylePW} 
+                            required 
                         />
                         <button 
                             type="button" 
@@ -90,7 +86,6 @@ export const EmailAndPasswordForm = ({ onSubmit }) => {
                     </button>
                 </form>
             </div>
-            
         </div>
     )  
   }

@@ -1,5 +1,6 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useAuth } from '../../../context/AuthContext';
 import { HeaderLanding } from '../../../components/HeaderLanding';
 import { LoginModal } from '../../../components/Home/LoginModal';
 import { EmailAndPasswordForm } from '../../../components/Account/EmailPwForm';
@@ -7,6 +8,49 @@ import styles from '/styles/Account/SignUp.module.css'
 
 
 const SignUp = () => {
+    const { checkAuthSignUp } = useAuth();
+    const router = useRouter();
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+        country: '',
+    });
+
+    // フォームの変更をハンドリング
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    // APIエンドポイントへのPOSTリクエスト
+    const submitData = async (e) => {
+        e.preventDefault(); // デフォルトのフォーム送信を防ぐ
+        if (formData.email && formData.password && formData.country) {
+            try {
+                const response = await fetch('/api/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                // 成功した場合、トークン取得してリダイレクト
+                await checkAuthSignUp();
+                router.push('/dashboard');
+
+            } catch (error) {
+                console.log(formData);
+            }
+        } else {
+            console.log(formData);
+        }
+    };
 
 
     return (
@@ -25,11 +69,34 @@ const SignUp = () => {
                     </div>
                 </div>
                 <div className={styles.rightContainer}>
-                    <EmailAndPasswordForm />
+                    <EmailAndPasswordForm 
+                        onSubmit={submitData} 
+                        formData={formData} 
+                        handleChange={handleChange}
+                    />
                 </div>
             </div>
         </div>
     );
 };
+
+// サーバーサイドでクッキーをチェックし、リダイレクト
+export async function getServerSideProps({ req }) {
+    const { cookies } = req;
+    const token = cookies.access;
+
+    if (token) {
+        return {
+            redirect: {
+                destination: '/dashboard',
+                permanent: false,
+            },
+        };
+    }
+
+    return {
+        props: {}, // 必要な場合に他のプロパティを追加
+    };
+}
 
 export default SignUp;
