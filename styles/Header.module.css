@@ -113,6 +113,14 @@
     background-color: #575757;
 }
 
+.forMobilContainer {
+    display: none;
+}
+
+.premiumButton {
+    display: none;
+}
+
 @media (max-width: 500px) {
     .headerContainer {
         height: 55px;
@@ -145,5 +153,14 @@
 
     .hamburger {
         display: flex;
+    }
+
+    .forMobilContainer {
+        display: flex;
+    }
+    
+    .premiumButton {
+        display: flex;
+        margin-right: -150px;
     }
 }

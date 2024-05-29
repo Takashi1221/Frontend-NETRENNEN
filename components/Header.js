@@ -39,6 +39,27 @@ export const Header = () => {
         <div className={styles.naviLogin}>
           {isLogin ? (
             <div>
+              <Link href={`/account/premium`}>
+                <Button 
+                  variant="contained"
+                  sx={{
+                    marginRight: '30px',
+                    paddingTop: '5px',
+                    paddingBottom: '5px',
+                    paddingLeft: '15px',
+                    paddingRight: '15px',
+                    backgroundColor: '#FBCB0A',
+                    color: '#333',
+                    fontSize: '1rem',
+                    fontWeight: '700',
+                    '&:hover': {
+                      backgroundColor: '#ffd940', // ホバー時の色
+                    },
+                  }}
+                >
+                  Premium
+                </Button>
+              </Link>
               <Link href={`/account/mypage`}>
                 <PersonOutlineIcon sx={{ 
                     marginRight: '30px', 
@@ -52,17 +73,17 @@ export const Header = () => {
               </Link>
               <Button 
                 onClick={logout}
-                variant="outlined"
+                variant="text" // テキストボタンをベースにする
                 sx={{
                   color: '#ffffff',
-                  fontSize: '1rem',
+                  fontSize: '1.1rem',
                   fontWeight: '700',
-                  borderWidth: 4,
-                  borderColor: '#ffffff',
+                  textDecoration: 'underline', // アンダーラインを追加
+                  padding: 0,
+                  minWidth: 'auto',
                   '&:hover': {
-                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                    borderColor: '#ffffff',
-                    borderWidth: 4,
+                    color: 'red',
+                    textDecoration: 'underline',
                   },
                 }}
               >
@@ -111,6 +132,30 @@ export const Header = () => {
               </Button>
             </div>
           )}
+        </div>
+        <div className={styles.premiumButton}>
+          <Link href={`/account/premium`}>
+            <Button 
+              variant="contained"
+              sx={{
+                marginTop: '2px',
+                marginRight: '30px',
+                paddingTop: '1px',
+                paddingBottom: '1px',
+                paddingLeft: '10px',
+                paddingRight: '10px',
+                backgroundColor: '#FBCB0A',
+                color: '#333',
+                fontSize: '0.8rem',
+                fontWeight: '700',
+                '&:hover': {
+                  backgroundColor: '#ffd940', // ホバー時の色
+                },
+              }}
+            >
+              Premium
+            </Button>
+          </Link>
         </div>
         <div className={styles.hamburger} onClick={toggleMenu}>
           <div></div>

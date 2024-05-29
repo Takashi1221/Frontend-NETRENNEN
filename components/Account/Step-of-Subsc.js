@@ -10,7 +10,6 @@ export const SubscriptionOption = () => {
     return (
         <div>
             <div>
-                <p className={styles.pageTitle}>Kontoregistrierung fertig!</p>
                 <p className={styles.pageDiscription}>Dann können Sie einen Nutzungsplan auswählen.</p>
             </div>
             <div className={styles.pageMainContainer}>
@@ -22,7 +21,7 @@ export const SubscriptionOption = () => {
                         <p className={styles.priceMonatText}>/Monat</p>
                     </div>
                     <div className={styles.aboButtonContainer}>
-                        <p className={styles.aktuellerPlanButton}>Aktueller Plan</p>
+                        <p></p>
                     </div>
                     <div className={styles.aboDiscriptionContainer}>
                         <div className={styles.aboDiscriptionLeftSpace}>

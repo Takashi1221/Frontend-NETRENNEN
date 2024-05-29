@@ -1,0 +1,298 @@
+.backgroundContainer {
+    background-color: #ffffff;
+    height: auto;
+    max-width: auto;
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: auto;
+}
+
+.pageTitle {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+
+.pageTitle h2 {
+    font-size: 3rem;
+    color: rgba(38, 38, 38, 0.821);
+}
+
+.pageTitle p {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: rgba(74, 74, 74, 0.832);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.pageMainContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 756px; /* 540pxの1.4倍 */
+    height: 672px; /* 480pxの1.4倍 */
+    gap: 60px;
+}
+
+.subscContainer1, .subscContainer2 {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    width: 357px; /* 255pxの1.4倍 */
+    height: 672px; /* 480pxの1.4倍 */
+    border-radius: 28px; /* 20pxの1.4倍 */
+    transition: transform 0.3s ease-in-out;
+}
+
+.subscContainer1 {
+    padding-top: 42px;
+    border: 2.8px solid rgba(93, 93, 93, 0.498); /* 2pxの1.4倍 */
+}
+
+.subscContainer1:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 28px rgba(0, 0, 0, 0.2); /* 20pxの1.4倍 */
+}
+
+.subscContainer2 {
+    border: 2.8px solid #6528F7; /* 2pxの1.4倍 */
+}
+
+.subscContainer2:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 28px rgba(0, 0, 0, 0.2); /* 20pxの1.4倍 */
+}
+
+.beliebtFlame {
+    background-color: #6528F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px; /* 30pxの1.4倍 */
+    font-size: 1.26rem; /* 0.9remの1.4倍 */
+    color: rgb(255, 255, 255);
+    border-top-right-radius: 21px; /* 15pxの1.4倍 */
+    border-top-left-radius: 21px; /* 15pxの1.4倍 */
+}
+
+.dummyFlame {
+    height: 42px; /* 30pxの1.4倍 */
+}
+
+.priceContainer {
+    display: flex;
+    flex-direction: column;
+    height: 252px; /* 180pxの1.4倍 */
+}
+
+.priceHeaderText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 63px;
+    color: rgba(38, 38, 38, 0.821);
+    font-size: 1.54rem;
+    font-weight: 700;
+}
+
+.priceVolumeText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98px;
+    font-size: 2.24rem;
+    font-weight: 800;
+}
+
+.priceMonatText {
+    display: flex;
+    justify-content: center;
+    height: 63px;
+    color: rgba(38, 38, 38, 0.821);
+    font-size: 1.4rem;
+}
+
+.aboButtonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 126px; /* 90pxの1.4倍 */
+    padding-top: 14px; /* 10pxの1.4倍 */
+    padding-bottom: 14px; /* 10pxの1.4倍 */
+    border-bottom: 2.8px solid rgba(237, 232, 232, 0.743); /* 2pxの1.4倍 */
+}
+
+.stripeDiscription {
+    padding-top: 20px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: rgba(38, 38, 38, 0.821);
+}
+
+.aboDiscriptionContainer {
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    padding-top: 16.8px;
+    margin-left: -15px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: rgba(74, 74, 74, 0.832);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.aboDiscriptionRow {
+    display: flex;
+    margin-left: 28px;
+    margin-bottom: 10px;
+}
+
+.subscAttention {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: rgba(74, 74, 74, 0.832);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 80px;
+    margin-left: 800px;
+    margin-right: 800px;
+    margin-bottom: 200px;
+    padding: 20px 10px;
+    border-top: 1px solid rgba(92, 92, 92, 0.604);
+    border-bottom: 1px solid rgba(92, 92, 92, 0.604);
+}
+
+.swipeContainer {
+    display: none;
+}
+
+
+@media (max-width: 500px) {
+    .backgroundContainer {
+        background-color: rgb(246, 246, 246);
+        height: auto;
+    }
+
+    .pageTitle {
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+    
+    .pageTitle h2 {
+        font-size: 2rem;
+    }
+    
+    .pageTitle p {
+        font-size: 0.9rem;
+    }
+
+    .pageMainContainer {
+        display: none;
+    }
+
+    .swipeContainer {
+        display: flex;
+        width: 100%;
+    }
+
+    .swiperSlide {
+        display: flex;
+        justify-content: center;
+    }
+
+    .subscContainer1, .subscContainer2 {
+        width: 255px; /* 元の幅の約71% */
+        height: 520px; /* 元の高さの約71% */
+        border-radius: 20px; /* 元のボーダー半径の約71% */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .subscContainer1 {
+        padding-top: 30px; /* 元のパディングの約71% */
+        border: 2px solid rgba(93, 93, 93, 0.498); /* 元のボーダーの約71% */
+    }
+    
+    .subscContainer1:hover {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* 元のボックスシャドウの約71% */
+    }
+    
+    .subscContainer2 {
+        border: 2px solid #6528F7; /* 元のボーダーの約71% */
+    }
+    
+    .subscContainer2:hover {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* 元のボックスシャドウの約71% */
+    }
+    
+    .beliebtFlame {
+        height: 30px; /* 元の高さの約71% */
+        font-size: 0.9rem; /* 元のフォントサイズの約71% */
+        border-top-right-radius: 15px; /* 元のボーダー半径の約71% */
+        border-top-left-radius: 15px; /* 元のボーダー半径の約71% */
+    }
+    
+    .dummyFlame {
+        height: 30px; /* 元の高さの約71% */
+    }
+    
+    .priceContainer {
+        height: 180px; /* 元の高さの約71% */
+    }
+    
+    .priceHeaderText {
+        height: 45px; /* 元の高さの約71% */
+        color: rgba(38, 38, 38, 0.821);
+        font-size: 1.1rem; /* 元のフォントサイズの約71% */
+        padding-top: 10px;
+    }
+    
+    .priceVolumeText {
+        height: 70px; /* 元の高さの約71% */
+        font-size: 1.8rem; /* 元のフォントサイズの約71% */
+    }
+    
+    .priceMonatText {
+        height: 45px; /* 元の高さの約71% */
+        font-size: 1.1rem; /* 元のフォントサイズの約71% */
+    }
+    
+    .aboButtonContainer {
+        height: 90px; /* 元の高さの約71% */
+        padding-top: 10px; /* 元のパディングの約71% */
+        padding-bottom: 20px; /* 元のパディングの約71% */
+        border-bottom: 2px solid rgba(237, 232, 232, 0.743); /* 元のボーダーの約71% */
+    }
+    
+    .stripeDiscription {
+        padding-top: 14px; /* 元のパディングの約71% */
+        font-weight: 600;
+        font-size: 0.85rem; /* 元のフォントサイズの約71% */
+    }
+    
+    .aboDiscriptionContainer {
+        height: 200px; /* 元の高さの約71% */
+        padding-top: 12px; /* 元のパディングの約71% */
+        margin-left: -11px; /* 元のマージンの約71% */
+        font-size: 0.85rem; /* 元のフォントサイズの約71% */
+        font-weight: 500;
+    }
+    
+    .aboDiscriptionRow {
+        margin-left: 20px; /* 元のマージンの約71% */
+        margin-bottom: 3px; /* 元のマージンの約71% */
+    }
+
+    .subscAttention {
+        font-size: 0.85rem;
+        margin: 60px 10px 150px 10px;
+        padding: 10px 7px;
+    }
+}
