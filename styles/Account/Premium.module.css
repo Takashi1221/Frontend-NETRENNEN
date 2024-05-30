@@ -159,12 +159,11 @@
     font-size: 1.1rem;
     font-weight: 500;
     margin-top: 80px;
-    margin-left: 800px;
-    margin-right: 800px;
+    margin-left: 20%;
+    margin-right: 20%;
     margin-bottom: 200px;
     padding: 20px 10px;
     border-top: 1px solid rgba(92, 92, 92, 0.604);
-    border-bottom: 1px solid rgba(92, 92, 92, 0.604);
 }
 
 .swipeContainer {
@@ -185,7 +184,7 @@
     }
     
     .pageTitle h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .pageTitle p {

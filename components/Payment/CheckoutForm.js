@@ -9,8 +9,9 @@ export const CheckOut = () => {
     });
     const { sessionId } = await res.json();
     if (res.ok) {
+      console.log("res.ok!!!!!!!!")
       // Stripe Checkoutページへリダイレクト
-      const stripe = Stripe(process.env.STRIPE_PUBLIC_KEY);
+      const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
       stripe.redirectToCheckout({ sessionId });
     } else {
       console.error('Failed to create checkout session.');
