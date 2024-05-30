@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from '/styles/Starter/HorseCardsCopy.module.css';
+import styles from '/styles/Starter/HorseCards.module.css';
 
 const CheckBox = ({ horseId }) => {
   const [isChecked, setIsChecked] = useState(false);

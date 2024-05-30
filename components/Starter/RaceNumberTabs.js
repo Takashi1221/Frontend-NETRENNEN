@@ -17,7 +17,12 @@ export function RaceNumberTabs({ sameDayRaces, onRaceSelect }) {
 
   return (
     <div className={styles.headerContainer}>
-      <div className={styles.dayLocation}>{formatDate(sameDayRaces[0].date)} {sameDayRaces[0].location}</div>
+      <div className={styles.dayLocationContainer}>
+        <p className={styles.dayLocation}>{formatDate(sameDayRaces[0].date)} {sameDayRaces[0].location}</p>
+        <Link href="/dashboard" passHref>
+          <p className={styles.hiddenReturnButton}>zurück</p>
+        </Link>
+      </div>
       <div className={styles.racenumberContainer}>
         {sameDayRaces.map((race) => (
           <button 

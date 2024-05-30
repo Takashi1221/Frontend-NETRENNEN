@@ -43,6 +43,10 @@
     margin-left: 30px;
 }
 
+.dayLocationContainer {
+    display: flex;
+}
+
 .dayLocation {
     padding-top: 15px;
 }
@@ -58,9 +62,14 @@
 }
 
 .returnButton {
+    display: flex;
     color: #8b8a88bf;
     font-size: 1rem;
     margin-left: 30px;
+}
+
+.hiddenReturnButton {
+    display: none;
 }
 
 .selectedButton {
@@ -76,9 +85,21 @@
 }
 
 .raceTitle {
+    display: flex;
     font-size: 1.4rem;
     color: #353535bf;
     margin-bottom: 5px;
+}
+
+.raceTitleNumber {
+    background-color: #353535bf;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-right: 10px;
 }
 
 .infoDetails {
@@ -119,6 +140,7 @@
     .racenumberContainer {
         display: flex;
         align-items: center;
+        max-width: 100%;
         gap: 5x;
         margin-left: 5px;
         margin-bottom: 5px;
@@ -129,9 +151,19 @@
         padding: 5px;
         border-radius: 5px;
     }
+
     .returnButton {
+        display: none;
         font-size: 0.8rem;
         margin-left: 10px;
+    }
+
+    .hiddenReturnButton {
+        display: flex;
+        color: #8b8a88bf;
+        font-size: 0.8rem;
+        margin-top: 3px;
+        margin-left: 20px;
     }
 
     .infoContainer {
@@ -143,6 +175,12 @@
         font-size: 1.1rem;
         color: #353535bf;
         margin-bottom: 3px;
+    }
+
+    .raceTitleNumber {
+        font-size: 0.8rem;
+        padding: 3px 5px;
+        margin-right: 5px;
     }
     
     .infoDetails {

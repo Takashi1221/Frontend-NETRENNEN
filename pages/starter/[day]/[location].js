@@ -5,7 +5,7 @@ import { Header } from '../../../components/Header';
 import { LoginModal } from '../../../components/Home/LoginModal';
 import { Footer } from '../../../components/Footer';
 import { RaceNumberTabs } from '../../../components/Starter/RaceNumberTabs';
-import { HorseCardsCopy } from '../../../components/Starter/HorseCardsCopy';
+import { HorseCardsCopy } from '../../../components/Starter/HorseCards';
 import { Loading } from '../../../components/Loading';
 import styles from '/styles/Starter/Raceid.module.css';
 
@@ -73,7 +73,10 @@ const RaceComponent = () => {
           <RaceNumberTabs sameDayRaces={raceList} onRaceSelect={handleRaceSelect} />
           <div className={styles.headerBackground}></div>
           <div className={styles.infoContainer}>
-            <p className={styles.raceTitle}>{selectedRace.title}</p>
+            <p className={styles.raceTitle}>
+              <span className={styles.raceTitleNumber}>{selectedRace.number}R</span>
+              <span>{selectedRace.title}</span>
+            </p>
             <p className={styles.infoDetails}>{selectedRace.start} / {selectedRace.distance} / {selectedRace.categorie}</p>
           </div>
           <div className={styles.mainContainer}>

@@ -6,76 +6,27 @@
 
 .mainContainer {
     display: flex;
-}
-
-.resultsWrapper {
-    display: flex;
     flex-direction: column;
-
 }
 
-.resultsHeader {
+.horseWrapper {
     display: flex;
     flex-direction: row;
-    min-height: 28px;
-    color: #FFFFFF;
-    font-size: 0.85rem;
-    margin-bottom: 10px;
-    border-top: 0.6px solid rgb(199, 204, 208);
-    border-left: 0.6px solid rgb(199, 204, 208);
 }
 
-.resultsHeaderColumn1 {
+.resultWrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 75px;
-    border-right: 0.6px solid rgb(199, 204, 208);
-    border-bottom: 0.6px solid rgb(199, 204, 208);
-}
-
-.resultsHeaderColumn2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 205px;
-    border-right: 0.6px solid rgb(199, 204, 208);
-    border-bottom: 0.6px solid rgb(199, 204, 208);
-}
-
-.resultsHeaderColumn3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 67px;
-    border-right: 0.6px solid rgb(199, 204, 208);
-    border-bottom: 0.6px solid rgb(199, 204, 208);
-}
-
-.resultsHeaderColumn4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 252px;
-    border-right: 0.6px solid rgb(199, 204, 208);
-    border-bottom: 0.6px solid rgb(199, 204, 208);
+    flex-direction: row;
 }
 
 .horseContainer {
+    background-color: #ffffff;
     display: flex;
     flex-direction: row;
     width: 347px;
     height: 175px;
     margin: 0 0 10px 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.horseContainerOdd {
-    background-color: #ffffff; /* 偶数の背景色 */
-}
-  
-.horseContainerEven {
-    background-color: #ffffff; /* 奇数の背景色 */
 }
 
 .markBox {
@@ -166,12 +117,6 @@
     text-overflow: ellipsis;
 }
 
-.horseWrapper {
-    display: flex;
-    flex-direction: column;
-
-}
-
 .resultsContainer1 {
     background-color: #fffbe5;
     display: flex;
@@ -208,7 +153,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.resultsContainer4Odd {
+.resultsContainer4 {
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -220,29 +165,13 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.resultsContainer4Even {
-    background-color: #ffffff;
+.resultsContainerEmpty {
+    background-color: #eeeeeebf;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 200px;
-    height: 175px;
-    padding: 5px;
-    margin: 0 0 10px 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.resultsContainerEmptyOdd {
-    background-color: #eeeeeebf;
-    width: 200px;
-    height: 175px;
-    padding: 5px;
-    margin: 0 0 10px 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.resultsContainerEmptyEven {
-    background-color: #eeeeeebf;
+    justify-content: center;
+    align-items: center;
+    color: #8b8a88bf;
+    font-size: 0.9rem;
     width: 200px;
     height: 175px;
     padding: 5px;
@@ -338,19 +267,7 @@
     border-radius: 5px;
 }
 
-.platzBox4Odd {
-    display: flex;
-    justify-content: center;
-    width: 32px;
-    height: 28px;
-    padding-top: 1.5px;
-    font-size: 1.1rem;
-    color: #353535bf;
-    border: 1px solid #888888;
-    border-radius: 5px;
-}
-
-.platzBox4Even {
+.platzBox4 {
     display: flex;
     justify-content: center;
     width: 32px;
@@ -498,4 +415,192 @@
     user-select: none;
     font-size: 24px;
     color: #353535bf;
+}
+
+
+@media (max-width: 500px) {
+    .mobilMainContainer {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        font-weight: 400;
+    }
+
+    .horseWrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .horseContainer {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        width: 97%;
+        height: 120px;
+        margin: 0 0 10px 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .markBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 10%;
+        height: 120px;
+        padding-left: 3px;
+    }
+
+    .number {
+        margin-top: 5px;
+        font-size: 0.85rem;
+        color: #353535bf;
+    }
+
+    .checkBoxContainer {
+        width: 24px;
+        height: 24px;
+        margin-top: 10px;
+        padding-top: 3px;
+        border-radius: 5px;
+        font-size: 21px;
+        color: #ff0095;
+    }
+
+    .infoBoxOne {
+        display: flex;
+        flex-direction: column;
+        width: 55%;
+        height: 120px;
+        padding: 5px 0 5px 5px;
+    }
+    
+    .infoBoxTwo {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 35%;
+        height: 120px;
+        padding-left: 5px;
+        color: #8b8a88bf;
+        border-left: 0.6px solid rgb(199, 204, 208);
+    }
+    
+    .nameBox {
+        display: flex;
+        font-size: 1.1rem;
+        color: #1FC613;
+  
+    }
+
+    .alt {
+        font-size: 0.8rem;
+        color: #767675cf;
+        margin-bottom: 2px;
+    }
+
+    .jockyBox {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        overflow: hidden;
+    }
+    
+    .jocky {
+        font-size: 0.8rem;
+        color: #353535bf;
+        margin-bottom: 2px;
+        overflow: hidden;
+    }
+    
+    .sireBox {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.85rem;
+        color: #353535bf;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        overflow: hidden;
+    }
+    
+    .oddsAndButton {
+        display: flex;
+        justify-content: space-between;
+    }
+    .odds {
+        font-size: 0.9rem;
+        color: #8b8a88bf;
+        margin-left: 5px;
+    }
+
+    .showSwiper {
+        font-size: medium;
+        color: #4d4d4dbf;
+        margin-top: -3px;
+        margin-right: 8px;
+    }
+    
+    .gewGag {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5px;
+    }
+    
+    .textOverFlow {
+        overflow: hidden;   
+    }
+
+    .resultWrapper {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5px;
+    }
+
+    .resultsContainer1 {
+        width: 90%;
+    }
+    
+    .resultsContainer2 {
+        width: 90%;
+    }
+    
+    .resultsContainer3 {
+        width: 90%;
+    }
+    
+    .resultsContainer4 {
+        width: 90%;
+    }
+    
+    .resultsContainerEmpty {
+        width: 50%;
+    }
+
+    .titleRow {
+        font-size: 1rem;
+    }
+
+    .platzBox1 {
+        width: 32px;
+        height: 28px;
+        font-size: 1rem;
+    }
+    
+    .platzBox2 {
+        width: 32px;
+        height: 28px;
+        font-size: 1rem;
+    }
+    
+    .platzBox3 {
+        width: 32px;
+        height: 28px;
+        font-size: 1rem;
+    }
+    
+    .platzBox4 {
+        width: 32px;
+        height: 28px;
+        font-size: 1rem;
+    }
 }
