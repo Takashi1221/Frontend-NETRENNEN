@@ -24,7 +24,6 @@
     color: #353535bf;
     font-size: 1.2rem;
     margin-top: 40px;
-
 }
 
 .headerBackground {
@@ -96,4 +95,66 @@
     padding: 8px;
     margin-bottom: 10px;
     margin-left: 10px;
+}
+
+@media (max-width: 500px) {
+    .pageContainer {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 100px;
+    }
+
+    .headerContainer {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .dayLocation {
+        font-size: 1rem;
+        padding-top: 0;
+        margin-bottom: 5px;
+    }
+
+    .racenumberContainer {
+        display: flex;
+        align-items: center;
+        gap: 5x;
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+
+    .racenumberButton {
+        font-size: 0.9rem;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .returnButton {
+        font-size: 0.8rem;
+        margin-left: 10px;
+    }
+
+    .infoContainer {
+        margin-bottom: 7px;
+        margin-left: 5px;
+    }
+    
+    .raceTitle {
+        font-size: 1.1rem;
+        color: #353535bf;
+        margin-bottom: 3px;
+    }
+    
+    .infoDetails {
+        font-size: 0.8rem;
+    }
+
+    .tabLabel {
+        color: #8b8a88bf;
+        font-size: 0.8rem;
+        width: 105px;
+        padding: 6px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+    }    
 }

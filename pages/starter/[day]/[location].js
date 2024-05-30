@@ -5,7 +5,7 @@ import { Header } from '../../../components/Header';
 import { LoginModal } from '../../../components/Home/LoginModal';
 import { Footer } from '../../../components/Footer';
 import { RaceNumberTabs } from '../../../components/Starter/RaceNumberTabs';
-import { HorseCards } from '../../../components/Starter/HorseCards';
+import { HorseCardsCopy } from '../../../components/Starter/HorseCardsCopy';
 import { Loading } from '../../../components/Loading';
 import styles from '/styles/Starter/Raceid.module.css';
 
@@ -79,7 +79,7 @@ const RaceComponent = () => {
           <div className={styles.mainContainer}>
             <div className={styles.tabLabel}>Letzte 4 Läufe</div>
             {/* 馬柱コンテナ */}
-            <HorseCards starters={starters} />
+            <HorseCardsCopy starters={starters} />
           </div>
         </div>
         <Footer />

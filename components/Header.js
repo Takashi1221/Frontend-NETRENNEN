@@ -138,16 +138,15 @@ export const Header = () => {
             <Button 
               variant="contained"
               sx={{
-                marginTop: '2px',
-                marginRight: '30px',
+                marginTop: '5px',
                 paddingTop: '1px',
                 paddingBottom: '1px',
-                paddingLeft: '10px',
-                paddingRight: '10px',
+                paddingLeft: '8px',
+                paddingRight: '8px',
                 backgroundColor: '#FBCB0A',
                 color: '#333',
-                fontSize: '0.8rem',
-                fontWeight: '700',
+                fontSize: '0.7rem',
+                fontWeight: '600',
                 '&:hover': {
                   backgroundColor: '#ffd940', // ホバー時の色
                 },
