@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import { Header } from '/components/Header';
-import { LoginModal } from '/components/Home/LoginModal';
-import { Main3 } from '/components/Home/Main3';
-import { Footer } from '/components/Footer';
+import { Header } from '/components/Header/Header';
+import { LoginModal } from '/components/Header/LoginModal';
+import { RennTermine } from '/components/Starter/RennTermine';
+import { Footer } from '/components/Header/Footer';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import styles from '/styles/Starter/Starter.module.css'
 
@@ -25,7 +25,7 @@ export default function Home() {
             </Link>
             <p><PlayArrowIcon fontSize='small' /></p>
           </div>
-          <Main3 />
+          <RennTermine />
         </div>
       </div>
       <Footer />

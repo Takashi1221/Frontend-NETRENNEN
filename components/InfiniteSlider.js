@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Button from '@mui/material/Button';
-import styles from '/styles/Home/Bg.module.css'
-import { HeaderLanding } from './HeaderLanding';
-import { LoginModal } from './Home/LoginModal';
+import { HeaderLanding } from './Header/HeaderLanding';
+import { LoginModal } from './Header/LoginModal';
+import styles from '/styles/Home/Bg.module.css';
 
 export function BackgroundSlider() {
   return (

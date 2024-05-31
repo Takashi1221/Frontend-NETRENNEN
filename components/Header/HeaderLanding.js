@@ -1,7 +1,7 @@
 import { useAuth } from '/context/AuthContext';
 import Button from '@mui/material/Button';
 import Image from 'next/image';
-import styles from '../styles/HeaderLanding.module.css'; 
+import styles from '/styles/HeaderLanding.module.css'; 
 
 
 export const HeaderLanding = () => {

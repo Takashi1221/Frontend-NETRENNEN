@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import styles from '/styles/Account/SignUp.module.css'
+import styles from '/styles/Account/SignUp.module.css';
 
 const countryList = [
     'Germany',

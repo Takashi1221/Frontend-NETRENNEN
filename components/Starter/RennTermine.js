@@ -1,29 +1,34 @@
 import React, { useState, useEffect } from 'react'; 
+import axios from 'axios';
 import Link from 'next/link';
-import { useRacelist } from '../../context/RacelistContext';
-import styles from '/styles/Starter/Starter.module.css'
-
 import { Loading } from '../Loading';
+import styles from '/styles/Starter/Starter.module.css';
 
 
-export function Main3() {
-  const { raceList: contextRaceList } = useRacelist();
-  const [raceList, setRaceList] = useState(contextRaceList);
+export function RennTermine() {
+  const [raceList, setRacelist] = useState(null);
   const [sortedAndMaxNumberRaces, setSortedAndMaxNumberRaces] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (!contextRaceList) {
-      const storedRaceList = localStorage.getItem('raceList');
-      if (storedRaceList) {
-        setRaceList(JSON.parse(storedRaceList));
+    const fetchData = async () => {
+      try {
+        // 開催データをフェッチ
+        const respense = await axios.get('/api/renntermine/');
+        setRacelist(respense.data);
+        
+      } catch (error) {
+        console.error("fault to get races:", error);
       }
-    } else {
-      setRaceList(contextRaceList);
+    };
+    if (!raceList) {
+      fetchData();
     }
-  }, [contextRaceList]);
+}, [raceList]);
+
 
   useEffect(() => {
+    // 開催データを整形
     if (raceList && raceList.length > 0) {
       const races = raceList
         .sort((a, b) => a.date.localeCompare(b.date) || a.location.localeCompare(b.location))

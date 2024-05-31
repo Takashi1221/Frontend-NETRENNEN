@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, Box, Typography, Button, TextField } from '@mui/material';
 import { useForm } from "react-hook-form";
 import { useAuth } from '/context/AuthContext';
-import styles from "../../styles/Login/LoginPage.module.css"
+import styles from "../../styles/Login/LoginPage.module.css";
 
 
 export function LoginModal() {

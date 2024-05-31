@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { loadStripe } from '@stripe/stripe-js';
-import { Header } from '/components/Header';
-import { LoginModal } from '/components/Home/LoginModal';
-import { Footer } from '/components/Footer';
+import { Header } from '/components/Header/Header'
+import { LoginModal } from '/components/Header/LoginModal'
+import { Footer } from '/components/Header/Footer'
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
 import styles from '/styles/Account/SignUp.module.css'
@@ -16,7 +16,7 @@ const PayErrorPage = () => {
     const router = useRouter();
     useEffect(() => {
         const timer = setTimeout(() => {
-            router.push('/starter');
+            router.push('/dashboard');
         }, 6000); // 6秒
         // タイマーをクリアする
         return () => clearTimeout(timer);
@@ -30,7 +30,7 @@ const PayErrorPage = () => {
         const { sessionId } = await res.json();
         if (res.ok) {
           // Stripe Checkoutページへリダイレクト
-          const stripe = Stripe(process.env.STRIPE_PUBLIC_KEY);
+          const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
           stripe.redirectToCheckout({ sessionId });
         } else {
           console.error('Failed to create checkout session.');

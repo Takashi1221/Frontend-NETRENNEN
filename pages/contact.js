@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { TextField, Button, Box } from '@mui/material';
+import { Header } from '../components/Header/Header';
+import { LoginModal } from '../components/Header/LoginModal';
+import { Footer } from '/components/Header/Footer';
 import styles from '/styles/Company/Contact.module.css';
-import { Header } from '../components/Header';
-import { LoginModal } from '../components/Home/LoginModal';
-import { Footer } from '/components/Footer';
 
 
 export default function ContactForm () {

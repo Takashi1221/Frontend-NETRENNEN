@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
-import { Header } from "../../components/Header";
-import { LoginModal } from '../../components/Home/LoginModal';
-import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header/Header";
+import { LoginModal } from '../../components/Header/LoginModal';
+import { Footer } from "../../components/Header/Footer";
 import styles from '/styles/News/News.module.css'
 
 

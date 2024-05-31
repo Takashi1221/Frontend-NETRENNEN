@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useAuth } from '../../../context/AuthContext';
-import { HeaderLanding } from '../../../components/HeaderLanding';
-import { LoginModal } from '../../../components/Home/LoginModal';
+import { HeaderLanding } from '../../../components/Header/HeaderLanding';
+import { LoginModal } from '../../../components/Header/LoginModal';
 import { EmailAndPasswordForm } from '../../../components/Account/EmailPwForm';
 import styles from '/styles/Account/SignUp.module.css'
 

@@ -1,7 +1,7 @@
-import { Header } from "../components/Header";
-import { LoginModal } from '../components/Home/LoginModal';
-import styles from '/styles/Company/Aboutus.module.css'
-import { Footer } from "../components/Footer";
+import { Header } from "../components/Header/Header";
+import { LoginModal } from '../components/Header/LoginModal';
+import { Footer } from "../components/Header/Footer";
+import styles from '/styles/Company/Aboutus.module.css';
 
 
 const AboutUs = () => {

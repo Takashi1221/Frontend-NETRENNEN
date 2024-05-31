@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import { Header } from '../../../components/Header';
-import { LoginModal } from '../../../components/Home/LoginModal';
-import { Footer } from '../../../components/Footer';
+import { Header } from '../../../components/Header/Header';
+import { LoginModal } from '../../../components/Header/LoginModal';
+import { Footer } from '../../../components/Header/Footer';
 import { RaceNumberTabs } from '../../../components/Starter/RaceNumberTabs';
 import { HorseCardsCopy } from '../../../components/Starter/HorseCards';
 import { Loading } from '../../../components/Loading';

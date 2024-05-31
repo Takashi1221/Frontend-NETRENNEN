@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Header } from "../../../components/Header";
-import { LoginModal } from "../../../components/Home/LoginModal";
-import { Footer } from "../../../components/Footer";
+import { Header } from "../../../components/Header/Header";
+import { LoginModal } from "../../../components/Header/LoginModal";
+import { Footer } from "../../../components/Header/Footer";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import styles from "/styles/Starter/Kalender.module.css";
 

@@ -6,9 +6,9 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { Header } from '../../../components/Header';
-import { LoginModal } from '../../../components/Home/LoginModal';
-import { Footer } from '../../../components/Footer';
+import { Header } from '../../../components/Header/Header';
+import { LoginModal } from '../../../components/Header/LoginModal';
+import { Footer } from '../../../components/Header/Footer';
 import { CheckOut } from '../../../components/Payment/CheckoutForm';
 import CheckIcon from '@mui/icons-material/Check';
 import styles from '/styles/Account/Premium.module.css';

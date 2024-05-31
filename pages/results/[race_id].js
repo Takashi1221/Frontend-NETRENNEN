@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import styles from '/styles/Results/RaceResults.module.css';
-import { Header } from '../../components/Header';
-import { LoginModal } from '../../components/Home/LoginModal';
+import { Header } from '../../components/Header/Header';
+import { LoginModal } from '../../components/Header/LoginModal';
 import { RaceInfo } from '../../components/Results/RaceInfo';
 import { RaceNumberTabs } from '../../components/Results/RaceNumberTabs';
 import { ResultsTable } from '../../components/Results/PlatzTable';
-import { Footer } from '../../components/Footer';
+import { Footer } from '../../components/Header/Footer';
 
 
 
