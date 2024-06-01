@@ -215,9 +215,9 @@ export function HorseCardsCopy({ starters }) {
                                   </div>
                                   <div className={styles.platzRightRow2}>
                                     <span className={styles.strs}>/{result.strs}</span>
-                                    <span className={styles.textLightEvq}>[{result.box}]</span>
+                                    <span className={styles.startbox}>[{result.box}]</span>
                                     <p className={styles.platzRightTextBox}>
-                                      <span className={styles.textLightEvq}>{result.evq}</span>
+                                      <span>{result.evq}</span>
                                       <span className={styles.textExtraSmall}>evq</span>
                                     </p>
                                   </div>
@@ -227,18 +227,17 @@ export function HorseCardsCopy({ starters }) {
                                 <div className={styles.lowerRow1}>
                                   <p className={styles.distanz}>{result.distanz}m</p>
                                   <p className={styles.raceTime}>{result.race_time}</p>
-                                  <p className={styles.textLightEvq}>({result.abstand_zeit})</p>
+                                  <p className={styles.abstandZeit}>({result.abstand_zeit})</p>
                                 </div>
                                 <div className={styles.lowerRow2}>
                                   <p className={styles.distanz}>{displayedReiter}</p>
-                                  <p className={styles.textSmallLight}>
+                                  <p className={styles.abstandZeit}>
                                     <span>{result.gew}</span>
                                     <span>kg</span>
                                   </p>
                                 </div>
                                 <div className={styles.lowerRow3}>
                                   <p className={styles.passingOrder}>{result.passing_order ? result.passing_order : '----'}</p>
-                                  <p className={styles.commentText}>{result.comment ? result.comment : '----'}</p>
                                 </div>
                               </div>
                             </div>

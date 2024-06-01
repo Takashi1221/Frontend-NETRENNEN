@@ -139,6 +139,7 @@
 
     .racenumberContainer {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         max-width: 100%;
         gap: 5x;
