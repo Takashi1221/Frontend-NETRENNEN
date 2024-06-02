@@ -1,5 +1,5 @@
 .body {
-    background-color: #f3ede4;
+    background-color: #f7f5f3;
     min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
     margin: 0;
     padding: 0;
@@ -8,22 +8,18 @@
 .pageContainer {
     display: flex;
     flex-direction: column;
-}
-
-.headerText {
-    color: #122315;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 6vw;
-    font-weight: 800;
-    padding-left: 1vw;
+    align-items: center;
+    margin-bottom: 100px;
 }
 
 .bodyContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 1.8vw;
-    margin-left: 36vw;
-    margin-bottom: 6vw;
+    width: 1100px;
+    padding: 20px;
+    margin-top: 80px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
 }
 
 .nameContainer {
@@ -35,13 +31,13 @@
 }
 
 .horseName {
-    color: #f1f5f6;
+    color: #ffffff;
     font-size: 1.6rem;
     padding-left: 15px;
 }
 
 .horseAge {
-    color: #f1f5f6f1;
+    color: #ffffff;
     font-size: 1.2rem;
     padding-left: 15px;
 }
@@ -72,7 +68,9 @@
     width: 800px;
     min-height: 150px;
     margin-top: 15px;
+    margin-bottom: 40px;
     padding: 15px;
+    border-radius: 5px;
 }
 
 .main1LeftContainer {
@@ -148,7 +146,6 @@
 }
 
 .pedigreeSpace {
-
     display: flex;
     flex-direction: column;
     width: 400px;
@@ -198,7 +195,7 @@
 }
 
 .fatherColor {
-    background-color: #f3ede4;
+    background-color: #eaeaeace;
 }
 
 .motherColor {
@@ -208,19 +205,20 @@
 .mainContainer2 {
     background-color: #ffffff;
     display: flex;
-    width: 780px;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    width: 800px;
+    margin-bottom: 40px;
     padding: 15px;
+    border-radius: 5px;
 }
 
 .formenTabBG {
     background-color: #ffffff;
     display: flex;
-    width: 780px;
+    width: 800px;
     margin-top: 20px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     padding: 15px;
+    border-radius: 5px;
 }
 
 .resultsTableContainer {
@@ -259,7 +257,7 @@
 }
 
 .tableRowContainer:hover {
-    background-color: rgba(157, 157, 157, 0.526);
+    background-color: rgba(187, 187, 187, 0.189);
     color: rgb(209, 43, 43, 0.8);
 }
 
@@ -276,39 +274,32 @@
     text-decoration: underline;
 }
 
-.rowWidth190 {
-    width: 190px;
-    height: 28px;
-    font-size: 0.95rem;
-}
-
-.rowWidth150 {
-    display: flex;
-    width: 150px;
+.dateColumn  {
+    width: 100px;
     height: 28px;
     padding-left: 5px;
-    font-size: 0.95rem;
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
+    font-size: 0.9rem;
 }
 
-.rowWidth80 {
-    display: flex;
-    justify-content: flex-end;
-    width: 80px;
+.ortColumn, .kategorieColumn {
+    width: 170px;
     height: 28px;
-    padding-right: 10px;
-    font-size: 0.95rem;
+    padding-left: 5px;
+    font-size: 0.9rem;
 }
 
-.rowWidth70 {
-    display: flex;
-    justify-content: flex-end;
+.evqColumn, .distanzColumn, .gewColumn, .gagColumn {
     width: 70px;
     height: 28px;
-    padding-right: 10px;
-    font-size: 0.95rem;
+    padding-left: 5px;
+    font-size: 0.9rem;
+}
+
+.platzColumn {
+    width: 50px;
+    height: 28px;
+    padding-left: 5px;
+    font-size: 0.9rem;
 }
 
 .paddingLeft {
@@ -325,7 +316,7 @@
 }
 
 .evenRow {
-    background-color: #f3ede4;
+    background-color: #eaeaeace;
 }
 
 .tabPedigreeBG {
@@ -419,4 +410,324 @@
     margin-bottom: 6vw;
     min-height: 100vh;
     padding-left: 9vw;
+}
+
+@media (max-width: 500px) {
+    .bodyContainer {
+        width: 100%;
+        padding: 0;
+        margin-top: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 rgba(0, 0, 0, 0.1); 
+    }
+
+    .nameContainer {
+        background-color: #f7f5f3;
+        display: flex;
+        align-items: center;
+        height: 32px;
+        margin-bottom: 5px;
+    }
+    
+    .horseName {
+        color: #15950ce3;
+        font-size: 1.2rem;
+        padding-left: 10px;
+    }
+    
+    .horseAge {
+        color: #15950ce3;
+        font-size: 1rem;
+        padding-left: 10px;
+    }
+
+    .tablistStyle {
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+    
+    .tab {
+        padding: 10px;
+        font-size: 0.8rem;
+        color: #39433ace;
+    }
+
+    .mainContainer1 {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 40px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .main1LeftContainer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .photoSpace {
+        width: 60%;
+        height: 120px;
+        color: #adadadf0;
+        font-size: 0.8rem;
+    }
+    
+    .threadSpace {
+        width: 40%;
+        height: 120px;
+        color: #adadadf0;
+        font-size: 0.8rem;
+    }
+
+    .main1RightContainer {
+        width: 100%;
+    }
+    
+    .infoSpace {
+        width: 100%;
+        height: 250px;
+        margin-left: 0;
+        font-size: 0.85rem;
+        color: #353535bf;
+    }
+    
+    .infoTitle {
+        height: 30px;
+        padding-left: 0;
+        padding-bottom: 5px;
+        font-size: 0.95rem;
+        color: #252525e4;
+    }
+
+    .infoLeft {
+        width: 30%;
+    }
+    
+    .infoLeftRow {
+        border-right: 1px solid rgb(199, 204, 208);
+        border-bottom: 1px solid rgb(199, 204, 208);
+        border-left: 1px solid rgb(199, 204, 208);
+        padding: 3px 6px;
+    }
+    
+    .infoRight {
+        width: 70%;
+    }
+    
+    .infoRightRow {
+        border-right: 1px solid rgb(199, 204, 208);
+        border-bottom: 1px solid rgb(199, 204, 208);
+        padding: 3px 6px;
+    }
+
+    .pedigreeSpace {
+        width: 100%;
+        margin: -40px 0 0 0;
+    }
+    
+    .pedigreeTitle {
+        height: 30px;
+        padding-bottom: 3px;
+        font-size: 0.95rem;
+        color: #252525e4;
+    }
+    
+    .pedigreeRowContainer {
+        width: 100%;
+    }
+    
+    .pedigreeRow1 {
+        width: 100%;
+        height: 60px;
+        padding-left: 7.5px;
+        font-size: 0.9rem;
+        color: #353535bf;
+    }
+    
+    .pedigreeRow2 {
+        width: 100%;
+        height: 30px;
+        padding-left: 7.5px;
+        font-size: 0.9rem;
+        color: #353535bf;
+    }
+
+    .showMore {
+        padding: 10px 5px 5px 0;
+        font-size: 0.8rem;
+        color: #8b8a88bf;
+    }
+
+    .mainContainer2 {
+        background-color: #ffffff;
+        display: flex;
+        width: 100%;
+        overflow: auto;
+        margin-bottom: 40px;
+        padding: 5px;
+    }
+    
+    .resultsTitle {
+        display: flex;
+        align-items: center;
+        height: 30px;
+        padding-bottom: 3px;
+        font-size: 0.95rem;
+        color: #252525e4;
+    }
+    
+    .resultsTableColumns {
+        background-color: #282828d8;
+        padding: 2px 0 0 2px;
+        color: #FFFFFF;
+        font-size: 0.9rem;
+    }
+    
+    .resultsTableBody {
+        display: flex;
+        flex-direction: column;
+        color: #252525e4;
+    }
+    
+    .tableRowContainer {
+        display: flex;
+        align-items: center;
+        padding: 2px 0 0 2px;
+        border-bottom: 0.6px solid rgb(199, 204, 208);
+        cursor: pointer;
+    }
+    
+    .dateColumn  {
+        width: 90px;
+        height: 28px;
+        padding-left: 3px;
+        font-size: 0.85rem;
+    }
+    
+    .ortColumn, .kategorieColumn {
+        width: 160px;
+        height: 28px;
+        padding-left: 3px;
+        font-size: 0.85rem;
+    }
+    
+    .evqColumn, .distanzColumn, .gewColumn, .gagColumn {
+        width: 60px;
+        height: 28px;
+        padding-left: 2px;
+        font-size: 0.85rem;
+    }
+    
+    .platzColumn {
+        width: 50px;
+        height: 28px;
+        padding-left: 2px;
+        font-size: 0.85rem;
+    }
+
+    .formenTabBG {
+        background-color: #ffffff;
+        display: flex;
+        width: 100%;
+        overflow: auto;
+        margin-top: 15px;
+        margin-bottom: 40px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .tabPedigreeBG {
+        width: 100%;
+        overflow: auto;
+        height: auto;
+        margin-top: 15px;
+        margin-bottom: 40px;
+        padding: 5px;
+    }
+    
+    .pedigreeTabTitle {
+        display: flex;
+        align-items: center;
+        height: 30px;
+        padding: 20px 0;
+        font-size: 0.9rem;
+        color: #252525e4;
+    }
+    
+    .tabPedigreeContainer {
+        display: flex;
+        width: 825px;
+        height: 448px;
+        font-size: 0.9rem;
+        color: #252525e4;
+        border-top: 0.6px solid rgb(199, 204, 208);
+        border-left: 0.6px solid rgb(199, 204, 208);
+    }
+    
+    .pedigreeContainerDummy {
+        display: flex;
+        flex-direction: column;
+        width: 175px;
+        height: 448px;
+    }
+    
+    .pedigreeContainerOne {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 175px;
+        height: 448px;
+        padding-left: 20px;
+        border-right: 0.6px solid rgb(199, 204, 208);
+        border-bottom: 0.6px solid rgb(199, 204, 208);
+    }
+    
+    .pedigreeContainerTwo {
+        display: flex;
+        align-items: center;
+        width: 175px;
+        height: 224px;
+        padding-left: 10px;
+        border-right: 0.6px solid rgb(199, 204, 208);
+        border-bottom: 0.6px solid rgb(199, 204, 208);
+    }
+    
+    .pedigreeContainerThree {
+        display: flex;
+        align-items: center;
+        width: 175px;
+        height: 112px;
+        padding-left: 10px;
+        border-right: 0.6px solid rgb(199, 204, 208);
+        border-bottom: 0.6px solid rgb(199, 204, 208);
+    }
+    
+    .pedigreeContainerFour {
+        display: flex;
+        align-items: center;
+        width: 150px;
+        height: 56px;
+        font-size: 0.8rem;
+        padding-left: 10px;
+        border-right: 0.6px solid rgb(199, 204, 208);
+        border-bottom: 0.6px solid rgb(199, 204, 208);
+    }
+    
+    .pedigreeContainerFive {
+        display: flex;
+        align-items: center;
+        width: 150px;
+        height: 28px;
+        font-size: 0.8rem;
+        padding-left: 10px;
+        border-right: 0.6px solid rgb(199, 204, 208);
+        border-bottom: 0.6px solid rgb(199, 204, 208);
+    }
+
+
+
 }

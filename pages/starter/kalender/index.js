@@ -30,11 +30,10 @@ function RennKalender() {
                 <div className={styles.bodyContainer}>
                     <div className={styles.contentHeader}>
                         <p><CalendarMonthIcon sx={{ 
-                                    marginLeft: '1vw',
-                                    marginRight: '0.5vw',
-                                    paddingBottom: '0.2vw',
-                                    fontSize: '2vw', 
-                                    color: '#122315'
+                                    marginRight: '5px',
+                                    paddingBottom: '7px',
+                                    fontSize: '2.4rem', 
+                                    color: '#282828d8'
                                 }} /></p>
                         <p>Wichtigste Renntermine</p>
                     </div>
@@ -59,7 +58,7 @@ function RennKalender() {
                                 year: 'numeric' // 年も含める必要があれば追加
                             }).replace(/(\d{2})\.(\d{2})\.(\d{4})/, '$1.$2.'); // フォーマットを 'dd.mm.' にする
                             // 偶数行の場合は `evenRow` クラスを適用
-                            const rowClass = index % 2 === 0 ? `${styles.tableRow} ${styles.evenRow}` : styles.tableRow;
+                            const rowClass = index % 2 === 0 ? styles.tableRow : `${styles.tableRow} ${styles.evenRow}`;
                             return (
                                 <div className={rowClass} key={index}>
                                     <p className={styles.columnWigth70}>{dateString}</p>

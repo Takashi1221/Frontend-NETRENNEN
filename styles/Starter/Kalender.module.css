@@ -8,8 +8,9 @@
 .pageContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 20%;
-    margin-right: 20%;
+    align-items: center;
+    margin-left: 300px;
+    margin-right: 300px;
     margin-bottom: 80px;
 }
 
@@ -45,58 +46,50 @@
 }
 
 .bodyContainer {
-    background-color: #fefefd;
     display: flex;
     flex-direction: column;
-    width: 48vw;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 40px;
     margin-bottom: 100px;
+    padding: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
 }
 
 .contentHeader {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin: 10px;
-    color: #122315;
-    font-size: 1.1vw;
+    color: #282828d8;
+    font-size: 1.4rem;
 }
 
 .tableContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #282828d8;
 }
 
 .jahrText {
-    color: #122315;
-    font-size: 0.7vw;
-    margin-left: 40px;
+    color: #8b8a88bf;
+    font-size: 0.9rem;
 }
 
 .tableHeader {
-    background-color: #107623d1;
+    background-color: #282828d8;
     display: flex;
-    margin-right: auto;
-    padding-top: 0.2vw;
-    padding-bottom: 0.2vw;
     color: #f9f7f4;
+    padding: 3px 0;
 }
 
 .tableRow {
     display: flex;
-    margin-right: auto;
-    padding-top: 0.3vw;
-    padding-bottom: 0.3vw;
-    border-bottom: 1px solid rgb(199, 204, 208);
+    padding: 4px 0;
 }
 
 .evenRow {
-    background-color: #f7f4ef;
+    background-color: #eaeaeace;
 }
 
 .columnWigth60 {
@@ -112,7 +105,7 @@
 .columnWigth90 {
     display: flex;
     justify-content: flex-end;
-    padding-right: 0.6vw;
+    padding-right: 20px;
     width: 90px;
 }
 
@@ -142,4 +135,84 @@
     color: #122315;
     font-size: 0.8vw;
     margin-left: 2vw;
+}
+
+@media (max-width: 500px) {
+    .pageContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 80px;
+    }
+
+    .bodyContainer {
+        width: 100%;
+        overflow-x: auto;
+        margin-top: 20px;
+        margin-bottom: 100px;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
+    }
+
+    .headerContainer {
+        margin-top: 20px;
+    }
+    
+    .headerText {
+        font-size: 1.4rem;
+    }
+
+    .contentHeader {
+        margin: 5px;
+        font-size: 1.2rem;
+    }
+    
+    .tableContainer {
+        font-size: 0.85rem;
+    }
+    
+    .jahrText {
+        font-size: 0.8rem;
+    }
+    
+    .tableHeader {
+        width: 1010px;
+        padding: 2px 0;
+    }
+
+    .columnWigth60 {
+        width: 60px;
+    }
+    
+    .columnWigth70 {
+        display: flex;
+        justify-content:center;
+        width: 70px;
+    }
+    
+    .columnWigth90 {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20px;
+        width: 90px;
+    }
+    
+    .columnWigth100 {
+        width: 100px;
+    }
+    
+    .columnWigth140 {
+        width: 140px;
+    }
+    
+    .columnWigth450 {
+        width: 450px;
+    }
+
+    .tableRow {
+        width: 1010px;
+    }
+
 }

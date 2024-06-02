@@ -8,6 +8,7 @@
 .pageContainer {
     display: flex;
     flex-direction: column;
+    padding: 0 0 0 300px;
 }
 
 .headerText {
@@ -20,16 +21,21 @@
 
 .infoContainer {
     display: flex;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .infoNumber {
-    background-color: #044349;
+    background-color: #606060ca;
+    display: flex;
+    align-items: center;
     color: #f1f5f6;
-    font-size: 1.8rem;
-    margin: 0 0 1.5%;
-    padding: 1%;
+    font-size: 1.2rem;
+    margin-right: 2px;
+    margin-bottom: 40px;
+    padding: 6px 12px;
     border-radius: 5px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .infoTextContainer{
@@ -40,7 +46,8 @@
 }
 
 .titleText{
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    color: #282828d8;
 }
 
 .infoText {
@@ -48,6 +55,7 @@
     flex-direction: row;
     padding: auto;
     font-size: 0.9rem;
+    color: #39433ace;
 }
 
 .infoTextRightMargin {
@@ -57,22 +65,23 @@
 .resultsTableContainer {
     display: flex;
     flex-direction: column;
+    margin-bottom: 60px;
 }
 
 .resultsTableColumns {
-    background-color: #122315d1;
+    background-color: #282828d8;
     display: flex;
     align-items: center;
     width: 1285px;
     height: 32px;
     color: #FFFFFF;
-    font-size: 1.0rem;
+    font-size: 0.9rem;
 }
 
 .resultsTableBody {
     display: flex;
     flex-direction: column;
-    color: #033034;
+    color: #282828d8;
 }
 
 .tableRowContainer {
@@ -93,62 +102,72 @@
 
 .rowWidth200 {
     width: 200px;
+    padding-left: 3px;
 }
 
 .rowWidthName {
     width: 200px;
+    font-size: 0.95rem;
+    color: #15950ce3;
     cursor: pointer;
+    padding-left: 3px;
 }
 
 .rowWidthName:hover {
-    background-color: rgba(225, 216, 216, 0.524);
+    background-color: rgba(225, 216, 216, 0.221);
     color: rgb(209, 43, 43, 0.8);
 }
 
 .rowWidth190 {
     width: 190px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    padding-left: 3px;
 }
 
 .rowWidth180 {
     width: 180px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    padding-left: 3px;
 }
 
 .rowWidth120 {
     width: 120px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    padding-left: 3px;
 }
 
 .rowWidth80 {
     width: 80px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    padding-left: 3px;
 }
 
 .rowWidth60 {
     width: 60px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    padding-left: 3px;
 }
 
 .rowWidth35 {
     width: 35px;
-    padding-left: 1px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    padding-left: 2px;
 }
 
 .payContainer {
     display: flex;
     flex-direction: column;
     width: 200px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    margin-bottom: 120px;
 }
 
 .payTableColumn {
-    background-color: #122315d1;
+    background-color: #282828d8;
     display: flex;
     align-items: center;
     height: 32px;
-    padding-left: 2px;
+    padding-left: 8px;
     color: #FFFFFF;
 }
 
@@ -160,21 +179,21 @@
     display: flex;
     flex-direction: column;
     width: 80px;
-    color: #033034;
+    color: #282828d8;
 }
 
 .payVolumeContainer {
     display: flex;
     flex-direction: column;
     width: 120px;
-    color: #033034;
+    color: #282828d8;
 }
 
 .payRow {
     display: flex;
     align-items: center;
     height: 32px;
-    padding-left: 2px;
+    padding-left: 8px;
     border-bottom: 0.6px solid rgb(199, 204, 208);
 }
 

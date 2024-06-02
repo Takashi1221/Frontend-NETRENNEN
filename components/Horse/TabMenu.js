@@ -1,15 +1,15 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import Link from 'next/link';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import styles from '/styles/Horse/HorsePage.module.css';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import LooksOneIcon from '@mui/icons-material/LooksOne';
 import LooksTwoIcon from '@mui/icons-material/LooksTwo';
 import Looks3Icon from '@mui/icons-material/Looks3';
 import { Loading } from '../Loading';
+import styles from '/styles/Horse/HorsePage.module.css';
 
 
 export function HorseMenuTabs() {
@@ -81,9 +81,6 @@ export function HorseMenuTabs() {
   if (!horseData || horseData.length === 0 || !horseData[0] || horseData[0].length === 0 || !horseData[0][0] || horseData[0][0].length === 0) {
     if (timeoutMessage) {
       return <div className={styles.pageContainer}>
-                <div className={styles.headerText}>
-                    PFERD
-                </div>
                 <div className={styles.noDataContainer}>{timeoutMessage}</div>
               </div>;
     }
@@ -93,9 +90,6 @@ export function HorseMenuTabs() {
 
   return (
     <div className={styles.pageContainer}>
-      <div className={styles.headerText}>
-          PFERD
-      </div>
       <div className={styles.bodyContainer}>
         <div className={styles.nameContainer}>
           <p className={styles.horseName}>{horseData[0][0][0].name}</p>
@@ -104,7 +98,7 @@ export function HorseMenuTabs() {
 
         <Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}>
           <TabList className={styles.tablistStyle}>
-            <Tab className={styles.tab}>TOP</Tab>
+            <Tab className={styles.tab}>Top</Tab>
             <Tab className={styles.tab}>Formen</Tab>
             <Tab className={styles.tab}>Pedigree</Tab>
           </TabList>
@@ -171,14 +165,14 @@ export function HorseMenuTabs() {
                   <span className={styles.paddingLeftMini}>Formen</span>
                 </div>
                 <div className={styles.resultsTableColumns}>
-                    <p className={styles.rowWidth80}>Date</p>
-                    <p className={styles.rowWidth150}>Ort</p>
-                    <p className={styles.rowWidth150}>Kategorie</p>
-                    <p className={styles.rowWidth70}>Evq.</p>
-                    <p className={styles.rowWidth70}>Pl.</p>
-                    <p className={styles.rowWidth80}>Distanz</p>
-                    <p className={styles.rowWidth70}>Gew.</p>
-                    <p className={styles.rowWidth70}>GAG</p>
+                    <p className={styles.dateColumn}>Date</p>
+                    <p className={styles.ortColumn}>Ort</p>
+                    <p className={styles.kategorieColumn}>Kategorie</p>
+                    <p className={styles.evqColumn}>Evq.</p>
+                    <p className={styles.platzColumn}>Pl.</p>
+                    <p className={styles.distanzColumn}>Distanz</p>
+                    <p className={styles.gewColumn}>Gew.</p>
+                    <p className={styles.gagColumn}>GAG</p>
                 </div>
                 <div className={styles.resultsTableBody}>
                   {horseData[2][0].slice(0, 3).map((record, index) => { // 最初の3つのレコードのみマップする
@@ -193,18 +187,18 @@ export function HorseMenuTabs() {
 
                     return (
                       <Link key={index} href={`/results/${record.race_id}`} className={`${styles.tableRowContainer} ${rowStyle}`}>
-                          <p className={styles.rowWidth80}>{dateString}</p>
-                          <p className={styles.rowWidth150}>{record.ort}</p>
-                          <p className={styles.rowWidth150}>{record.kategorie}</p>
-                          <p className={styles.rowWidth70}>{record.evq}</p>
-                          <p className={styles.rowWidth70}>{record.platz} / {record.strs}</p>
-                          <p className={styles.rowWidth80}>{record.distanz}m</p>
-                          <p className={styles.rowWidth70}>{record.gew}kg</p>
-                          <p className={styles.rowWidth70}>{record.gag}kg</p>
+                          <p className={styles.dateColumn}>{dateString}</p>
+                          <p className={styles.ortColumn}>{record.ort}</p>
+                          <p className={styles.kategorieColumn}>{record.kategorie}</p>
+                          <p className={styles.evqColumn}>{record.evq}</p>
+                          <p className={styles.platzColumn}>{record.platz}/{record.strs}</p>
+                          <p className={styles.distanzColumn}>{record.distanz}m</p>
+                          <p className={styles.gewColumn}>{record.gew}kg</p>
+                          <p className={styles.gagColumn}>{record.gag}kg</p>
                       </Link>
                     );
                   })}
-
+                  
                   {/* Mehr Anzeigen ボタンの表示条件 */}
                   {horseData[2][0].length > 3 && (
                     <div className={styles.showMore} onClick={selectFormenTab}>
@@ -226,14 +220,14 @@ export function HorseMenuTabs() {
                   <span className={styles.paddingLeftMini}>Formen</span>
                 </div>
                 <div className={styles.resultsTableColumns}>
-                    <p className={styles.rowWidth80}>Date</p>
-                    <p className={styles.rowWidth150}>Ort</p>
-                    <p className={styles.rowWidth150}>Kategorie</p>
-                    <p className={styles.rowWidth70}>Evq.</p>
-                    <p className={styles.rowWidth70}>Pl.</p>
-                    <p className={styles.rowWidth80}>Distanz</p>
-                    <p className={styles.rowWidth70}>Gew.</p>
-                    <p className={styles.rowWidth70}>GAG</p>
+                    <p className={styles.dateColumn}>Date</p>
+                    <p className={styles.ortColumn}>Ort</p>
+                    <p className={styles.kategorieColumn}>Kategorie</p>
+                    <p className={styles.evqColumn}>Evq.</p>
+                    <p className={styles.platzColumn}>Pl.</p>
+                    <p className={styles.distanzColumn}>Distanz</p>
+                    <p className={styles.gewColumn}>Gew.</p>
+                    <p className={styles.gagColumn}>GAG</p>
                 </div>
                 <div className={styles.resultsTableBody}>
                   {horseData[2][0].map((record, index) => {
@@ -248,14 +242,14 @@ export function HorseMenuTabs() {
 
                     return (
                       <Link key={index} href={`/results/${record.race_id}`} className={`${styles.tableRowContainer} ${rowStyle}`}>
-                        <p className={styles.rowWidth80}>{dateString}</p>
-                        <p className={styles.rowWidth150}>{record.ort}</p>
-                        <p className={styles.rowWidth150}>{record.kategorie}</p>
-                        <p className={styles.rowWidth70}>{record.evq}</p>
-                        <p className={styles.rowWidth70}>{record.platz} / {record.strs}</p>
-                        <p className={styles.rowWidth80}>{record.distanz}m</p>
-                        <p className={styles.rowWidth70}>{record.gew}kg</p>
-                        <p className={styles.rowWidth70}>{record.gag}kg</p>
+                        <p className={styles.dateColumn}>{dateString}</p>
+                        <p className={styles.ortColumn}>{record.ort}</p>
+                        <p className={styles.kategorieColumn}>{record.kategorie}</p>
+                        <p className={styles.evqColumn}>{record.evq}</p>
+                        <p className={styles.platzColumn}>{record.platz} / {record.strs}</p>
+                        <p className={styles.distanzColumn}>{record.distanz}m</p>
+                        <p className={styles.gewColumn}>{record.gew}kg</p>
+                        <p className={styles.gagColumn}>{record.gag}kg</p>
                       </Link>
                     );
                   })}
