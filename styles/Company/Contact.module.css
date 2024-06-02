@@ -80,3 +80,71 @@
 .sendSuccessedText {
     margin-bottom: 20px;
 }
+
+@media (max-width: 500px) {
+    .pageContainer {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+        margin-bottom: 150px;
+    }
+    
+    .headerContainer {
+        margin-top: 20px;
+    }
+    
+    .headerText {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-left: 5px;
+    }
+    
+    .bodyContainer {
+        display: flex;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    .formContainer {
+        width: 100%;
+        height: 500px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
+    }
+    
+    .formHeader {
+        color: rgba(59, 59, 59, 0.724);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.85rem;
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    .formHeader p {
+        margin-bottom: 5px;
+    }
+    
+    .formBodyContainer {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+    }
+    
+    .sendSuccessed {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #484d49b4;
+        font-size: 1rem;
+    }
+    
+    .sendSuccessedText {
+        margin-bottom: 20px;
+    }
+
+}

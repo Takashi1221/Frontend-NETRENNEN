@@ -145,3 +145,135 @@
     font-size: 0.8em;
     color: #888;
 }
+
+@media (max-width: 500px) {
+    .pageContainer {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 120px;
+        padding: 0 5px;
+    }
+    
+    .headerContainer {
+        margin-top: 20px;
+    }
+    
+    .headerText {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-left: 10px;
+    }
+
+    .bodyContainer {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .card {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        flex: 1 1 100%;
+        width: 100%;
+        height: 100px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        overflow: hidden;
+    }
+    
+    .card:hover {
+        background-color: #ecf1e8;
+    }
+      
+    .largeCard {
+        background-color: #ffffff;
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+        height: 275px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        overflow: hidden;
+    }
+    
+    .largeCard:hover {
+        background-color: #ecf1e8;
+    }
+      
+    .imageContainer {
+        position: relative;
+        
+    }
+      
+    .card .imageContainer {
+        width: 120px;
+        height: 100px; 
+    }
+      
+    .largeCard .imageContainer {
+        width: 100%;
+        height: 150px; 
+    }
+      
+    .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+      
+    .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+        padding: 5px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .card .text {
+        height: 100px;
+        width: 66%;
+        padding: 5px;
+        margin-top: -100px;
+        margin-left: 125px;
+    }
+      
+    .text h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        color: #353535d5;
+        margin: 0 0 5px 0;
+    }
+      
+    .text p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.75rem;
+        margin: 0 0 5px 0;
+        color: #5a5a5ad3;
+    }
+      
+    .date {
+        font-size: 0.65rem;
+    }
+    
+    .genre {
+        font-size: 0.65rem;
+        color: #888;
+    }
+
+    .card .text h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.9rem;
+        color: #353535d5;
+        margin: 0;
+    }
+}

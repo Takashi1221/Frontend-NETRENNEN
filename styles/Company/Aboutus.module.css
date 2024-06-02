@@ -65,3 +65,66 @@
 .textSpace {
     margin-bottom: 40px;
 }
+
+.bodyContainerMobil {
+    display: none;
+}
+
+.aboutImgContainerMobil {
+    display: none;
+}
+
+.aboutTextContainerMobil {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .pageContainer {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 80px;
+    }
+    
+    .headerContainer {
+        margin-top: 20px;
+    }
+    
+    .headerText {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-left: 10px;
+    }
+    
+    .bodyContainer {
+        display: none;
+    }
+
+    .bodyContainerMobil {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .aboutImgContainerMobil {
+        display: flex;
+        height: 150px;
+        background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/DubaiSheemaClassic111.jpg');
+        background-size: cover; 
+        background-position: center; 
+    }
+
+    .aboutTextContainerMobil {
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        color: #444444b9;
+        font-size: 0.9rem;
+        margin: 0;
+        padding: 20px 10px 10px 10px;
+    }
+
+    .textSpace {
+        margin-bottom: 40px;
+    }
+
+}

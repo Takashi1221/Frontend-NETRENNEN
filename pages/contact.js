@@ -103,6 +103,16 @@ export default function ContactForm () {
                                             backgroundColor: '#1FC613 !important', 
                                             '&:hover': { 
                                                 backgroundColor: '#3CB371 !important' 
+                                            },
+                                            fontSize: '1rem', // デフォルトのフォントサイズ
+                                            padding: '10px 20px', // デフォルトのパディング
+                                            '@media (max-width: 500px)': { // スマートフォン用のスタイル
+                                            fontSize: '0.8rem',
+                                            padding: '8px 16px',
+                                            mt: 0, 
+                                            mb: 0,
+                                            width: '70%',
+                                            marginLeft: '40px',
                                             }
                                         }}
                                     >
