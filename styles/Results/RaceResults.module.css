@@ -1,5 +1,5 @@
 .body {
-    background-color: #f3ede4;
+    background-color: #f7f5f3;
     min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
     margin: 0;
     padding: 0;
@@ -18,17 +18,8 @@
     padding-left: 1vw;
 }
 
-.bodyContainer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1.8vw;
-    margin-left: 12vw;
-    margin-bottom: 6vw;
-}
-
 .infoContainer {
     display: flex;
-    margin: 0.5% 0.5% 0.5% 18%;  /* フレームの左右に余白 */
 }
 
 .infoNumber {
@@ -37,7 +28,7 @@
     font-size: 1.8rem;
     margin: 0 0 1.5%;
     padding: 1%;
-    border-radius: 10px; /* 角の丸みを指定 */
+    border-radius: 5px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -66,7 +57,6 @@
 .resultsTableContainer {
     display: flex;
     flex-direction: column;
-    margin: 0.5% 0.5% 0.5% 18%;  /* フレームの左右に余白 */
 }
 
 .resultsTableColumns {
@@ -91,6 +81,14 @@
     width: 1285px;
     height: 32px;
     border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+.oddRow {
+    background-color: #eaeaeace;
+}
+  
+.evenRow {
+    background-color: #f9f9f9;
 }
 
 .rowWidth200 {
@@ -142,7 +140,6 @@
     display: flex;
     flex-direction: column;
     width: 200px;
-    margin: 2.5% 0.5% 2.5% 18%;
     font-size: 0.95rem;
 }
 
@@ -179,4 +176,180 @@
     height: 32px;
     padding-left: 2px;
     border-bottom: 0.6px solid rgb(199, 204, 208);
+}
+
+@media (max-width: 500px) {
+
+    .pageContainer {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .infoContainer {
+        display: flex;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+
+    .infoNumber {
+        background-color: #606060ca;
+        display: flex;
+        align-items: center;
+        color: #f1f5f6;
+        font-size: 0.9rem;
+        margin-right: 3px;
+        margin-bottom: 50px;
+        padding: 4px 6px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .infoTextContainer{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+    
+    .titleText{
+        margin-left: 3px;
+        font-size: 1rem;
+        color: #282828d8;
+    }
+    
+    .infoText {
+        font-size: 0.8rem;
+        color: #39433ace;
+        margin-bottom: -2px;
+        padding: 0;
+    }
+    
+    .infoTextRightMargin {
+        margin-left: 8px;
+        margin-right: 0;
+    }
+
+    .resultsTableContainer {
+        width: 100%;
+        overflow-x: auto;
+        margin-bottom: 40px;
+    }
+    
+    .resultsTableColumns {
+        background-color: #282828d8;
+        display: flex;
+        align-items: center;
+        width: 1285px;
+        height: 27px;
+        color: #FFFFFF;
+        font-size: 0.8rem;
+    }
+    
+    .resultsTableBody {
+        display: flex;
+        flex-direction: column;
+        color: #282828d8;
+        font-size: 0.8rem;
+    }
+    
+    .tableRowContainer {
+        display: flex;
+        align-items: center;
+        width: 1285px;
+        height: 32px;
+        border-bottom: 0.6px solid rgb(199, 204, 208);
+    }
+    
+    .rowWidth200 {
+        width: 180px;
+        padding-left: 3px;
+    }
+    
+    .rowWidthName {
+        width: 180px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        color: #15950ce3;
+        padding-left: 3px;
+    }
+    
+    .rowWidthName:hover {
+        background-color: rgba(240, 237, 237, 0.194);
+        color: rgb(209, 43, 43, 0.8);
+    }
+    
+    .rowWidth190 {
+        width: 190px;
+        font-size: 0.8rem;
+        padding-left: 3px;
+    }
+    
+    .rowWidth180 {
+        width: 180px;
+        font-size: 0.8rem;
+        padding-left: 3px;
+    }
+    
+    .rowWidth120 {
+        width: 120px;
+        font-size: 0.8rem;
+        padding-left: 3px;
+    }
+    
+    .rowWidth80 {
+        width: 80px;
+        font-size: 0.8rem;
+        padding-left: 3px;
+    }
+    
+    .rowWidth60 {
+        width: 60px;
+        font-size: 0.8rem;
+        padding-left: 3px;
+    }
+    
+    .rowWidth35 {
+        width: 35px;
+        padding-left: 1px;
+        font-size: 0.8rem;
+        padding-left: 3px;
+    }
+
+    .payContainer {
+        margin-bottom: 120px;
+    }
+
+    .payTableColumn {
+        background-color: #282828d8;
+        height: 27px;
+        padding-left: 8px;
+        color: #FFFFFF;
+        font-size: 0.8rem;
+    }
+    
+    .payTitleContainer {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        color: #282828d8;
+        font-size: 0.8rem;
+    }
+    
+    .payVolumeContainer {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        color: #282828d8;
+        font-size: 0.8rem;
+    }
+    
+    .payRow {
+        display: flex;
+        align-items: center;
+        height: 32px;
+        padding-left: 8px;
+        border-bottom: 0.6px solid rgb(199, 204, 208);
+    }
+    
+
 }

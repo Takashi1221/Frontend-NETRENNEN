@@ -6,6 +6,8 @@ import styles from '/styles/Starter/Raceid.module.css';
 export function RaceNumberTabs({ raceDetail }) {
   
   const [uniqueRecords, setUniqueRecords] = useState([]);
+  const [selectedRaceId, setSelectedRaceId] = useState(raceDetail[0].race_id);
+
 
   useEffect(() => {
     const fetchRecords = async () => {
@@ -35,17 +37,32 @@ export function RaceNumberTabs({ raceDetail }) {
     fetchRecords();
   }, [raceDetail]);
 
-  return (
-    <div className={styles.racenumberContainer}>
-      {uniqueRecords.map((record, index) => (
-        <Link key={record.race_id} href={`/results/${record.race_id}`} passHref>
-          <button className={styles.racenumberButton}>
-            {index + 1}R
-          </button>
-        </Link>
-      ))}
-      {/* 必要なら戻るボタンを作成 */}
+  const handleRaceSelect = (raceId) => {
+    setSelectedRaceId(raceId);
+  };
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' });
+  };
+
+  return (
+    <div className={styles.headerContainer}>
+      <div className={styles.dayLocationContainer}>
+        <p className={styles.dayLocation}>{formatDate(raceDetail[0].date)} {raceDetail[0].ort}</p>
+      </div>
+      <div className={styles.racenumberContainer}>
+        {uniqueRecords.map((record, index) => (
+          <Link key={record.race_id} href={`/results/${record.race_id}`} passHref>
+            <button 
+            className={`${styles.racenumberButton} ${selectedRaceId === record.race_id ? styles.selectedButton : ''}`}
+            onClick={() => handleRaceSelect(record.race_id)}
+            >
+              {index + 1}R
+            </button>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

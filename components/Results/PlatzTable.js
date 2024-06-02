@@ -4,6 +4,10 @@ import styles from '/styles/Results/RaceResults.module.css';
 
 export function ResultsTable({ raceDetail }) {
 
+    const formatPreisgeld = (preisgeld) => {
+        return preisgeld === 'nan' || preisgeld === null ? '0 €' : `${preisgeld}`;
+    };
+
     return (
         <div>
             <div className={styles.resultsTableContainer}>
@@ -23,7 +27,10 @@ export function ResultsTable({ raceDetail }) {
                 </div>
                 <div className={styles.resultsTableBody}>
                     {raceDetail.map((record, index) => (
-                        <div className={styles.tableRowContainer} key={index}>
+                        <div
+                            className={`${styles.tableRowContainer} ${index % 2 === 0 ? styles.evenRow : styles.oddRow}`}
+                            key={index}
+                        >
                             <p className={styles.rowWidth35}>{record.platz}</p>
                             <Link href={`/horse/${record.horse_id}`}>
                                 <p className={styles.rowWidthName}>{record.name.slice(0, 22)}</p>
@@ -37,7 +44,7 @@ export function ResultsTable({ raceDetail }) {
                             <p className={styles.rowWidth190}>{record.trainer.slice(0, 20)}</p>
                             <p className={styles.rowWidth190}>{record.besitzer.slice(0, 20)}</p>
                             <p className={styles.rowWidth60}>{record.evq}</p>
-                            <p className={styles.rowWidth80}>{record.preisgeld}</p>
+                            <p className={styles.rowWidth80}>{formatPreisgeld(record.preisgeld)}</p>
                         </div>
                     ))}
                 </div>
@@ -46,21 +53,19 @@ export function ResultsTable({ raceDetail }) {
                 <div className={styles.payTableColumn}>Gewinn (Quote/1€)</div>
                 <div className={styles.payTableBody}>
                     <div className={styles.payTitleContainer}>
-                        <p className={styles.payRow}>Sieg</p>
-                        <p className={styles.payRow}>Platz</p>
-                        <p className={styles.payRow}>Zweier</p>
-                        <p className={styles.payRow}>Dreier</p>
+                        <p className={`${styles.payRow} ${styles.evenRow}`}>Sieg</p>
+                        <p className={`${styles.payRow} ${styles.oddRow}`}>Platz</p>
+                        <p className={`${styles.payRow} ${styles.evenRow}`}>Zweier</p>
+                        <p className={`${styles.payRow} ${styles.oddRow}`}>Dreier</p>
                     </div>
                     <div className={styles.payVolumeContainer}>
-                        <p className={styles.payRow}>{raceDetail[0].pay_sieg}</p>
-                        <p className={styles.payRow}>{raceDetail[0].pay_platz}</p>
-                        <p className={styles.payRow}>{raceDetail[0].pay_zweier}</p>
-                        <p className={styles.payRow}>{raceDetail[0].pay_dreier}</p>
+                        <p className={`${styles.payRow} ${styles.evenRow}`}>{raceDetail[0].pay_sieg}</p>
+                        <p className={`${styles.payRow} ${styles.oddRow}`}>{raceDetail[0].pay_platz}</p>
+                        <p className={`${styles.payRow} ${styles.evenRow}`}>{raceDetail[0].pay_zweier}</p>
+                        <p className={`${styles.payRow} ${styles.oddRow}`}>{raceDetail[0].pay_dreier}</p>
                     </div>
                 </div>
             </div>
         </div>
-
     );
-
 }

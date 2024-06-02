@@ -7,13 +7,10 @@ export function RaceInfo({ raceDetail }) {
       <div className={styles.infoTextContainer}>
         <p className={styles.titleText}>{raceDetail[0].title}</p>
         <div className={styles.infoText}>
-          <p className={styles.infoTextRightMargin}>{raceDetail[0].date} </p>
-          <p className={styles.infoTextRightMargin}>{raceDetail[0].ort} </p>
-          <p className={styles.infoTextRightMargin}>{raceDetail[0].time} </p>
+          <p className={styles.infoTextRightMargin}>{raceDetail[0].distanz}</p>
+          <p className={styles.infoTextRightMargin}>{raceDetail[0].kategorie} </p>
         </div>
         <div className={styles.infoText}>
-          <p className={styles.infoTextRightMargin}>{raceDetail[0].distanz} </p>
-          <p className={styles.infoTextRightMargin}>{raceDetail[0].kategorie} </p>
           <p className={styles.infoTextRightMargin}>{raceDetail[0].boden}</p>
         </div>
       </div>

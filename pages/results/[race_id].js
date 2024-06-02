@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import styles from '/styles/Results/RaceResults.module.css';
+
 import { Header } from '../../components/Header/Header';
 import { LoginModal } from '../../components/Header/LoginModal';
 import { RaceInfo } from '../../components/Results/RaceInfo';
 import { RaceNumberTabs } from '../../components/Results/RaceNumberTabs';
 import { ResultsTable } from '../../components/Results/PlatzTable';
 import { Footer } from '../../components/Header/Footer';
+import styles from '/styles/Results/RaceResults.module.css';
 
 
 
@@ -47,21 +48,12 @@ function RaceResults() {
       <Header />
       <LoginModal />
       <div className={styles.pageContainer}>
-        <div className={styles.headerText}>
-            ERGEBNISSE
-        </div>
-        <div className={styles.bodyContainer}>
-
-          {/* レース番号タブ */}
-          <RaceNumberTabs raceDetail={raceDetail} />
-          {/* レース情報コンテナ */}
-          <RaceInfo raceDetail={raceDetail} />
-          
-          {/* レース結果テーブル */}
-          <ResultsTable raceDetail={raceDetail} />
-
-        {/*ページの大枠コンテナここまで */}
-        </div>
+        {/* レース番号タブ */}
+        <RaceNumberTabs raceDetail={raceDetail} />
+        {/* レース情報コンテナ */}
+        <RaceInfo raceDetail={raceDetail} />  
+        {/* レース結果テーブル */}
+        <ResultsTable raceDetail={raceDetail} />
       </div>
       <Footer />
     </div>
