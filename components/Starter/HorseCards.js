@@ -14,6 +14,7 @@ export function HorseCardsCopy({ starters }) {
   const [enhancedStarters, setEnhancedStarters] = useState([]);
   const [visibleResults, setVisibleResults] = useState({});
   const [isMobile, setIsMobile] = useState(false);
+  const [oddsData, setOddsData] = useState([]);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -45,6 +46,19 @@ export function HorseCardsCopy({ starters }) {
     }
   }, [starters]);
 
+  useEffect(() => {
+    const fetchOddsData = async () => {
+      if (starters && starters.length > 0) {
+        const raceId = starters[0].race_id; // starters配列の最初のrace_idを使用
+        const oddsData = await fetch(`/api/todayodds/?race_id=${raceId}`).then(res => res.json());
+        setOddsData(oddsData);
+        console.log(oddsData)
+      }
+    };
+
+    fetchOddsData();
+  }, [starters]);
+
   const truncateGew = (gew) => {
     const patterns = ['Erl.', 'Mgw.'];
     let truncatedGew = gew;
@@ -66,6 +80,18 @@ export function HorseCardsCopy({ starters }) {
     }));
   };
 
+  const getOddsDataForHorse = (horseId) => {
+    const odds = oddsData.find(odds => odds.horse_id === horseId);
+    const oddsValue = odds ? odds.quote : '[....]';
+    const oddsClass = oddsValue.length === 3 ? styles.oddsHoch : styles.odds;
+    return { oddsValue, oddsClass };
+  };
+
+  const getHorseContainerClass = (horseId) => {
+    const { oddsValue } = getOddsDataForHorse(horseId);
+    return oddsValue === 'NS' ? styles.horseContainerNs : styles.horseContainer;
+  };
+
   if (!starters) {
     return (
       <div>....</div>
@@ -78,7 +104,7 @@ export function HorseCardsCopy({ starters }) {
         <div className={styles.mobilMainContainer}>
           {enhancedStarters.map((horse, index) => (
             <div className={styles.horseWrapper} key={horse.id}>
-              <div className={styles.horseContainer}>
+              <div className={getHorseContainerClass(horse.horse_id)}>
                 <div className={styles.markBox}>
                   <p className={styles.number}>{horse.number}</p>
                   <p className={styles.number}>({horse.box})</p>
@@ -105,7 +131,7 @@ export function HorseCardsCopy({ starters }) {
                     <span>{truncateGew(horse.gew)} / {horse.gag}</span>
                   </p>
                   <p className={styles.oddsAndButton}>
-                    <span className={styles.odds}>[....]</span>
+                  <span className={getOddsDataForHorse(horse.horse_id).oddsClass}>{getOddsDataForHorse(horse.horse_id).oddsValue}</span>
                     <button 
                       className={styles.showSwiper}
                       onClick={() => toggleResultsVisibility(horse.id)}
@@ -189,6 +215,12 @@ export function HorseCardsCopy({ starters }) {
                           }
                         }
 
+                        // ドットをカンマに置換する処理
+                        const evqTransformed = typeof result.evq === 'string' ? result.evq.replace(/\./g, ',') : (typeof result.evq === 'number' ? result.evq.toString().replace(/\./g, ',') : result.evq);
+                        const abstandZeitTransformed = typeof result.abstand_zeit === 'string' ? result.abstand_zeit.replace(/\./g, ',') : (typeof result.abstand_zeit === 'number' ? result.abstand_zeit.toString().replace(/\./g, ',') : result.abstand_zeit);
+                        const gewTransformed = typeof result.gew === 'string' ? result.gew.replace(/\./g, ',') : (typeof result.gew === 'number' ? result.gew.toString().replace(/\./g, ',') : result.gew);
+                        
+
                         return (
                           <SwiperSlide key={result.race_horse_id}>
                             <div className={containerColor}>
@@ -217,7 +249,7 @@ export function HorseCardsCopy({ starters }) {
                                     <span className={styles.strs}>/{result.strs}</span>
                                     <span className={styles.startbox}>[{result.box}]</span>
                                     <p className={styles.platzRightTextBox}>
-                                      <span>{result.evq}</span>
+                                      <span>{evqTransformed}</span>
                                       <span className={styles.textExtraSmall}>evq</span>
                                     </p>
                                   </div>
@@ -227,12 +259,12 @@ export function HorseCardsCopy({ starters }) {
                                 <div className={styles.lowerRow1}>
                                   <p className={styles.distanz}>{result.distanz}m</p>
                                   <p className={styles.raceTime}>{result.race_time}</p>
-                                  <p className={styles.abstandZeit}>({result.abstand_zeit})</p>
+                                  <p className={styles.abstandZeit}>({abstandZeitTransformed})</p>
                                 </div>
                                 <div className={styles.lowerRow2}>
                                   <p className={styles.distanz}>{displayedReiter}</p>
                                   <p className={styles.abstandZeit}>
-                                    <span>{result.gew}</span>
+                                    <span>{gewTransformed}</span>
                                     <span>kg</span>
                                   </p>
                                 </div>
@@ -255,7 +287,7 @@ export function HorseCardsCopy({ starters }) {
         <div className={styles.mainContainer}>
           {enhancedStarters.map((horse, index) => (
             <div className={styles.horseWrapper} key={horse.id}>
-              <div className={styles.horseContainer}>
+              <div className={getHorseContainerClass(horse.horse_id)}>
                 <div className={styles.markBox}>
                   <CheckBox horseId={horse.horse_id} />
                 </div>
@@ -280,7 +312,10 @@ export function HorseCardsCopy({ starters }) {
                     <span className={styles.textOverFlow}>{horse.trainer}</span>
                     <span className={styles.textOverFlow}>{horse.owner}</span>
                   </p>
-                  <p className={styles.oddsBox}>[....]</p>
+                  <p className={styles.oddsBox}>
+                    <span className={getOddsDataForHorse(horse.horse_id).oddsClass}>{getOddsDataForHorse(horse.horse_id).oddsValue}</span>
+                  </p>
+                  
                 </div>
                 <div className={styles.infoBoxTwo}>
                   <p className={styles.alterGew}>
@@ -392,7 +427,6 @@ export function HorseCardsCopy({ starters }) {
                           </div>
                           <div className={styles.lowerRow3}>
                             <p className={styles.passingOrder}>{result.passing_order ? result.passing_order : '----'}</p>
-                            <p className={styles.commentText}>{result.comment ? result.comment : '----'}</p>
                           </div>
                         </div>
                       </div>
