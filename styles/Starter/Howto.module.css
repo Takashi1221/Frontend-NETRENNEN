@@ -1,0 +1,226 @@
+.body {
+    background-color: rgba(37, 37, 37, 0.119);
+    padding: 5px 0;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.languageButtons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+  
+.languageButtons button {
+    margin: 0 2.5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: rgba(96, 96, 96, 0.768);
+    color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+  
+.languageButtons button:hover {
+    background-color: rgba(59, 59, 59, 0.858);
+}
+
+.howToContainer {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 0 10px 0;
+    border-radius: 5px;
+}
+
+.howToHeader {
+    background-color: rgba(96, 96, 96, 0.768);
+    color: rgb(255, 255, 255);
+    font-size: 0.9rem;
+    padding: 5px 0 3px 10px;
+}
+
+.howToBody {
+    display: flex;
+}
+
+.imgContainer1 {
+    display: flex;
+    background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/others/howto_01.jpg');
+    background-repeat:  no-repeat; 
+}
+
+.imgContainer2 {
+    display: flex;
+    background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/others/howto_02.jpg');
+    background-repeat:  no-repeat; 
+}
+
+.imgContainer1, .imgContainer2 {
+    width:  300px;
+    height: 175px;
+    background-size: 100%;
+    background-position: center;
+    object-fit: cover;
+}
+
+.textContainer {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+}
+
+.textLeft, .textRight {
+    display: flex;
+    flex-direction: column;
+}
+
+.textLeft {
+    width: 180px;
+    margin-left: 15px;
+}
+
+.textRight {
+    width: 500px;
+    margin-left: 15px;
+}
+
+.textRow {
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.number {
+    background-color: red;
+    color: white;
+    font-size: 0.85rem;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.description {
+    color: rgba(49, 49, 49, 0.794);
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.howToContainerMobil {
+    display: none;
+}
+
+.gag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: rgba(49, 49, 49, 0.794);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+@media (max-width: 500px) {
+    .languageButtons button {
+        margin: 2px 3px;
+        padding: 5px 10px;
+        font-size: 0.7rem;
+
+    }
+
+    .howToHeader {
+        background-color: rgba(96, 96, 96, 0.768);
+        color: rgb(255, 255, 255);
+        font-size: 0.8rem;
+        padding: 2px 0 1px 10px;
+    }
+
+    .howToContainer {
+        display: none;
+    }
+
+    .howToBody {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imgContainer1, .imgContainer2 {
+        width:  50%;
+        height: 125px;
+        background-size: 100%;
+        background-position: center;
+        object-fit: cover;
+    }
+
+    .howToContainerMobil {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        margin: 0 0 10px 0;
+        border-radius: 5px;
+    }
+
+    .textContainerMobil1 {
+        display: flex;
+    }
+
+    .textContainerMobil2 {
+        display: flex;
+    }
+
+    .textLeft {
+        width: 50%;
+        font-size: 0.8rem;
+        padding-top: 10px;
+        padding-left: 5px;
+    }
+
+    .textRight {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+    .textRow {
+        display: flex;
+        margin-bottom: 1px;
+    }
+
+    .number {
+        background-color: red;
+        color: white;
+        font-size: 0.65rem;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .description {
+        color: rgba(49, 49, 49, 0.794);
+        font-size: 0.8rem;
+        margin-left: 5px;
+        flex-grow: 1;
+        word-break: break-word;
+    }
+
+    .gagMobil {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        color: rgba(49, 49, 49, 0.794);
+        font-size: 0.7rem;
+        margin-top: 5px;
+    }
+}

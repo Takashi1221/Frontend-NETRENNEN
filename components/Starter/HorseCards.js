@@ -52,7 +52,6 @@ export function HorseCardsCopy({ starters }) {
         const raceId = starters[0].race_id; // starters配列の最初のrace_idを使用
         const oddsData = await fetch(`/api/todayodds/?race_id=${raceId}`).then(res => res.json());
         setOddsData(oddsData);
-        console.log(oddsData)
       }
     };
 

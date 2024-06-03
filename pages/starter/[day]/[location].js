@@ -7,7 +7,11 @@ import { Footer } from '../../../components/Header/Footer';
 import { RaceNumberTabs } from '../../../components/Starter/RaceNumberTabs';
 import { HorseCardsCopy } from '../../../components/Starter/HorseCards';
 import { Loading } from '../../../components/Loading';
+import QuizIcon from '@mui/icons-material/Quiz';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import CloseIcon from '@mui/icons-material/Close';
 import styles from '/styles/Starter/Raceid.module.css';
+import { HowTo } from '../../../components/Starter/Howto';
 
 
 const RaceComponent = () => {
@@ -16,6 +20,7 @@ const RaceComponent = () => {
   const [raceList, setRaceList] = useState(null);
   const [starters, setStarters] = useState(null);
   const [selectedRace, setSelectedRace] = useState(null);
+  const [howToVisible, setHowToVisible] = useState(false);
 
 
   useEffect(() => {
@@ -58,8 +63,12 @@ const RaceComponent = () => {
       console.error("Error fetching starters data:", error);
     }
   };
-  
 
+  // アコーディオンの表示を切り替える関数
+  const toggleHowToVisibility = () => {
+    setHowToVisible(prevState => !prevState);
+  };
+  
   if (!raceList) {
     return <Loading />;
   }
@@ -80,7 +89,17 @@ const RaceComponent = () => {
             <p className={styles.infoDetails}>{selectedRace.start} / {selectedRace.distance} / {selectedRace.categorie}</p>
           </div>
           <div className={styles.mainContainer}>
-            <div className={styles.tabLabel}>Letzte 4 Läufe</div>
+            <div className={styles.tab}>
+              <div className={styles.tabLabel}>Letzte 4 Läufe</div>
+              <div className={styles.tabHint}>
+                <QuizIcon />
+                <div>Seitenanleitung</div>
+                <button onClick={toggleHowToVisibility}>
+                  {howToVisible ? <CloseIcon /> : <KeyboardArrowDownIcon />}
+                </button>
+              </div>
+            </div>
+            {howToVisible && <HowTo />}
             {/* 馬柱コンテナ */}
             <HorseCardsCopy starters={starters} />
           </div>

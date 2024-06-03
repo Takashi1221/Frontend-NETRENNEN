@@ -107,6 +107,21 @@
     color: #8b8a88bf;
 }
 
+.tab {
+    display: flex;
+}
+
+.tabHint {
+    background-color: #f0f0f0; 
+    display: flex;
+    color: #353535bf;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
 .tabLabel {
     background-color: #f0f0f0; 
     font-size: 0.9rem;
@@ -116,6 +131,7 @@
     padding: 8px;
     margin-bottom: 10px;
     margin-left: 10px;
+    border-radius: 5px;
 }
 
 @media (max-width: 500px) {
@@ -186,6 +202,14 @@
     
     .infoDetails {
         font-size: 0.8rem;
+    }
+
+    .tabHint {
+        color: #8b8a88bf;
+        font-size: 0.8rem;
+        margin-left: 7px;
+        margin-bottom: 10px;
+        padding: 6px;
     }
 
     .tabLabel {
