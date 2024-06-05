@@ -1,15 +1,38 @@
+import axios from 'axios';
 import { loadStripe } from '@stripe/stripe-js';
-
 
 
 export const CheckOut = () => {
   async function handleCheckout() {
+
+    let userEmail;
+    // Emailをチェックする関数
+    const checkEmail = async () => {
+      try {
+        const response = await axios.get('/api/checkemail/');
+        if (response.status === 200) {
+          userEmail = response.data.email;
+        } else {
+          console.error('Failed to get user email:', response.status);
+        }
+      } catch (error) {
+        console.error('Failed to get user email:', error);
+      }
+    };
+
+    await checkEmail();
+
+    // Stripeセッションの作成リクエスト
     const res = await fetch('/api/stripe-session', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ userEmail: userEmail }),
     });
+
     const { sessionId } = await res.json();
     if (res.ok) {
-      console.log("res.ok!!!!!!!!")
       // Stripe Checkoutページへリダイレクト
       const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
       stripe.redirectToCheckout({ sessionId });

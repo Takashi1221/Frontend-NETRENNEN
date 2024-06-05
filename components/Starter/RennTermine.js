@@ -4,11 +4,30 @@ import Link from 'next/link';
 import { Loading } from '../Loading';
 import styles from '/styles/Starter/Starter.module.css';
 
+// LocalStorageのクリーンアップを定義
+function cleanupLocalStorage() {
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key && key.startsWith('checkBoxState_')) {
+      const item = localStorage.getItem(key);
+      const { expiry } = JSON.parse(item);
+      const now = new Date();
+      if (now.getTime() > expiry) {
+        localStorage.removeItem(key);
+      }
+    }
+  }
+}
 
 export function RennTermine() {
   const [raceList, setRacelist] = useState(null);
   const [sortedAndMaxNumberRaces, setSortedAndMaxNumberRaces] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    cleanupLocalStorage();  // マウントされた時にLocalStorageをクリーンアップ
+    console.log("LocalStrageを更新しました")
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {

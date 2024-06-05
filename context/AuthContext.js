@@ -46,6 +46,7 @@ export const AuthProvider = ({ children }) => {
   const handleClose = () => {
     setOpen(false);
   };
+  
   // ログイン処理
   const login = async (email, password) => {
     try {
@@ -77,6 +78,7 @@ export const AuthProvider = ({ children }) => {
         const response = await axios.post('/api/refresh/');
         if (response.status === 200) {
           setIsLogin(true);
+          router.push('/dashboard');
         }
     } catch (error) {
         console.error('Token refresh failed:', error);
@@ -91,6 +93,7 @@ export const AuthProvider = ({ children }) => {
         const response = await axios.get('/api/checkauth/');
         if (response.status === 200) {
           setIsLogin(true);
+          router.push('/dashboard');
         } else {
             setIsLogin(false);
         }

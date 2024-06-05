@@ -40,9 +40,10 @@ const SignUp = () => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                // 成功した場合、トークン取得してリダイレクト
+                // 成功した場合、EmailをLocalStorageに保存
+                localStorage.setItem('userEmail', formData.email);
+                // トークン取得してリダイレクト
                 await checkAuthSignUp();
-                router.push('/dashboard');
 
             } catch (error) {
                 console.log(formData);

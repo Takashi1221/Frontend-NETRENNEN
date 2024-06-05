@@ -1,5 +1,8 @@
+import React, { useEffect, useState} from 'react';
+import { useRouter } from 'next/router';
+import axios from 'axios';
+import Link from 'next/link';
 import EmailIcon from '@mui/icons-material/Email';
-import LockResetIcon from '@mui/icons-material/LockReset';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 
 import { Header } from '../../../components/Header/Header';
@@ -9,7 +12,75 @@ import styles from '/styles/Account/Mypage.module.css';
 
 
 
-const NewsTop = () => {
+const MyPageTop = () => {
+    const [userEmail, setUserEmail] = useState('');
+    const [isSubscribed, setIsSubscribed] = useState(false);
+    const [subscriptionId, setSubscriptionId] = useState(null); 
+    const router = useRouter();
+
+    useEffect(() => {
+        const checkEmail = async () => {
+          try {
+            const response = await axios.get('/api/checkemail/');
+            if (response.status === 200) {
+              const email = response.data.email;
+              setUserEmail(email);
+            } else {
+              console.error('Failed to get user email:', response.status);
+            }
+          } catch (error) {
+            console.error('Failed to get user email:', error);
+          }
+        };
+    
+        const checkSubscription = async () => {
+          try {
+            const response = await axios.get('/api/abocheck/');
+            if (response.status === 200) {
+              const { is_subscribed, subscription_id } = response.data;
+              setIsSubscribed(is_subscribed);
+              setSubscriptionId(subscription_id);
+              console.log(subscription_id)
+            } else {
+              console.error('Failed to get subscription status:', response.status);
+            }
+          } catch (error) {
+            console.error('Failed to get subscription status:', error);
+          }
+        };
+    
+        checkEmail();
+        checkSubscription();
+      }, []);
+
+      const handleCancelSubscription = async () => {
+        const email = userEmail;
+        const message = `サブスク番号：${subscriptionId}を解約お願いします。`;
+    
+        const data = { email, message }; // 送信するデータ
+        console.log('Sending:', data); // コンソールに送信データを出力
+    
+        try {
+          const res = await fetch('/api/send-message/', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          });
+    
+          if (res.ok) {
+            // 解約リクエストが成功した場合の処理
+            alert('Cancellation request sent successfully.');
+            router.push('/account/mypage/cancel');
+          } else {
+            console.error('Failed to send cancellation request:', res.status);
+          }
+        } catch (error) {
+          console.error('Failed to send cancellation request:', error);
+        }
+      };
+
 
     return (
         <div className={styles.body}>
@@ -20,37 +91,40 @@ const NewsTop = () => {
                     <div className={styles.headerText}>Konto</div>
                 </div>
                 <div className={styles.headerBackground}></div>
-                <div className={styles.bodyContainer}>
-                    <div className={styles.contentHeader}> ABO Status</div>
-                    <div className={styles.contentContainer}>
-                        <p>
-                            <WorkspacePremiumIcon sx={{ 
-                                marginLeft: '1vw',
-                                fontSize: '2.5vw', 
-                                color: '#122315'
-                            }} />
-                        </p>
-                        <p className={styles.contentTextSpace}>Netrennen Premium</p>
-                    </div>
-                    <div className={styles.contentHeader}>Änderung der Registrierungsinformationen</div>
-                    <div className={styles.contentContainer}>
-                        <p>
+                <div className={styles.mainContainer}>
+                    <div className={styles.emailContainer}>
+                        <div className={styles.leftContainer}>
                             <EmailIcon sx={{ 
-                                marginLeft: '1vw',
-                                fontSize: '2.5vw', 
-                                color: '#122315'
+                                fontSize: '1.8rem', 
+                                color: '#3a3a3adc'
                             }} />
-                        </p>
-                        <p className={styles.contentTextSpace}>Änderung der E-Mail Adresse</p>
+                            <div className={styles.email}>Email</div>
+                        </div>  
+                        <div className={styles.status}>{userEmail}</div>
                     </div>
-                    <div className={styles.contentContainer}>
-                        <p><LockResetIcon sx={{ 
-                                marginLeft: '1vw',
-                                fontSize: '2.5vw', 
-                                color: '#122315'
-                            }} />
-                        </p>
-                        <p className={styles.contentTextSpace}>Passwort ändern</p>
+                    <div className={styles.aboContainer}>
+                        <div className={styles.leftContainer}>
+                            <div><WorkspacePremiumIcon sx={{ 
+                                    fontSize: '1.8rem', 
+                                    color: '#3a3a3adc'
+                                }} />
+                            </div>
+                            <div className={styles.abo}>Abo-Status</div>
+                        </div>
+                        <div className={styles.status}>
+                        {isSubscribed ? 'netrennen Premium' : 'Basic (kostenlos)'}
+                        </div>
+                    </div>
+                    <div className={styles.selectContainer}>
+                        {isSubscribed ? (
+                            <span className={styles.cancel} onClick={handleCancelSubscription}>
+                                Abonnements kündigen
+                            </span>
+                        ) : (
+                        <Link href={`/account/premium`}>
+                            <span className={styles.upgrade}>Upgrade auf Premium</span>
+                        </Link>
+                        )}
                     </div>
                 </div>
             </div>
@@ -59,4 +133,4 @@ const NewsTop = () => {
     );
 };
 
-export default NewsTop;
+export default MyPageTop;

@@ -1,5 +1,5 @@
 .body {
-    background-color: #f7f5f3;
+    background-color: #f9f9f9;
     min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
     margin: 0;
     padding: 0;
@@ -8,15 +8,14 @@
 .pageContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-bottom: 175px;
+    align-items: center;
+    min-height: 50vh;
+    margin: 40px 300px 175px 300px;
 }
 
 .headerContainer {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
 }
 
 .headerText {
@@ -36,36 +35,147 @@
     background-size: 3% 50%; 
 }
 
-.bodyContainer {
+.mainContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 2vw;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.contentHeader {
+.emailContainer {
+    background-color: #ffffff;
     display: flex;
-    align-items: center;
-    height: 2.1vw;
-    width: 30vw;
-    margin-top: 2vw;
-    margin-bottom: 1vw;
-    color: #122315;
-    font-size: 1.2vw;
+    margin: 40px 10px 10px 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.contentContainer {
+.aboContainer {
+    background-color: #ffffff;
     display: flex;
-    align-items: center;
-    height: 4.5vw;
-    width: 30vw;
-    margin-bottom: 1vw;
-    border: 1px solid rgb(199, 204, 208);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.contentTextSpace {
-    color: #122315;
-    font-size: 0.8vw;
-    margin-left: 2vw;
+.leftContainer {
+    display: flex;
+    width: 200px;
+}
+
+.email, .abo {
+    font-size: 1.2rem;
+    color: #3a3a3adc;
+    margin-left: 10px;
+}
+
+.status {
+    font-size: 1.1rem;
+    color: #3a3a3adc;
+    margin-left: 10px;
+}
+
+.selectContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.cancel {
+    font-size: 0.85rem;
+    color: #454545c8;
+    cursor: pointer;
+}
+
+.cancel:hover {
+    font-size: 0.85rem;
+    color: #656565c8;
+}
+
+.upgrade {
+    font-size: 0.9rem;
+    color: #ff0062e3;
+    text-decoration: underline; 
+    cursor: pointer;
+}
+
+.upgrade:hover {
+    color: #ff5a99e3;
+}
+
+@media (max-width: 500px) {
+    .pageContainer {
+        min-height: 50vh;
+        margin: 20px 0 175px 0;
+    }
+    
+    .headerText {
+        font-size: 1.4rem;
+        margin-left: 10px;
+    }
+
+    .mainContainer {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .emailContainer {
+        margin: 10px 0;
+        padding: 20px 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .aboContainer {
+        margin: 10px 0;
+        padding: 20px 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .leftContainer {
+        display: flex;
+        align-items: center;
+        width: 130px;
+    }
+    
+    .email, .abo {
+        font-size: 0.85rem;
+        color: #3a3a3adc;
+        margin-left: 3px;
+    }
+    
+    .status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #3a3a3adc;
+        margin-left: 10px;
+    }
+    
+    .selectContainer {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 5px;
+        padding-right: 10px;
+    }
+    
+    .cancel {
+        font-size: 0.8rem;
+        color: #454545c8;
+        cursor: pointer;
+    }
+    
+    .cancel:hover {
+        font-size: 0.8rem;
+        color: #656565c8;
+    }
+    
+    .upgrade {
+        font-size: 0.9rem;
+        color: #ff0062e3;
+        text-decoration: none; 
+    }
 }

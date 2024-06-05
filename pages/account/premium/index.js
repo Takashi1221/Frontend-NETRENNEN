@@ -53,7 +53,7 @@ const PlanCard = ({ plan }) => (
       <p className={styles.priceMonatText}>{plan.period}</p>
     </div>
     <div className={styles.aboButtonContainer}>
-      {plan.type === 'Premium' && <p><CheckOut /></p>}
+      {plan.type === 'Premium' && <CheckOut />}
       {plan.description && <p className={styles.stripeDiscription}>{plan.description}</p>}
     </div>
     <div className={styles.aboDiscriptionContainer}>

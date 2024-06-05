@@ -1,0 +1,92 @@
+.body {
+    background-color: #ffffff;
+    min-height: 100vh; /* Makes sure the body takes up at least the viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 300px;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.textContainer h2 {
+    font-size: 2rem;
+    color: rgba(35, 35, 35, 0.874);
+    margin-bottom: 40px;
+}
+
+.textContainer p {
+    font-size: 1.2rem;
+    color: rgba(71, 71, 71, 0.874);
+}
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.returnStripeContainer {
+    display: flex;
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.returnStripeButton {
+    margin-top: 80px;
+    padding: 10px;
+    height: 40px;
+    background-color: #6528F7;
+    border: 1px solid #6528F7;
+    border-radius: 10px;
+    color: #f8f5f5fd;
+    cursor: pointer;
+}
+  
+.returnStripeButton:hover {
+    background-color: #341282;
+    border: 1px solid #341282;
+}
+
+@media (max-width: 500px) {
+    .pageContainer {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 200px;
+        padding: 20px;
+    }
+    
+    .textContainer {
+        align-items: flex-start;
+        margin: 0 0 60px 0;
+    }
+    
+    .textContainer h2 {
+        font-size: 1.4rem;
+        color: rgba(35, 35, 35, 0.874);
+        margin-bottom: 20px;
+    }
+    
+    .textContainer p {
+        font-size: 0.85rem;
+        color: rgba(74, 74, 74, 0.874);
+    }
+
+    .returnStripeContainer {
+        margin-top: 20px;
+    }
+
+    .returnStripeButton {
+        font-size: 0.8rem;
+    }
+    
+}

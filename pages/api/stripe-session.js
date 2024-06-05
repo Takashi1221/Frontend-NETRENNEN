@@ -4,6 +4,12 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const stripeSessionHandler = async (req, res) => {
   if (req.method === 'POST') {
     try {
+      const { userEmail } = req.body;
+
+      if (!userEmail) {
+        return res.status(400).json({ error: 'User email not found' });
+      }
+
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         line_items: [{
@@ -11,12 +17,14 @@ const stripeSessionHandler = async (req, res) => {
           'quantity': 1,
         }],
         mode: 'subscription',
-        success_url: `${req.headers.origin}/account/signup/success?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${req.headers.origin}/account/signup/success`,
         cancel_url: `${req.headers.origin}/account/signup/payerror`,
+        customer_email: userEmail,  // ここでメールアドレスを設定
       });
 
       res.status(200).json({ sessionId: session.id });
     } catch (error) {
+      console.error('Error creating Stripe session:', error); // エラーメッセージを出力
       res.status(500).json({ error: error.message });
     }
   } else {

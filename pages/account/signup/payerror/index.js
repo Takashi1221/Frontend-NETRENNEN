@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { loadStripe } from '@stripe/stripe-js';
-import { Header } from '/components/Header/Header'
-import { LoginModal } from '/components/Header/LoginModal'
-import { Footer } from '/components/Header/Footer'
+import { Header } from '/components/Header/Header';
+import { LoginModal } from '/components/Header/LoginModal';
+import { Footer } from '/components/Header/Footer';
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
-import styles from '/styles/Account/SignUp.module.css'
+import styles from '/styles/Account/AfterStripe.module.css';
 
 
 // Stripeのページからキャンセルするとこのページを表示→リダイレクトする
@@ -38,32 +38,25 @@ const PayErrorPage = () => {
       }
 
     return (
-        <div>
+        <div className={styles.body}>
             <Header />
             <LoginModal />
             <div className={styles.pageContainer}>
-                <div className={styles.signupBody}>
-                    <div className={styles.useFreeMainContainer}>
-                        <div className={styles.useFreeHeader}>
-                            Die Zahlung wurde nicht abgeschlossen.
-                        </div>
-                        <div className={styles.useFreeBody}>
-                            <p>Bitte warten Sie ein paar Sekunden, </p>
-                            <p>während wir die Seite umleiten....</p>
-                        </div>
-                        <div className={styles.loadingContainer}>
-                            <Stack sx={{ color: 'grey.500', alignItems: 'center' }} spacing={2}>
-                                <Stack direction="row" spacing={2}>
-                                <CircularProgress color="success" />
-                                </Stack>
-                            </Stack>
-                        </div>
-                        <div className={styles.returnStripeContainer}>
-                            <p onClick={handleCheckout} className={styles.returnStripeButton}>
-                                Zahlungsseite erneut aufrufen
-                            </p>
-                        </div>
-                    </div>
+                <div className={styles.textContainer}>
+                    <h2>Die Zahlung wurde nicht abgeschlossen</h2>
+                    <p> Bitte warten Sie ein paar Sekunden, während wir die Seite umleiten....</p>
+                </div>
+                <div className={styles.loadingContainer}>
+                    <Stack sx={{ color: 'grey.500', alignItems: 'center' }} spacing={2}>
+                        <Stack direction="row" spacing={2}>
+                        <CircularProgress color="success" />
+                        </Stack>
+                    </Stack>
+                </div>
+                <div className={styles.returnStripeContainer}>
+                    <p onClick={handleCheckout} className={styles.returnStripeButton}>
+                        Zahlungsseite erneut aufrufen
+                    </p>
                 </div>
             </div>
             <Footer />
