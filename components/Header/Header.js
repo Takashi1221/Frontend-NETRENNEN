@@ -96,16 +96,14 @@ export const Header = () => {
                 <Button 
                   variant="outlined"
                   sx={{
+                    backgroundColor: '#ffffff',
                     marginRight: '30px', 
-                    color: '#ffffff',
-                    fontSize: '1rem',
+                    color: '#1FC613',
+                    fontSize: '1.2rem',
                     fontWeight: '700',
-                    borderWidth: 4,
-                    borderColor: '#ffffff',
                     '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                      borderColor: '#ffffff',
-                      borderWidth: 4,
+                      backgroundColor: '#ffffffb9',
+
                     },
                   }}
                 >
@@ -122,8 +120,8 @@ export const Header = () => {
                   borderWidth: 4,
                   borderColor: '#ffffff',
                   '&:hover': {
-                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                    borderColor: '#ffffff',
+                    backgroundColor: '#ffffff51',
+                    borderColor: '#ffffff51',
                     borderWidth: 4,
                   },
                 }}
@@ -162,6 +160,16 @@ export const Header = () => {
           <div></div>
         </div>
         <div ref={menuRef} className={`${styles.menu} ${menuOpen ? styles.show : ''}`}>
+          <Link href={`/account/mypage`}>
+            <span onClick={toggleMenu} className={styles.menuMargin}>
+              Konto
+              <PersonOutlineIcon sx={{ 
+                paddingBottom: '3px',
+                fontSize: '25px', 
+                color: '#ffffff',
+              }} />
+            </span>
+          </Link>
           <Link href={`/dashboard`}><span onClick={toggleMenu}>Rennen</span></Link>
           <Link href={`/news`}><span onClick={toggleMenu}>News</span></Link>
           <Link href={`/about`}><span onClick={toggleMenu}>Über uns</span></Link>

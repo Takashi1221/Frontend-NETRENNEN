@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-
+import { useAuth } from '/context/AuthContext';
 import { Header } from '../../components/Header/Header';
 import { LoginModal } from '../../components/Header/LoginModal';
 import { RaceInfo } from '../../components/Results/RaceInfo';
@@ -11,12 +11,18 @@ import { Footer } from '../../components/Header/Footer';
 import styles from '/styles/Results/RaceResults.module.css';
 
 
-
 function RaceResults() {
+  const { isLogin } = useAuth();
   const router = useRouter();
   const { race_id } = router.query; // URLからrace_idを取得
   const [raceDetail, setRaceDetail] = useState(null); // レース詳細データを保持するための状態
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!isLogin) {
+      router.push('/');
+    }
+  }, [isLogin, router]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,6 +46,10 @@ function RaceResults() {
 
   if (loading) {
     return <div>Loading...</div>;
+  }
+
+  if (!isLogin) {
+    return null; // リダイレクトが完了するまで何も表示しない
   }
 
 

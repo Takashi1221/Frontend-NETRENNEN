@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import axios from 'axios';
+import { useAuth } from '/context/AuthContext';
 import { Header } from "../../../components/Header/Header";
 import { LoginModal } from "../../../components/Header/LoginModal";
 import { Footer } from "../../../components/Header/Footer";
@@ -9,6 +11,14 @@ import styles from "/styles/Starter/Kalender.module.css";
 
 function RennKalender() {
     const [kalender, setKalender] = useState([]);
+    const { isLogin } = useAuth();
+    const router = useRouter();
+
+    useEffect(() => {
+        if (!isLogin) {
+            router.push('/');
+        }
+    }, [isLogin, router]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -17,6 +27,10 @@ function RennKalender() {
         };
         fetchData();
     }, []);
+
+    if (!isLogin) {
+        return null; // リダイレクトが完了するまで何も表示しない
+    }
 
     return (
         <div className={styles.body}>

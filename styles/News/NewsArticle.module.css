@@ -8,8 +8,9 @@
 .pageContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 30%;
-    margin-right: 30%;
+    align-items: center;
+    margin-left: 300px;
+    margin-right: 300px;
     margin-bottom: 175px;
 }
 
@@ -39,8 +40,10 @@
 .bodyContainer {
     background-color: #ffffff;
     font-family: 'Roboto', sans-serif;
-    margin-top: 10px;
+    width: 1000px;
+    margin: 10px 0 60px 0;
     padding: 40px;
+    border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
 }
 
@@ -81,11 +84,88 @@
     text-decoration: underline; /* 下線を表示 */
 }
 
+.otherArticleContainer {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+}
+
+.andereArticle {
+    color: rgba(45, 45, 50, 0.941);
+    font-size: 1.6rem;
+    margin: 0 0 0 10px;
+}
+
+.otherCard {
+    background-color: #ffffff;
+    display: flex;
+    width: 100%;
+    height: 125px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.otherCard:hover {
+    background-color: #eaeaea;
+}
+
+.otherImgContainer {
+    width: 20%;
+    height: 100%;
+}
+
+.otherTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    height: 100%;
+    padding: 10px 10px 10px 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.otherTextContainer h2 {
+    font-size: 1.6rem;
+    color: #353535d5;
+}
+
+.otherTextContainer p {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.otherTextContainer span {
+    font-size: 1rem;
+    color: rgba(140, 140, 140, 0.892);
+    margin: 0 5px;
+}
+
+.otherArticleImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.returnNewsList {
+    display: flex;
+    justify-content: flex-end;
+    color: rgba(45, 45, 50, 0.941);
+    font-size: 1.2rem;
+    margin: 15px 10px 0 0;
+}
+
+.returnNewsList:hover {
+    color: #f30089ed;
+}
+
 @media (max-width: 500px) {
     .pageContainer {
         margin-left: 0;
         margin-right: 0;
         margin-bottom: 125px;
+        padding: 5px;
     }
     
     .headerContainer {
@@ -97,9 +177,9 @@
     }
     
     .bodyContainer {
-        margin: 10px 0;
-        padding: 10px 10px 60px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
+        width: 100%;
+        margin: 0 0 40px 0;
+        padding: 10px;
     }
     
     .title {
@@ -131,4 +211,45 @@
         color: #13b907ec;
     }
 
+    .otherArticleContainer {
+        width: 100%;
+    }
+
+    .andereArticle {
+        font-size: 1.2rem;
+        margin: 0 0 0 5px;
+    }
+
+    .otherCard {
+        width: 100%;
+        height: 100px;
+        margin: 10px 0;
+    }
+    
+    .otherImgContainer {
+        width: 30%;
+        height: 100%;
+    }
+    
+    .otherTextContainer {
+        width: 70%;
+        height: 100%;
+        padding: 5px 5px 5px 20px;
+    }
+
+    .otherTextContainer h2 {
+        font-size: 1.05rem;
+        color: #353535d5;
+    }
+    
+    .otherTextContainer span {
+        font-size: 0.7rem;
+        margin: 0 5px;
+    }
+
+    .returnNewsList {
+        color: rgba(45, 45, 50, 0.941);
+        font-size: 0.8rem;
+        margin: 10px 10px 0 0;
+    }
 }

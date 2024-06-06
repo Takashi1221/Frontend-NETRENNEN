@@ -95,6 +95,7 @@
     width: 200px;
     border-radius: 8px;
     padding: 10px;
+    z-index: 1000; /* 高い値を設定 */
 }
   
 .menu.show {
@@ -111,6 +112,10 @@
   
 .menu span:hover {
     background-color: #575757;
+}
+
+.menuMargin {
+    margin-left: 10px;
 }
 
 .forMobilContainer {

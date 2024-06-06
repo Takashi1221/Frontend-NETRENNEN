@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useAuth } from '/context/AuthContext';
 import { TextField, Button, Box } from '@mui/material';
 import { Header } from '../components/Header/Header';
 import { LoginModal } from '../components/Header/LoginModal';
@@ -7,9 +9,17 @@ import styles from '/styles/Company/Contact.module.css';
 
 
 export default function ContactForm () {
+    const { isLogin } = useAuth();
+    const router = useRouter();
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [submitted, setSubmitted] = useState(false); 
+
+    useEffect(() => {
+        if (!isLogin) {
+          router.push('/');
+        }
+    }, [isLogin, router]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -32,6 +42,10 @@ export default function ContactForm () {
             console.error('Failed to send message:', await res.json()); 
         }
     };
+
+    if (!isLogin) {
+        return null; // リダイレクトが完了するまで何も表示しない
+    }
 
     return (
         <div className={styles.body}>

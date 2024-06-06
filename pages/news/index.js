@@ -80,4 +80,4 @@ const NewsTop = () => {
     )  
 }
 
-  export default NewsTop;
+export default NewsTop;

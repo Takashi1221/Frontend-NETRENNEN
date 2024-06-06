@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { useAuth } from '/context/AuthContext';
 import { Header } from '../../../components/Header/Header';
 import { LoginModal } from '../../../components/Header/LoginModal';
 import { Footer } from '../../../components/Header/Footer';
@@ -15,6 +16,7 @@ import { HowTo } from '../../../components/Starter/Howto';
 
 
 const RaceComponent = () => {
+  const { isLogin } = useAuth();
   const router = useRouter();
   const { day, location } = router.query;
   const [raceList, setRaceList] = useState(null);
@@ -22,6 +24,11 @@ const RaceComponent = () => {
   const [selectedRace, setSelectedRace] = useState(null);
   const [howToVisible, setHowToVisible] = useState(false);
 
+  useEffect(() => {
+    if (!isLogin) {
+      router.push('/');
+    }
+  }, [isLogin, router]);
 
   useEffect(() => {
     const fetchRaces = async () => {
@@ -71,6 +78,10 @@ const RaceComponent = () => {
   
   if (!raceList) {
     return <Loading />;
+  }
+
+  if (!isLogin) {
+    return null; // リダイレクトが完了するまで何も表示しない
   }
 
   return (
