@@ -23,8 +23,8 @@ export default function ContactForm () {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const data = { email, message }; // 送信するデータ
-        console.log('Sending:', data); // コンソールに送信データを出力
+        const data = { email, message }; 
+        console.log('Sending:', data);
     
         const res = await fetch('/api/send-message/', {
             method: 'POST',
