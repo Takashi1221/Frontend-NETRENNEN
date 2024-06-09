@@ -442,6 +442,31 @@
     color: #353535bf;
 }
 
+.notAuthedContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.moreVert {
+    color: #4a4a4ad2;
+    margin: 20px;
+
+}
+
+.goPremiumContainer {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    color: #2a2a2ad2;
+}
+
 
 @media (max-width: 500px) {
     .mobilMainContainer {
@@ -707,5 +732,16 @@
     .passingOrder {
         font-size: 0.9rem;
         color: #8b8a88bf;
+    }
+
+    .moreVert {
+        margin: 10px;
+    
+    }
+
+    .goPremiumContainer {
+        height: 150px;
+        padding: 10px;
+        font-size: 0.8rem;
     }
 }

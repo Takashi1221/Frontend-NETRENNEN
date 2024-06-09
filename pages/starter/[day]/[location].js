@@ -7,6 +7,7 @@ import { LoginModal } from '../../../components/Header/LoginModal';
 import { Footer } from '../../../components/Header/Footer';
 import { RaceNumberTabs } from '../../../components/Starter/RaceNumberTabs';
 import { HorseCardsCopy } from '../../../components/Starter/HorseCards';
+import { HorseCardsNotAuthed } from '../../../components/Starter/HorseCardsNotAuth';
 import { Loading } from '../../../components/Loading';
 import QuizIcon from '@mui/icons-material/Quiz';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -23,12 +24,27 @@ const RaceComponent = () => {
   const [starters, setStarters] = useState(null);
   const [selectedRace, setSelectedRace] = useState(null);
   const [howToVisible, setHowToVisible] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
   useEffect(() => {
     if (!isLogin) {
       router.push('/');
     }
   }, [isLogin, router]);
+
+  useEffect(() => {
+    const fetchSubscriptionStatus = async () => {
+      try {
+        const response = await axios.get('/api/abocheck');
+        setIsSubscribed(response.data.is_subscribed);
+        console.log(response.data.is_subscribed)
+      } catch (error) {
+        console.error("Error fetching subscription status:", error);
+      }
+    };
+
+    fetchSubscriptionStatus();
+  }, []);
 
   useEffect(() => {
     const fetchRaces = async () => {
@@ -112,7 +128,11 @@ const RaceComponent = () => {
             </div>
             {howToVisible && <HowTo />}
             {/* 馬柱コンテナ */}
-            <HorseCardsCopy starters={starters} />
+            {selectedRace.number > 3 && !isSubscribed ? (
+              <HorseCardsNotAuthed starters={starters} />
+            ) : (
+              <HorseCardsCopy starters={starters} />
+            )}
           </div>
         </div>
         <Footer />
