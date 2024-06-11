@@ -16,10 +16,14 @@ export default function ContactForm () {
     const [submitted, setSubmitted] = useState(false); 
 
     useEffect(() => {
-        if (!isLogin) {
+        // ローカルストレージから初期状態を設定
+        const storedLoginStatus = localStorage.getItem('isLogin');
+        console.log(isLogin)
+        console.log(storedLoginStatus)
+        if (storedLoginStatus !== 'true') {
           router.push('/');
         }
-    }, [isLogin, router]);
+      }, [isLogin, router]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

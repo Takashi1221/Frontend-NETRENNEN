@@ -14,7 +14,11 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!isLogin) {
+    // ローカルストレージから初期状態を設定
+    const storedLoginStatus = localStorage.getItem('isLogin');
+    console.log(isLogin)
+    console.log(storedLoginStatus)
+    if (storedLoginStatus !== 'true') {
       router.push('/');
     }
   }, [isLogin, router]);

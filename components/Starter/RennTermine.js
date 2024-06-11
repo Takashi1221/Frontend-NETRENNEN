@@ -77,7 +77,7 @@ export function RennTermine() {
       {sortedAndMaxNumberRaces.map((race, index) => {
         // race.dateが文字列の場合、Dateオブジェクトに変換
         const date = new Date(race.date);
-        const path = `/starter/${race.date}/${encodeURIComponent(race.location)}`;
+        const path = `/starter/${race.date}/${encodeURIComponent(race.location)}/1`;
 
         return (
           <Link key={index} href={path}>

@@ -6,11 +6,11 @@ const translations = {
       header1: 'Pferdeinformationen verstehen',
       header2: 'Vergangene Ergebnisse verstehen',
       texts: [
-        'Nummer und (Box)', 'Name', 'Jahre', 'Reiter', 'Trainer', 'Vater', 'Vater der Mutter',
+        'Nummer und (Box)', 'Name', 'Jahre Alter', 'Reiter', 'Trainer', 'Vater', 'Vater der Mutter',
         'Aktuelles Gewicht / GAG', 
         'Voraussichtliche Siegquote', 'Datum und Ort', 'Kategorie Rennen', 'Platz / Starter', 'Boden', 'Box',
-        'Siegqutote', 'Distanz und Laufzeit des Rennens', 'Zeitdifferenz zum Sieger (oder 2. Platz)', 'Reiter',
-        'Gew.', 'Position beim Passieren der Kurven'
+        'Siegquote', 'Distanz und Laufzeit des Rennens', 'Zeitdifferenz zum Sieger (oder 2. Platz)', 'Reiter',
+        'Gewicht', 'Position beim Passieren der Kurven'
       ],
       gagExplanation: 'Der GAG (Generalausgleichsgewicht) ist eine Bewertung, die aus den Ergebnissen vergangener Rennen berechnet und in Gewichtseinheiten ausgedrückt wird.'
     },

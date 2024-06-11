@@ -12,10 +12,14 @@ const AboutUs = () => {
     const router = useRouter();
 
     useEffect(() => {
-    if (!isLogin) {
-        router.push('/');
-    }
-    }, [isLogin, router]);
+        // ローカルストレージから初期状態を設定
+        const storedLoginStatus = localStorage.getItem('isLogin');
+        console.log(isLogin)
+        console.log(storedLoginStatus)
+        if (storedLoginStatus !== 'true') {
+          router.push('/');
+        }
+      }, [isLogin, router]);
 
     if (!isLogin) {
         return null; // リダイレクトが完了するまで何も表示しない

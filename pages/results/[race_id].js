@@ -7,6 +7,7 @@ import { LoginModal } from '../../components/Header/LoginModal';
 import { RaceInfo } from '../../components/Results/RaceInfo';
 import { RaceNumberTabs } from '../../components/Results/RaceNumberTabs';
 import { ResultsTable } from '../../components/Results/PlatzTable';
+import { Loading } from '../../components/Loading';
 import { Footer } from '../../components/Header/Footer';
 import styles from '/styles/Results/RaceResults.module.css';
 
@@ -16,10 +17,13 @@ function RaceResults() {
   const router = useRouter();
   const { race_id } = router.query; // URLからrace_idを取得
   const [raceDetail, setRaceDetail] = useState(null); // レース詳細データを保持するための状態
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!isLogin) {
+    // ローカルストレージから初期状態を設定
+    const storedLoginStatus = localStorage.getItem('isLogin');
+    console.log(isLogin)
+    console.log(storedLoginStatus)
+    if (storedLoginStatus !== 'true') {
       router.push('/');
     }
   }, [isLogin, router]);
@@ -27,15 +31,11 @@ function RaceResults() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setLoading(true);
         const response = await axios.get(`/api/results/?race_id=${race_id}`);
         // レスポンスからデータをセット
         setRaceDetail(response.data);
       } catch (error) {
         console.error("データの取得に失敗しました:", error);
-        // エラーハンドリング
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -44,12 +44,21 @@ function RaceResults() {
     }
   }, [race_id]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
   if (!isLogin) {
     return null; // リダイレクトが完了するまで何も表示しない
+  }
+
+  if (!raceDetail || Object.keys(raceDetail).length === 0) {
+    return (
+      <div className={styles.body}>
+        <Header />
+        <LoginModal />
+        <div>
+          <p><Loading /></p>
+        </div>
+        <Footer />
+      </div>
+    );
   }
 
 

@@ -1,14 +1,7 @@
-import { useState } from 'react';
 import Link from 'next/link';
 import styles from '/styles/Starter/Raceid.module.css';
 
-export function RaceNumberTabs({ sameDayRaces, onRaceSelect }) {
-  const [selectedRaceId, setSelectedRaceId] = useState(sameDayRaces[0].race_id);
-
-  const handleRaceSelect = (raceId) => {
-    setSelectedRaceId(raceId);
-    onRaceSelect(raceId);
-  };
+export function RaceNumberTabs({ sameDayRaces, thisRace }) {
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -24,13 +17,14 @@ export function RaceNumberTabs({ sameDayRaces, onRaceSelect }) {
         </Link>
       </div>
       <div className={styles.racenumberContainer}>
-        {sameDayRaces.map((race) => (
-          <button 
-            className={`${styles.racenumberButton} ${selectedRaceId === race.race_id ? styles.selectedButton : ''}`}
-            onClick={() => handleRaceSelect(race.race_id)}
-          >
-            {race.number}R
-          </button>
+        {sameDayRaces.map((race, index) => (
+          <Link key={index} href={`/starter/${race.date}/${encodeURIComponent(race.location)}/${race.number}`}>
+            <button 
+              className={`${styles.racenumberButton} ${thisRace.race_id === race.race_id ? styles.selectedButton : ''}`}
+            >
+              {race.number}R
+            </button>
+          </Link>
         ))}
         {/* 直近レース一覧へ戻るボタンを作成 */}
         <Link href="/dashboard" passHref>
