@@ -58,19 +58,6 @@ export function HorseCardsCopy({ starters }) {
     fetchOddsData();
   }, [starters]);
 
-  const truncateGew = (gew) => {
-    const patterns = ['Erl.', 'Mgw.'];
-    let truncatedGew = gew;
-
-    patterns.forEach(pattern => {
-      const index = truncatedGew.indexOf(pattern);
-      if (index !== -1) {
-        truncatedGew = truncatedGew.substring(0, index);
-      }
-    });
-
-    return truncatedGew.trim();
-  };
 
   const toggleResultsVisibility = (horseId) => {
     setVisibleResults(prevState => ({
@@ -115,7 +102,12 @@ export function HorseCardsCopy({ starters }) {
                       {horse.name}
                     </Link>
                   </p>
-                  <p className={styles.alt}>({horse.alter} Jahre)</p>
+                  <p className={styles.altSpace}>
+                    <span className={styles.alt}>({horse.alter} Jahre)</span>
+                    {horse.equip ? <span className={styles.equip}>{horse.equip}</span> : <span></span>}
+                    {horse.erlbnis ? <span className={styles.equip}>{horse.erlbnis}</span> : <span></span>}
+                    
+                  </p>
                   <p className={styles.jockyBox}>
                     <span className={`${styles.jockey} ${styles.textOverFlow}`}>{horse.jocky}</span>
                     <span className={`${styles.jockey} ${styles.textOverFlow}`}>{horse.trainer}</span>
@@ -127,7 +119,8 @@ export function HorseCardsCopy({ starters }) {
                     <span className={styles.textOverFlow}>{horse.pedigree[0]?.pedigree_2}</span>
                   </p>
                   <p className={styles.gewGag}>
-                    <span>{truncateGew(horse.gew)} / {horse.gag}</span>
+                    <span>{horse.gew} kg / {horse.gag}</span>
+                    
                   </p>
                   <p className={styles.oddsAndButton}>
                   <span className={getOddsDataForHorse(horse.horse_id).oddsClass}>{getOddsDataForHorse(horse.horse_id).oddsValue}</span>
@@ -223,29 +216,27 @@ export function HorseCardsCopy({ starters }) {
                         return (
                           <SwiperSlide key={result.race_horse_id}>
                             <div className={containerColor}>
-                              <div className={styles.resultsDetailContainerUpper}>
-                                <div className={styles.dayTitleBox}>
-                                  <p className={styles.textDayOrt}>
-                                    <span className={styles.marginRight}>{dateString}</span>
-                                    <span className={styles.textOverFlow}>{result.ort}</span>
-                                  </p>
-                                  <p className={styles.titleRow}>
-                                    <Link href={`/results/${result.race_id}`} className={`${styles.textOverFlow} ${styles.linkStyle}`}>
-                                      <p dangerouslySetInnerHTML={{ __html: kategorieTransformed }}></p>
-                                    </Link>
-                                  </p>
-                                </div>
+                              <div className={styles.dayTitleBox}>
+                                <p className={styles.textDayOrt}>
+                                  <span className={styles.marginRight}>{dateString}</span>
+                                  <span className={styles.textOverFlow}>{result.ort}</span>
+                                </p>
+                                <p className={styles.titleRow}>
+                                  <Link href={`/results/${result.race_id}`} className={`${styles.textOverFlow} ${styles.linkStyle}`}>
+                                    <p dangerouslySetInnerHTML={{ __html: kategorieTransformed }}></p>
+                                  </Link>
+                                </p>
                               </div>
                               <div className={styles.platzRow}>
                                 <div className={styles.platzContainer}>
                                   <p className={platzColor}>{result.platz}</p>
+                                  <span className={styles.strs}>/{result.strs}</span>
                                 </div>
                                 <div className={styles.platzRightContainer}>
                                   <div className={styles.platzRightRow1}>
                                     <span dangerouslySetInnerHTML={{ __html: bodenTransformed }}></span>
                                   </div>
                                   <div className={styles.platzRightRow2}>
-                                    <span className={styles.strs}>/{result.strs}</span>
                                     <span className={styles.startbox}>[{result.box}]</span>
                                     <p className={styles.platzRightTextBox}>
                                       <span>{evqTransformed}</span>
@@ -319,7 +310,7 @@ export function HorseCardsCopy({ starters }) {
                 <div className={styles.infoBoxTwo}>
                   <p className={styles.alterGew}>
                     <span>{horse.alter} Jahre</span>
-                    <span>{truncateGew(horse.gew)}</span>
+                    <span>{horse.gew} kg</span>
                   </p>
                   <p className={styles.gaw}>
                     <span>GAG:</span>
