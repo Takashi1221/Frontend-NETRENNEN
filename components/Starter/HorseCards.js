@@ -116,7 +116,7 @@ export function HorseCardsCopy({ starters }) {
                 <div className={styles.infoBoxTwo}>
                   <p className={styles.sireBox}>
                     <span className={styles.textOverFlow}>{horse.pedigree[0]?.pedigree_1}</span>
-                    <span className={styles.textOverFlow}>{horse.pedigree[0]?.pedigree_2}</span>
+                    <span className={styles.textOverFlow}>{horse.pedigree[0]?.pedigree_5}</span>
                   </p>
                   <p className={styles.gewGag}>
                     <span>{horse.gew} kg / {horse.gag}</span>
@@ -295,7 +295,7 @@ export function HorseCardsCopy({ starters }) {
                     </Link>
                   </p>
                   <p className={styles.sireBox}>
-                    <span className={styles.textOverFlow}>{horse.pedigree[0]?.pedigree_2}</span>
+                    <span className={styles.textOverFlow}>{horse.pedigree[0]?.pedigree_5}</span>
                   </p>
                   <p className={styles.jockyBox}>
                     <span className={styles.textOverFlow}>{horse.jocky}</span>

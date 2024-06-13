@@ -1,6 +1,7 @@
 .componentTitle {
     font-size: 2rem;
     color: rgba(36, 36, 36, 0.814);
+    margin-top: 20px;
     margin-bottom: 40px;
 }
 
@@ -47,8 +48,33 @@
     margin-top: 20px;
 }
 
+.lineContainer {
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.lineChart {
+    height: 300px;
+}
+
 .chartContainer {
     margin-bottom: 60px;
+}
+
+.chartContainer p {
+    color: rgba(45, 45, 45, 0.799);
+    font-size: 0.9rem;
+    margin: 10px 5px;
+}
+
+.barChart {
+    height: 300px;
+}
+
+.timeStamp {
+    color: rgba(70, 70, 70, 0.738);
+    font-size: 0.9rem;
+    margin: 10px;
 }
 
 @media (max-width: 500px) {
@@ -66,13 +92,13 @@
     }
 
     .doughnutContainer {
-        gap: 20px;
+        gap: 35px;
         margin-bottom: 0;
     }
     
     .doughNut {
         color: rgba(63, 63, 63, 0.799);
-        margin-left: 7.5%;
+        margin-left: 10px;
     }
     
     .doughNut div {
@@ -101,12 +127,31 @@
         align-items: center;
         font-size: 0.7rem;
         margin-top: 20px;
-        margin-bottom: -40px;
+        margin-bottom: -60px;
     }
 
     .chartContainer {
         padding: 0 5px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
-    
+
+    .chartContainer p {
+        color: rgba(45, 45, 45, 0.799);
+        font-size: 0.85rem;
+        margin: 2.5px 5px;
+    }
+
+    .lineChart {
+        height: 200px;
+    }
+
+    .barChart {
+        height: 200px;
+    }
+
+    .timeStamp {
+        color: rgba(70, 70, 70, 0.738);
+        font-size: 0.7rem;
+        margin: 10px;
+    }
 }

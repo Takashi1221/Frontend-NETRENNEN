@@ -67,7 +67,6 @@ const RaceCard = () => {
                 const resStarter = await axios.get(`/api/starter/?race_id=${matchingRace.race_id}`);
                 setStarters(resStarter.data);
                 setThisRace(matchingRace);
-                console.log(resStarter.data);
             }
           }
       } catch (error) {

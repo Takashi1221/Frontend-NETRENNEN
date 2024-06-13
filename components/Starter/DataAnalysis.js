@@ -8,8 +8,10 @@ import styles from '/styles/Starter/DataAnalysis.module.css';
 export function DataAnalysis({ thisRace, starters }) {
   const { location, distance } = thisRace;
   const [data, setData] = useState(null);
+  const [enhancedStarters, setEnhancedStarters] = useState([]);
   const [probabilities, setProbabilities] = useState(null);
   const [boxProbabilities, setBoxProbabilities] = useState(null);
+  const [topSires, setTopSires] = useState(null);
   const [topReiters, setTopReiters] = useState(null);
   const [topTrainers, setTopTrainers] = useState(null);
   const [topOwners, setTopOwners] = useState(null);
@@ -42,6 +44,76 @@ export function DataAnalysis({ thisRace, starters }) {
     }
   }, [distance, location]);
 
+  useEffect(() => {
+    const pedigreeHorseData = async () => {
+      const updatedStarters = await Promise.all(starters.map(async (starter) => {
+        try {
+          const response = await axios.get(`/api/pedigree/?horse_id=${starter.horse_id}`);
+          return { ...starter, pedigree: response.data };
+        } catch (error) {
+          console.error(`Error fetching data for horse_id: ${starter.horse_id}`, error);
+          return starter;
+        }
+      }));
+
+      setEnhancedStarters(updatedStarters);
+      console.log(updatedStarters)
+      const topSires = calculateSireProbabilities(data, updatedStarters);
+      setTopSires(topSires);
+    };
+
+    if (data) {
+      pedigreeHorseData();
+    }
+  }, [data]);
+
+
+  const calculateSireProbabilities = (data, updatedStarters) => {
+    const sireStats = {};
+    const damsireStats = {};
+  
+    const validSires = new Set(updatedStarters.map(starter => starter.pedigree[0].pedigree_1));
+    const validDamsires = new Set(updatedStarters.map(starter => starter.pedigree[0].pedigree_5));
+  
+    data.forEach(item => {
+      if (item.sire !== 'nan' && validSires.has(item.sire)) {
+        const sire = item.sire;
+        if (!sireStats[sire]) {
+          sireStats[sire] = { total: 0, platz1: 0 };
+        }
+        sireStats[sire].total++;
+        if (item.platz === '1') {
+          sireStats[sire].platz1++;
+        }
+      }
+  
+      if (item.damsire !== 'nan' && validDamsires.has(item.damsire)) {
+        const damsire = item.damsire;
+        if (!damsireStats[damsire]) {
+          damsireStats[damsire] = { total: 0, platz1: 0 };
+        }
+        damsireStats[damsire].total++;
+        if (item.platz === '1') {
+          damsireStats[damsire].platz1++;
+        }
+      }
+    });
+  
+    const sireProbs = Object.entries(sireStats).map(([sire, stats]) => ({
+      sire,
+      p1: stats.platz1 / stats.total,
+    }));
+  
+    const damsireProbs = Object.entries(damsireStats).map(([damsire, stats]) => ({
+      damsire,
+      p1: stats.platz1 / stats.total,
+    }));
+  
+    const sortedSireByP1 = sireProbs.sort((a, b) => b.p1 - a.p1).slice(0, 5);
+    const sortedDamsireByP1 = damsireProbs.sort((a, b) => b.p1 - a.p1).slice(0, 5);
+  
+    return { sortedSireByP1, sortedDamsireByP1 };
+  };
 
   const calculateReiterProbabilities = (data, starters) => {
     const reiterStats = {};
@@ -185,7 +257,7 @@ export function DataAnalysis({ thisRace, starters }) {
     return <div>Error fetching data: {error.message}</div>;
   }
 
-  if (!data || !probabilities) {
+  if (!data || !probabilities || !topSires) {
     return <div>Loading...</div>;
   }
 
@@ -274,7 +346,7 @@ export function DataAnalysis({ thisRace, starters }) {
           text: '(%)',
         },
         beginAtZero: true,
-        suggestedMax: 50,
+        suggestedMax: 40,
       },
     },
   };
@@ -311,7 +383,7 @@ export function DataAnalysis({ thisRace, starters }) {
   return (
     <div>
       <h1 className={styles.componentTitle}>Kursdatenanalyse für {location} {distance}</h1>
-      <h2 className={styles.subHeader}>Erfolgschancen für Pferde mit einer Siegquote unter 3.0</h2>
+      <h2 className={styles.subHeader}>Vertrauen in Pferde mit einer Siegquote unter 3.0</h2>
       <div className={styles.doughnutContainer}>
         <div className={styles.doughNut}>
           <h2 className={styles.upperText}>Platz 1</h2>
@@ -342,75 +414,107 @@ export function DataAnalysis({ thisRace, starters }) {
           </div>
         </div>
       </div>
-      <div className={styles.chartContainer}>
+      <div className={styles.lineContainer}>
         {boxProbabilities && (
-          <div>
-            <h2 className={styles.subHeader}>Gewinnchancen je Startbox</h2>
+          <div className={styles.lineChart}>
+            <h2 className={styles.subHeader}>Leistungen nach Startbox (Gewinnrate)</h2>
             <Line data={lineData} options={lineOptions} />
           </div>
         )}
       </div>
       <div className={styles.chartContainer}>
-        <h2 className={styles.subHeader}>Gewinnchancen je Reiters</h2>
-        <Bar
-          data={createBarData(
-            topReiters.sortedByP1.map(reiter => reiter.reiter),
-            topReiters.sortedByP1.map(reiter => (reiter.p1 * 100).toFixed(1))
-          )}
-          options={barOptions}
-        />
+        <h2 className={styles.subHeader}>Leistungen je Sire / Dam-Sire (Top 5)</h2>
+        <p>Platz 1 Sire</p>
+        <div className={styles.barChart}>
+          <Bar
+            data={createBarData(
+              topSires.sortedSireByP1.map(sire => sire.sire),
+              topSires.sortedSireByP1.map(sire => (sire.p1 * 100).toFixed(1))
+            )}
+            options={barOptions}
+          />
+        </div>
+        <p>Platz 1 Dam-Sire</p>
+        <div className={styles.barChart}>
+          <Bar
+            data={createBarData(
+              topSires.sortedDamsireByP1.map(damsire => damsire.damsire),
+              topSires.sortedDamsireByP1.map(damsire => (damsire.p1 * 100).toFixed(1))
+            )}
+            options={barOptions}
+          />
+        </div>
       </div>
       <div className={styles.chartContainer}>
-        <h2 className={styles.subHeader}>Platzierungschancen je Reiters</h2>
-        <Bar
-          data={createBarData(
-            topReiters.sortedByP123.map(reiter => reiter.reiter),
-            topReiters.sortedByP123.map(reiter => (reiter.p123 * 100).toFixed(1))
-          )}
-          options={barOptions}
-        />
+        <h2 className={styles.subHeader}>Leistungen je Reiters (Top 5)</h2>
+        <p>Platz 1</p>
+        <div className={styles.barChart}>
+          <Bar
+            data={createBarData(
+              topReiters.sortedByP1.map(reiter => reiter.reiter),
+              topReiters.sortedByP1.map(reiter => (reiter.p1 * 100).toFixed(1))
+            )}
+            options={barOptions}
+          />
+        </div>
+        <p>Platz 1-3</p>
+        <div className={styles.barChart}>
+          <Bar
+            data={createBarData(
+              topReiters.sortedByP123.map(reiter => reiter.reiter),
+              topReiters.sortedByP123.map(reiter => (reiter.p123 * 100).toFixed(1))
+            )}
+            options={barOptions}
+          />
+        </div>
       </div>
       <div className={styles.chartContainer}>
-        <h2 className={styles.subHeader}>Gewinnchancen je Trainers</h2>
-        <Bar
-          data={createBarData(
-            topTrainers.sortedByP1.map(trainer => trainer.trainer),
-            topTrainers.sortedByP1.map(trainer => (trainer.p1 * 100).toFixed(1))
-          )}
-          options={barOptions}
-        />
+        <h2 className={styles.subHeader}>Leistungen je Trainers (Top 5)</h2>
+        <p>Platz 1</p>
+        <div className={styles.barChart}>
+          <Bar
+            data={createBarData(
+              topTrainers.sortedByP1.map(trainer => trainer.trainer),
+              topTrainers.sortedByP1.map(trainer => (trainer.p1 * 100).toFixed(1))
+            )}
+            options={barOptions}
+          />
+        </div>
+        <p>Platz 1-3</p>
+        <div className={styles.barChart}>
+          <Bar
+            data={createBarData(
+              topTrainers.sortedByP123.map(trainer => trainer.trainer),
+              topTrainers.sortedByP123.map(trainer => (trainer.p123 * 100).toFixed(1))
+            )}
+            options={barOptions}
+          />
+        </div>
       </div>
       <div className={styles.chartContainer}>
-        <h2 className={styles.subHeader}>Platzierungschancen je Trainers</h2>
-        <Bar
-          data={createBarData(
-            topTrainers.sortedByP123.map(trainer => trainer.trainer),
-            topTrainers.sortedByP123.map(trainer => (trainer.p123 * 100).toFixed(1))
-          )}
-          options={barOptions}
-        />
+        <h2 className={styles.subHeader}>Leistungen je Owners (Top 5)</h2>
+        <p>Platz 1</p>
+        <div className={styles.barChart}>
+          <Bar
+            data={createBarData(
+              topOwners.sortedByP1.map(owner => owner.owner),
+              topOwners.sortedByP1.map(owner => (owner.p1 * 100).toFixed(1))
+            )}
+            options={barOptions}
+          />
+        </div>
+        <p>Platz 1-3</p>
+        <div className={styles.barChart}>
+          <Bar
+            data={createBarData(
+              topOwners.sortedByP123.map(owner => owner.owner),
+              topOwners.sortedByP123.map(owner => (owner.p123 * 100).toFixed(1))
+            )}
+            options={barOptions}
+          />
+        </div>
       </div>
-      <div className={styles.chartContainer}>
-        <h2 className={styles.subHeader}>Gewinnchancen je Owners</h2>
-        <Bar
-          data={createBarData(
-            topOwners.sortedByP1.map(owner => owner.owner),
-            topOwners.sortedByP1.map(owner => (owner.p1 * 100).toFixed(1))
-          )}
-          options={barOptions}
-        />
-      </div>
-      <div className={styles.chartContainer}>
-        <h2 className={styles.subHeader}>Platzierungschancen je Owners</h2>
-        <Bar
-          data={createBarData(
-            topOwners.sortedByP123.map(owner => owner.owner),
-            topOwners.sortedByP123.map(owner => (owner.p123 * 100).toFixed(1))
-          )}
-          options={barOptions}
-        />
-      </div>
-
+      <div className={styles.timeStamp}>(Daten von 2019 bis heute)</div>
     </div>
   );
 }
