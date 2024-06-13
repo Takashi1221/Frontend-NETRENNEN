@@ -9,8 +9,11 @@ import { HowTo } from '../../../../components/Starter/Howto';
 import { RaceNumberTabs } from '../../../../components/Starter/RaceNumberTabs';
 import { HorseCardsCopy } from '../../../../components/Starter/HorseCards';
 import { HorseCardsNotAuthed } from '../../../../components/Starter/HorseCardsNotAuth';
+import { DataAnalysis } from '../../../../components/Starter/DataAnalysis';
 import { Loading } from '../../../../components/Loading';
 import QuizIcon from '@mui/icons-material/Quiz';
+import BedroomBabyIcon from '@mui/icons-material/BedroomBaby';
+import AnalyticsIcon from '@mui/icons-material/Analytics';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CloseIcon from '@mui/icons-material/Close';
 import styles from '/styles/Starter/Raceid.module.css';
@@ -24,6 +27,7 @@ const RaceCard = () => {
   const [thisRace, setThisRace] = useState(null);
   const [starters, setStarters] = useState(null);
   const [howToVisible, setHowToVisible] = useState(false);
+  const [activeTab, setActiveTab] = useState('letzte4Laufe');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
   useEffect(() => {
@@ -90,6 +94,19 @@ const RaceCard = () => {
     return null; // リダイレクトが完了するまで何も表示しない
   }
 
+  const renderTabContent = () => {
+    if (activeTab === 'letzte4Laufe') {
+      return thisRace.number > 3 && !isSubscribed ? (
+        <HorseCardsNotAuthed starters={starters} />
+      ) : (
+        <HorseCardsCopy starters={starters} />
+      );
+    } else if (activeTab === 'datenanalyse') {
+      return <DataAnalysis thisRace={thisRace} starters={starters} />;
+    }
+  };
+
+
   return (
     <div>
       <div className={styles.body}>
@@ -106,23 +123,24 @@ const RaceCard = () => {
             <p className={styles.infoDetails}>{thisRace.start} / {thisRace.distance} / {thisRace.categorie}</p>
           </div>
           <div className={styles.mainContainer}>
+            <div className={styles.tabHint}>
+              <QuizIcon />
+              <div>Seitenanleitung</div>
+              <button onClick={toggleHowToVisibility}>
+                {howToVisible ? <CloseIcon /> : <KeyboardArrowDownIcon />}
+              </button>
+            </div>
+            {/* チュートリアルコンテナ */}
+            {howToVisible && <HowTo />}
             <div className={styles.tab}>
-              <div className={styles.tabLabel}>Letzte 4 Läufe</div>
-              <div className={styles.tabHint}>
-                <QuizIcon />
-                <div>Seitenanleitung</div>
-                <button onClick={toggleHowToVisibility}>
-                  {howToVisible ? <CloseIcon /> : <KeyboardArrowDownIcon />}
-                </button>
+              <div className={styles.tabLabel} onClick={() => setActiveTab('letzte4Laufe')}>
+                <BedroomBabyIcon />Letzte 4 Läufe
+              </div>
+              <div className={styles.tabLabel} onClick={() => setActiveTab('datenanalyse')}>
+                <AnalyticsIcon />Datenanalyse
               </div>
             </div>
-            {howToVisible && <HowTo />}
-            {/* 馬柱コンテナ */}
-            {thisRace.number > 3 && !isSubscribed ? (
-              <HorseCardsNotAuthed starters={starters} />
-            ) : (
-              <HorseCardsCopy starters={starters} />
-            )}
+            {renderTabContent()}
           </div>
         </div>
         <Footer />

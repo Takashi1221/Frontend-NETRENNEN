@@ -1,0 +1,112 @@
+.componentTitle {
+    font-size: 2rem;
+    color: rgba(36, 36, 36, 0.814);
+    margin-bottom: 40px;
+}
+
+.subHeader {
+    border-radius: 5px;
+    background-color: rgba(44, 44, 44, 0.632);
+    color: rgb(249, 249, 249);
+    padding: 4px 0 4px 8px;
+    margin-bottom: 20px;
+}
+
+.doughnutContainer {
+    display: flex;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.doughNut {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 200px;
+}
+
+.upperText {
+    margin-bottom: 20px;
+}
+
+.centerText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.underText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+.chartContainer {
+    margin-bottom: 60px;
+}
+
+@media (max-width: 500px) {
+    .componentTitle {
+        font-size: 1.2rem;
+        padding: 5px;
+        margin-bottom: 20px;
+    }
+
+    .subHeader {
+        font-size: 0.9rem;
+        color: rgb(249, 249, 249);
+        padding: 4px 0 4px 8px;
+        margin-bottom: 20px;
+    }
+
+    .doughnutContainer {
+        gap: 20px;
+        margin-bottom: 0;
+    }
+    
+    .doughNut {
+        color: rgba(63, 63, 63, 0.799);
+        margin-left: 7.5%;
+    }
+    
+    .doughNut div {
+        height: 125px !important;
+        width: 125px !important;
+      }
+    
+    .upperText {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+    
+    .centerText {
+        position: absolute;
+        top: 88%;
+        left: 83%;
+        transform: translate(-50%, -50%);
+        font-size: 0.9rem;
+        font-weight: bold;
+        pointer-events: none;
+    }
+    
+    .underText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.7rem;
+        margin-top: 20px;
+        margin-bottom: -40px;
+    }
+
+    .chartContainer {
+        padding: 0 5px;
+        margin-bottom: 30px;
+    }
+    
+}
