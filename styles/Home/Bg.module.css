@@ -1,3 +1,7 @@
+.landingBody {
+    height: 400vh;
+}
+
 .backgroundSlider {
     height: 100vh;
     width: 100%;
@@ -6,7 +10,7 @@
     background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/topimage.jpg');
     background-repeat: repeat-x;
     background-size: auto 100%;
-    animation: slide 100s linear infinite;
+    animation: slide 30s linear infinite;
 }
   
 @keyframes slide {
@@ -38,8 +42,9 @@
 
 .mainText {
     color: rgb(255, 255, 255);
-    font-size: 6rem;
+    font-size: 4rem;
     text-align: center; /* テキストを中央揃えに */
+    margin-bottom: 60px;
 }
 
 .subtextContainer {
@@ -50,14 +55,174 @@
 
 .subText {
     color: rgb(255, 255, 255);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center; /* サブテキストを中央揃えに */
     margin: 10px 0; /* テキスト間のマージンを設定 */
 }
 
+.page2 {
+    background-color: rgb(251, 251, 251);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+}
+
+.flexRow {
+    display: flex;
+}
+
+.landingTextContainerOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    color: rgba(25, 25, 25, 0.907);
+    margin-left: auto;
+    padding-right: 40px;
+}
+
+.landingTextContainerOne h2 {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+}
+
+.landingTextContainerOne p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.landingTextContainerOne li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.bulletList {
+    list-style-type: disc; /* デフォルトのディスクスタイルを適用 */
+    margin-left: 20px; /* リストの左マージンを調整 */
+}
+
+.imageContainerOne {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.imageOne {
+    background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/others/landingimage_01.png');
+    height: 900px;
+    width: 900px;
+    background-size: 100%;
+}
+
+.backgroundPorigon {
+    background-color: rgba(11, 143, 17, 0.873);
+    clip-path: polygon(0 90%, 100% 0, 100% 100%, 0 100%);
+    width: 100%;
+    height: 250px;
+}
+
+.page3 {
+    background-color: rgba(42, 175, 48, 0.873);
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.imageContainerTwo {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: -80px;
+}
+
+.imageTwo {
+    background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/others/landingimage_02.png');
+    height: 800px;
+    width: 800px;
+    background-size: 100%;
+}
+
+.landingTextContainerTwo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+
+.landingTextContainerTwo h2 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+}
+
+.landingTextContainerTwo li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.page4 {
+    background-color: rgb(251, 251, 251);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+}
+
+.backgroundEllipse {
+    background-color: rgba(11, 143, 17, 0.873);
+    clip-path: ellipse(60% 80% at 50% 0%);
+    width: 100%;
+    height: 300px;
+    margin-bottom: -100px;
+}
+
+.landingTextContainerThree {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    color: rgba(25, 25, 25, 0.907);
+    margin-left: auto;
+    padding-right: 40px;
+}
+
+.landingTextContainerThree p {
+    font-size: 1.6rem;
+}
+
+.underButtonContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+}
+
+.footerTitle {
+    color: rgba(25, 25, 25, 0.907);
+    font-size: 2.4rem;
+    margin-left: 400px;
+}
+
+.footerDammy {
+    width: 100%;
+    height: 200px;
+}
+
 @media (max-width: 500px) {
+    .landingBody {
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
     .mainText {
-        font-size: 2.7rem;
+        font-size: 1.6rem;
+        margin-bottom: 30px;
     }
 
     .subtextContainer {
@@ -68,10 +233,173 @@
 
     .subText {
         font-size: 
-        0.9rem;
+        0.7rem;
     }
     
     .backgroundSlider {
         background-size: auto 140%;
+        animation: slide 300s linear infinite;
+    }
+
+    .page2 {
+        background-color: rgb(251, 251, 251);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        width: 100%;
+    }
+    
+    .flexRow {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .landingTextContainerOne {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        color: rgba(25, 25, 25, 0.907);
+        margin-top: 50px;
+        margin-left: 0;
+        padding-right: 0;
+    }
+    
+    .landingTextContainerOne h2 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .landingTextContainerOne p {
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .landingTextContainerOne li {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .bulletList {
+        list-style-type: disc; /* デフォルトのディスクスタイルを適用 */
+        margin-left: 20px; /* リストの左マージンを調整 */
+    }
+    
+    .imageContainerOne {
+        display: flex;
+        align-items: center;
+        margin-top: -20px;
+        margin-right: 0;
+        margin-bottom: -20px;
+    }
+    
+    .imageOne {
+        background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/others/landingimage_01.png');
+        height: 300px;
+        width: 350px;
+        background-size: 100%;
+    }
+    
+    .backgroundPorigon {
+        background-color: rgba(11, 143, 17, 0.873);
+        clip-path: polygon(0 90%, 100% 0, 100% 100%, 0 100%);
+        width: 100%;
+        height: 50px;
+    }
+    
+    .page3 {
+        background-color: rgba(42, 175, 48, 0.873);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .imageContainerTwo {
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .imageTwo {
+        background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/others/landingimage_02.png');
+        height: 300px;
+        width: 300px;
+        background-size: 100%;
+    }
+    
+    .landingTextContainerTwo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        color: rgb(255, 255, 255);
+        margin-right: 0;
+    }
+    
+    .landingTextContainerTwo h2 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+    
+    .landingTextContainerTwo li {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .page4 {
+        background-color: rgb(251, 251, 251);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        width: 100%;
+    }
+    
+    .backgroundEllipse {
+        background-color: rgba(11, 143, 17, 0.873);
+        clip-path: ellipse(60% 70% at 50% 0%);
+        width: 100%;
+        height: 100px;
+        margin-bottom: 0;
+    }
+    
+    .landingTextContainerThree {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        color: rgba(25, 25, 25, 0.907);
+        margin-left: 50px;
+        padding-right: 0;
+    }
+    
+    .landingTextContainerThree p {
+        font-size: 1rem;
+    }
+    
+    .underButtonContainer {
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+        margin-right: auto;
+    }
+    
+    .footerTitle {
+        color: rgba(25, 25, 25, 0.907);
+        font-size: 1.6rem;
+        margin-left: 40px;
+    }
+    
+    .footerDammy {
+        width: 100%;
+        height: 75px;
     }
 }

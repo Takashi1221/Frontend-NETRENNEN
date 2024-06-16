@@ -1,6 +1,7 @@
 .backgroundSlider {
     height: 100vh;
     width: 100%;
+    background-size: cover;
     overflow: hidden;
     background-image: url('https://vercel-netrennen.s3.eu-central-1.amazonaws.com/topimage.jpg');
 }
@@ -8,80 +9,14 @@
 .backgroundContainer {
     background-color: rgba(0, 0, 0, 0.063);
     display: flex;
-    height: 100%;
+    height: 650px;
     max-width: auto;
-    margin-left: 300px;
-    margin-right: 300px;
-}
-
-.pageContainer {
-    background-color: #122315;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-
-.signupBody {
-    background-color: #f8f5f5fd;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin-left: 32vw;
-    margin-right: 32vw;
-}
-
-.useFreeMainContainer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
-}
-
-.useFreeHeader {
-    display: flex;
-    font-size: 1.6rem;
-    margin-left: auto;
-    margin-right: auto;
-    color: #122315ee;
-}
-
-.useFreeBody {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.0rem;
-    margin-top: 60px;
-    margin-left: auto;
-    margin-right: auto;
-    color: #243527c7;
-}
-
-.loadingContainer {
-    margin-top: 60px;
-}
-
-.returnStripeContainer {
-    display: flex;
-    margin-top: 120px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.returnStripeButton {
-    margin-top: 80px;
-    padding: 10px;
-    height: 40px;
-    background-color: #6528F7;
-    border: 1px solid #6528F7;
-    color: #f8f5f5fd;
-    cursor: pointer;
-}
-  
-.returnStripeButton:hover {
-    background-color: #341282;
-    border: 1px solid #341282;
+    margin: 40px 300px 200px 300px;
 }
 
 .leftContainer {
     display: flex;
+    align-items: center;
     flex: 1;
 }
 
@@ -89,15 +24,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 20%;
+    padding: 0 40px;
 }
 
 .leftTextSpace h2 {
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     color: #ffffff;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .bulletList {
@@ -107,10 +42,10 @@
 
 .leftTextSpace li {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #ffffff;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .rightContainer {
@@ -122,10 +57,9 @@
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
-    flex: 1;
-    height: 80%;
-    max-width: 700px;
-    padding: 80px;
+    height: 550px;
+    width: 400px;
+    padding: 40px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2); 
@@ -134,18 +68,18 @@
 .formTitle {
     display: flex;
     justify-content: flex-start;
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: #2f2f2fe4;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
   
 .formDiscription {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     color: #747274ca;
 }
 
 .formDiscriptionLower {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #747274ca;
 }
   
@@ -164,7 +98,7 @@
     padding: 0 15px;
     padding-right: 50px; /* ボタンのスペースを確保 */
     width: 100%;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     color: #373737d8;
 }
 
@@ -189,14 +123,15 @@
 }
   
 .weiterButtonStyle {
-    margin-top: 80px;
-    height: 60px;
-    padding: 15px auto;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 40px;
     background-color: #1cd441ed;
     border: 1px solid #1cd441ed;
-    border-radius: 10px;
+    border-radius: 7.5px;
     color: #f8f5f5fd;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
   
 .weiterButtonStyle:hover {
@@ -225,18 +160,18 @@
     .leftTextSpace {
         display: flex;
         flex-direction: column;
-        padding: 20px;
+        padding: 10px;
     }
     
     .leftTextSpace h2 {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         margin-left: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     
     .leftTextSpace li {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
     }
 
     .rightContainer {
@@ -253,16 +188,16 @@
     .formTitle {
         display: flex;
         justify-content: flex-start;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         margin-bottom: 30px;
     }
       
     .formDiscription {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     
     .formDiscriptionLower {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .inputStyleEmail {
@@ -270,9 +205,9 @@
     }
 
     .weiterButtonStyle {
-        margin: 60px 80px 20px 80px;
+        margin: 40px 80px 20px 80px;
         height: 60px;
         padding: 15px auto;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }

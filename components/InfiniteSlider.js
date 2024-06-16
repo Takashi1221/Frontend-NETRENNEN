@@ -14,7 +14,7 @@ export function BackgroundSlider() {
         </div>
         <div className={styles.mainContainer}>
             <div className={styles.mainText}>
-                Hacken wir die Pferderennen.
+                Hacken wir die Pferderennen
             </div>
             <div className={styles.subtextContainer}>
                 <p className={styles.subText}>
@@ -34,6 +34,7 @@ export function BackgroundSlider() {
                     fontSize: '1.6em', // テキストサイズを大きく
                     borderWidth: 4, // 枠線の太さも2倍に
                     borderColor: '#f3ede4', // 枠線の色
+                    borderRadius: '7.5px',
                     marginTop: '40px',
                     padding: '12px 24px', // パディングを調整してボタンのサイズを増加
                     '&:hover': {
