@@ -10,6 +10,7 @@ import { RaceNumberTabs } from '../../../../components/Starter/RaceNumberTabs';
 import { HorseCardsCopy } from '../../../../components/Starter/HorseCards';
 import { HorseCardsNotAuthed } from '../../../../components/Starter/HorseCardsNotAuth';
 import { DataAnalysis } from '../../../../components/Starter/DataAnalysis';
+import { TodayErgebnis } from '../../../../components/Starter/Ergebnis';
 import { Loading } from '../../../../components/Loading';
 import QuizIcon from '@mui/icons-material/Quiz';
 import BedroomBabyIcon from '@mui/icons-material/BedroomBaby';
@@ -26,6 +27,7 @@ const RaceCard = () => {
   const [raceList, setRaceList] = useState(null);
   const [thisRace, setThisRace] = useState(null);
   const [starters, setStarters] = useState(null);
+  const [ergebnis, setErgebnis] = useState(null);
   const [howToVisible, setHowToVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('letzte4Laufe');
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -79,6 +81,19 @@ const RaceCard = () => {
     }
   }, [day, location, number]);
 
+  useEffect(() => {
+    const fetchErgebnisData = async () => {
+      if (starters && starters.length > 0) {
+        const raceId = starters[0].race_id;
+        const ergebnisData = await fetch(`/api/todayergebnis/?race_id=${raceId}`).then(res => res.json());
+        setErgebnis(ergebnisData);
+        console.log(ergebnisData)
+      }
+    };
+
+    fetchErgebnisData();
+  }, [starters]);
+
 
   // アコーディオンの表示を切り替える関数
   const toggleHowToVisibility = () => {
@@ -122,24 +137,31 @@ const RaceCard = () => {
             <p className={styles.infoDetails}>{thisRace.start} / {thisRace.distance} / {thisRace.categorie}</p>
           </div>
           <div className={styles.mainContainer}>
-            <div className={styles.tabHint}>
-              <QuizIcon />
-              <div>Seitenanleitung</div>
-              <button onClick={toggleHowToVisibility}>
-                {howToVisible ? <CloseIcon /> : <KeyboardArrowDownIcon />}
-              </button>
-            </div>
-            {/* チュートリアルコンテナ */}
-            {howToVisible && <HowTo />}
-            <div className={styles.tab}>
-              <div className={styles.tabLabel} onClick={() => setActiveTab('letzte4Laufe')}>
-                <BedroomBabyIcon />Letzte 4 Läufe
-              </div>
-              <div className={styles.tabLabel} onClick={() => setActiveTab('datenanalyse')}>
-                <AnalyticsIcon />Datenanalyse
-              </div>
-            </div>
-            {renderTabContent()}
+            {Array.isArray(ergebnis) && ergebnis.length > 0 ? (
+              <TodayErgebnis ergebnis={ergebnis} starters={starters} />
+            ) : (
+              <>
+                <div className={styles.tabHint}>
+                  <QuizIcon />
+                  <div>Seitenanleitung</div>
+                  <button onClick={toggleHowToVisibility}>
+                    {howToVisible ? <CloseIcon /> : <KeyboardArrowDownIcon />}
+                  </button>
+                </div>
+                {/* チュートリアルコンテナ */}
+                {howToVisible && <HowTo />}
+                <div className={styles.tab}>
+                  <div className={styles.tabLabel} onClick={() => setActiveTab('letzte4Laufe')}>
+                    <BedroomBabyIcon />Letzte 4 Läufe
+                  </div>
+                  <div className={styles.tabLabel} onClick={() => setActiveTab('datenanalyse')}>
+                    <AnalyticsIcon />Datenanalyse
+                  </div>
+                </div>
+                {/* 馬柱コンテナ */}
+                {renderTabContent()}
+              </>
+            )}
           </div>
         </div>
         <Footer />

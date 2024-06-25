@@ -1,0 +1,142 @@
+.tableWrapper {
+    padding: 5px;
+    overflow-x: auto;
+}
+
+.header {
+    font-size: 1.4rem;
+    color: rgba(54, 54, 54, 0.759);
+    margin: 10px 0;
+    padding-left: 5px;
+}
+
+.header span {
+    padding: auto 0;
+    margin-left: 5px;
+}
+  
+.ergebnisTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+  
+.ergebnisTable th,
+.ergebnisTable td {
+    border: 1px solid #f5f5f5;
+    padding: 8px;
+    text-align: left;
+}
+  
+.ergebnisTable th {
+    background-color: #000b7ec3;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.evenRow {
+    background-color: #f5f5f5;
+    color: rgba(39, 39, 39, 0.921);
+}
+  
+.oddRow {
+    background-color: #ffffff;
+    color: rgba(39, 39, 39, 0.921);
+}
+
+.linkStyle:hover {
+    color: #ff0051;
+}
+
+.payContainer {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-top: 40px;
+}
+
+.payTableColumn {
+    background-color: #000b7ec3;
+    padding: 8px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.payTableBody {
+    display: flex;
+}
+
+.payTitleContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    color: rgba(39, 39, 39, 0.921);
+}
+
+.payVolumeContainer {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    color: rgba(39, 39, 39, 0.921);
+}
+
+.payRow {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+
+@media (max-width: 500px) {
+    .tableWrapper {
+        padding: 0;
+    }
+    
+    .header {
+        font-size: 1.1rem;
+        margin: 10px 3px;
+        padding-left: 2.5px;
+    }
+    
+    .header span {
+        padding: auto 0;
+        margin-left: 2.5px;
+    }
+      
+    .ergebnisTable {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+      
+    .ergebnisTable th,
+    .ergebnisTable td {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+    
+    .evenRow {
+        background-color: #ececec;
+        color: rgba(39, 39, 39, 0.921);
+    }
+
+    .payContainer {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        margin-top: 40px;
+        font-size: 0.8rem;
+    }
+    
+    .payTableColumn {
+        background-color: #000b7ec3;
+        padding: 4px 8px;
+        text-align: left;
+        color: #FFFFFF;
+    }
+
+    .payRow {
+        display: flex;
+        align-items: center;
+        padding: 4px 8px;
+    }
+}
