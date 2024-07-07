@@ -104,8 +104,19 @@
 
 .oddsBox {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin-right: 10px;
+}
+
+.equipEr {
+    display: flex;
+    gap: 10px;
+    margin-top: 3px;
+}
+
+.equipEr span {
+    font-size: 0.9rem;
+    color: #8b8a88bf;
 }
 
 .odds {

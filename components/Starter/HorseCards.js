@@ -302,10 +302,19 @@ export function HorseCardsCopy({ starters }) {
                     <span className={styles.textOverFlow}>{horse.trainer}</span>
                     <span className={styles.textOverFlow}>{horse.owner}</span>
                   </p>
-                  <p className={styles.oddsBox}>
+                  <div className={styles.oddsBox}>
+                    <p className={styles.equipEr}>
+                      {horse.equip ? (
+                      <>
+                        <span>{horse.equip}</span>
+                        <span>{horse.erlbnis}</span>
+                      </>
+                      ) : 
+                      <span>{horse.erlbnis}</span>
+                      }
+                    </p>
                     <span className={getOddsDataForHorse(horse.horse_id).oddsClass}>{getOddsDataForHorse(horse.horse_id).oddsValue}</span>
-                  </p>
-                  
+                  </div>
                 </div>
                 <div className={styles.infoBoxTwo}>
                   <p className={styles.alterGew}>
