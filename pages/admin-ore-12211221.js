@@ -10,7 +10,6 @@ const AdminOpacho = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [results, setResults] = useState([]);
   const [passingOrder, setPassingOrder] = useState({});
-  const [comments, setComments] = useState({});
 
 
   const handleLogin = async () => {
@@ -31,7 +30,6 @@ const AdminOpacho = () => {
     }
   };
 
-
   const fetchResultsByDate = async (date) => {
     // ローカルタイムゾーンの日付をそのままフォーマット
     const year = date.getFullYear();
@@ -48,17 +46,12 @@ const AdminOpacho = () => {
     setResults(result);
 
     const initialPassingOrder = {};
-    const initialComments = {};
     result.forEach(item => {
         if (item.passing_order) {
             initialPassingOrder[item.race_horse_id] = item.passing_order;
         }
-        if (item.comment) {
-            initialComments[item.race_horse_id] = item.comment;
-        }
     });
     setPassingOrder(initialPassingOrder);
-    setComments(initialComments);
   };
 
   useEffect(() => {
@@ -71,17 +64,9 @@ const AdminOpacho = () => {
     setSelectedDate(date);
   };
 
-
   const handlePassingOrderChange = (raceHorseId, value) => {
     setPassingOrder({
       ...passingOrder,
-      [raceHorseId]: value,
-    });
-  };
-
-  const handleCommentChange = (raceHorseId, value) => {
-    setComments({
-      ...comments,
       [raceHorseId]: value,
     });
   };
@@ -91,8 +76,7 @@ const AdminOpacho = () => {
     const dataToSubmit = {};
     for (let raceHorseId in passingOrder) {
       dataToSubmit[raceHorseId] = {
-        passing_order: passingOrder[raceHorseId],
-        comment: comments[raceHorseId],
+        passing_order: passingOrder[raceHorseId]
       };
     }
     const response = await fetch('/api/passing-order', {
@@ -147,15 +131,6 @@ const AdminOpacho = () => {
               onChange={(e) => handlePassingOrderChange(result.race_horse_id, e.target.value)}
             />
           </td>
-          <td className={styles.marginLeft}>
-            <input
-              type="text"
-              className={styles.inputField}
-              placeholder="----"
-              value={comments[result.race_horse_id] || ''}
-              onChange={(e) => handleCommentChange(result.race_horse_id, e.target.value)}
-            />
-          </td>
           <td className={styles.marginLeft}>{result.race_horse_id}</td>
         </tr>
       ));
@@ -165,20 +140,33 @@ const AdminOpacho = () => {
     return (
       <div className={styles.loginForm}>
         <div className={styles.loginBody}>
-            <div className={styles.loginMarginTop}>
+            <div className={styles.loginTitle}>レース結果データ入力管理</div>
+            <div>
                 <input
                 type="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                style={{
+                  padding: "5px", 
+                  border: "1px solid #rgba(6, 37, 27, 0.51)", 
+                  borderRadius: "4px", 
+                  boxSizing: "border-box",  // パディングを含むように調整
+                }}
                 />
             </div>
-            <div className={styles.loginMarginTop}>
+            <div>
                 <input
                 type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                style={{
+                  padding: "5px", 
+                  border: "1px solid #rgba(6, 37, 27, 0.51)", 
+                  borderRadius: "4px", 
+                  boxSizing: "border-box",  // パディングを含むように調整
+                }}
                 />
             </div>
             <div className={styles.loginButton}>
@@ -195,6 +183,9 @@ const AdminOpacho = () => {
     <div className={styles.backGround}>
         <div className={styles.calenderBlock}>
             <Calendar onChange={handleDateChange} value={selectedDate} />
+            <div className={styles.submitBlock}>
+              <button onClick={handlePassingOrderSubmit}>編集結果送信</button>
+          </div>
         </div>
         <div className={styles.mainContainer}>
             <h2>Results for… {selectedDate.toDateString()}</h2>
@@ -212,7 +203,6 @@ const AdminOpacho = () => {
                             <th className={styles.marginLeft}>馬名</th>
                             <th className={styles.marginLeft}>タイム</th>
                             <th className={styles.marginLeft}>通過順</th>
-                            <th className={styles.marginLeft}>コメント</th>
                             <th className={styles.marginLeft}>レース馬ID</th>
                         </tr>
                         </thead>
@@ -224,9 +214,6 @@ const AdminOpacho = () => {
                 ))}
                 </div>
             ))}
-        </div>
-        <div className={styles.submitBlock}>
-            <button onClick={handlePassingOrderSubmit}>編集結果送信！</button>
         </div>
     </div>
   );
